@@ -4,7 +4,7 @@
 本开源项目拟采用B2B2C的商业模式，采用SpringBoot+SpringCloud或者Dubbo技术栈实现微服务，实现一款分布式集群的高性能电商系统。(开发中...)
 
 ## 开源协议
-taoshop使用Apache开源协议
+taoshop使用Apache2.0开源协议
 
 ## 功能
 ### [前台]
