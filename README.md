@@ -35,6 +35,10 @@ taoshop使用Apache2.0开源协议
 * 后台主要框架：SpringBoot、Mybatis
 * 微服务搭建：SpringCloud或者阿里的Dubbo
 
+### 架构设计
+
+![Image text](https://github.com/u014427391/taoshop/raw/master/screenshot/架构图20180409.png)
+
 
 
 
