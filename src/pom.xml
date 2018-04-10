@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.muses</groupId>
+  <artifactId>taoshop</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>taoshop</name>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>1.5.7.RELEASE</version>
+  </parent>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+    <!-- 模块版本 -->
+    <taoshop-web-portal.version>1.0</taoshop-web-portal.version>
+
+    <!-- 外部依赖 -->
+    <log4j.version>1.2.17</log4j.version>
+    <mysql.version>5.1.27</mysql.version>
+    <oss.version>2.4.0</oss.version>
+    <cxf.version>2.7.18</cxf.version>
+    <tk.mybatis.mapper.version>3.3.8</tk.mybatis.mapper.version>
+    <mybatis-spring-boot.version>1.1.1</mybatis-spring-boot.version>
+    <mysql-connector.version>5.1.39</mysql-connector.version>
+    <spring-boot.version>1.5.7.RELEASE</spring-boot.version>
+    <druid.version>1.1.2</druid.version>
+    <github.pagehelper.version>4.2.1</github.pagehelper.version>
+    <fastjson.version>1.2.7</fastjson.version>
+  </properties>
+
+  <build>
+    <plugins>
+      <!-- 设置源文件编译 -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.6.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+          <compilerVersion>1.8</compilerVersion>
+          <encoding>UTF-8</encoding>
+          <skipMain></skipMain>
+        </configuration>
+      </plugin>
+
+      <!-- 解决资源文件的编码问题 -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>3.0.2</version>
+        <configuration>
+          <encoding>UTF-8</encoding>
+        </configuration>
+      </plugin>
+
+
+    </plugins>
+  </build>
+
+  <!--<modules>
+
+  </modules>-->
+
+  <dependencies>
+    <!-- Spring boot -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+      <version>${spring-boot.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-redis</artifactId>
+      <version>${spring-boot.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-jpa</artifactId>
+      <version>${spring-boot.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.mybatis.spring.boot</groupId>
+      <artifactId>mybatis-spring-boot-starter</artifactId>
+      <version>${mybatis-spring-boot.version}</version>
+    </dependency>
+    <!-- Thymeleaf-->
+    <!--<dependency>-->
+    <!--<groupId>org.springframework.boot</groupId>-->
+    <!--<artifactId>spring-boot-starter-thymeleaf</artifactId>-->
+    <!--</dependency>-->
+    <!-- druid -->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>druid</artifactId>
+      <version>${druid.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>druid-spring-boot-starter</artifactId>
+      <version>${druid.version}</version>
+    </dependency>
+
+    <!-- mybatis -->
+    <dependency>
+      <groupId>tk.mybatis</groupId>
+      <artifactId>mapper</artifactId>
+      <version>${tk.mybatis.mapper.version}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>javax.persistence</groupId>
+          <artifactId>persistence-api</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>com.github.pagehelper</groupId>
+      <artifactId>pagehelper</artifactId>
+      <version>${github.pagehelper.version}</version>
+    </dependency>
+
+    <!-- mysql -->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>${mysql-connector.version}</version>
+    </dependency>
+
+    <!-- log4j -->
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>${log4j.version}</version>
+    </dependency>
+
+    <!-- fatsjson -->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+      <version>${fastjson.version}</version>
+    </dependency>
+  </dependencies>
+  <!--  设定Maven主仓库为阿里私服 -->
+  <repositories>
+    <repository>
+      <id>repos</id>
+      <name>Repository</name>
+      <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+    </repository>
+  </repositories>
+
+  <!--  设定插件仓库 -->
+  <pluginRepositories>
+    <pluginRepository>
+      <id>pluginsRepos</id>
+      <name>PluginsRepository</name>
+      <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+    </pluginRepository>
+  </pluginRepositories>
+
+</project>
