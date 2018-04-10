@@ -33,6 +33,14 @@
     <fastjson.version>1.2.7</fastjson.version>
   </properties>
 
+  <modules>
+    <module>taoshop-portal</module>
+    <module>taoshop-api</module>
+    <module>project-oauth</module>
+    <module>project-sso</module>
+    <module>project-quartz</module>
+  </modules>
+
   <build>
     <plugins>
       <!-- 设置源文件编译 -->
@@ -59,13 +67,10 @@
         </configuration>
       </plugin>
 
-
     </plugins>
   </build>
 
-  <!--<modules>
 
-  </modules>-->
 
   <dependencies>
     <!-- Spring boot -->
@@ -89,12 +94,7 @@
       <artifactId>mybatis-spring-boot-starter</artifactId>
       <version>${mybatis-spring-boot.version}</version>
     </dependency>
-    <!-- Thymeleaf-->
-    <!--<dependency>-->
-    <!--<groupId>org.springframework.boot</groupId>-->
-    <!--<artifactId>spring-boot-starter-thymeleaf</artifactId>-->
-    <!--</dependency>-->
-    <!-- druid -->
+
     <dependency>
       <groupId>com.alibaba</groupId>
       <artifactId>druid</artifactId>
