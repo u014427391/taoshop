@@ -39,6 +39,7 @@
     <module>project-oauth</module>
     <module>project-sso</module>
     <module>project-quartz</module>
+    <module>taoshop-common</module>
   </modules>
 
   <build>
