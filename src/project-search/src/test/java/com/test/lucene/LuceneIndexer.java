@@ -89,14 +89,12 @@ public class LuceneIndexer {
 	       
 	        indexWriter.addDocument(doc);
 		}
-		
-		
-		
+
 		System.out.println("共索引了"+indexWriter.numDocs()+"个文件");
 		
 		indexWriter.commit();
 		indexWriter.close();
-		System.out.println("创建索引所用时间："+(System.currentTimeMillis()-startTime));
+		System.out.println("创建索引所用时间："+(System.currentTimeMillis()-startTime)+"毫秒");
 		
 		return true;
 	}
@@ -123,9 +121,9 @@ public class LuceneIndexer {
 		try {
 			boolean r = LuceneIndexer.getInstance().createIndex(INDEX_DIR,DATA_DIR);
 			if(r){
-				System.out.println("创建成功!");
+				System.out.println("索引创建成功!");
 			}else{
-				System.out.println("创建失败!");
+				System.out.println("索引创建失败!");
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
