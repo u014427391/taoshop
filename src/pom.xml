@@ -40,6 +40,7 @@
     <module>project-sso</module>
     <module>project-quartz</module>
     <module>taoshop-common</module>
+    <module>project-search</module>
   </modules>
 
   <build>
