@@ -41,6 +41,7 @@
     <module>project-quartz</module>
     <module>taoshop-common</module>
     <module>project-search</module>
+      <module>project-redis</module>
   </modules>
 
   <build>
