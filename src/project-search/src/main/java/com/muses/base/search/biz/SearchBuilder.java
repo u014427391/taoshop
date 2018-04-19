@@ -1,4 +1,4 @@
-package com.test.lucene;
+package com.muses.base.search.biz;
 
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.TokenStream;
@@ -19,6 +19,20 @@ import java.io.IOException;
 import java.io.StringReader;
 import java.nio.file.Paths;
 
+
+/**
+ * <pre>
+ * 	Lucene全局搜索服务类
+ * </pre>
+ *
+ * @author nicky
+ * @version 1.00.00
+ *
+ *          <pre>
+ * 修改记录
+ *    修改后版本:     修改人：  修改日期:2018年04月18日     修改内容:
+ *          </pre>
+ */
 public class SearchBuilder {
 
     public static void doSearch(String indexDir , String queryStr) throws IOException, ParseException, InvalidTokenOffsetsException {
@@ -46,7 +60,7 @@ public class SearchBuilder {
         for(ScoreDoc scoreDoc : docs.scoreDocs){
             Document doc = searcher.doc(scoreDoc.doc);
             System.out.println(doc.get("title"));
-
+            System.out.println(doc.get("tcontent"));
             String tcontent = doc.get("tcontent");
             if(tcontent != null){
                 TokenStream tokenStream =  analyzer.tokenStream("tcontent", new StringReader(tcontent));

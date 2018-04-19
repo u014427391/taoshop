@@ -42,6 +42,8 @@
     <module>taoshop-common</module>
     <module>project-search</module>
       <module>project-redis</module>
+    <module>project-mongodb</module>
+      <module>project-dubbo</module>
   </modules>
 
   <build>
