@@ -1,7 +1,7 @@
 # 电子商务项目
 ## 电商项目简介
 电子商务项目[taoshop](https://github.com/u014427391/taoshop)</br>
-本开源项目拟采用B2B2C的商业模式，采用SpringBoot+SpringCloud或者Dubbo技术栈实现微服务，实现一款分布式集群的高性能电商系统。(开发中...)
+本开源项目拟采用B2C的商业模式，采用SpringBoot+Dubbo技术栈实现微服务，实现一款分布式集群的高性能电商系统。(开发中...)
 
 ## 开源协议
 taoshop使用Apache2.0开源协议
@@ -19,7 +19,7 @@ taoshop使用Apache2.0开源协议
 - [ ] portal门户
 
 ### [后台]
-- [x] 报表统计
+- [ ] 报表统计
 - [ ] SCM供应链系统
 - [ ] 商品管理
 - [ ] 活动管理
