@@ -39,6 +39,7 @@
     <module>taoshop-sso</module>
     <module>taoshop-common</module>
     <module>taoshop-provider-api</module>
+    <module>taoshop-manager</module>
     <module>taoshop-portal</module>
 
 
