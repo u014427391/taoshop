@@ -9,8 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>project-oauth</artifactId>
+    <artifactId>taoshop-quartz</artifactId>
 
     <packaging>jar</packaging>
-
 </project>

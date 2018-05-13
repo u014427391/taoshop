@@ -34,13 +34,11 @@
   </properties>
 
   <modules>
-    <module>project-cache</module>
-    <module>project-oauth</module>
-    <module>project-quartz</module>
-    <module>project-remote</module>
-    <module>project-search</module>
-    <module>project-sso</module>
+    <module>taoshop-quartz</module>
+    <module>taoshop-search</module>
+    <module>taoshop-sso</module>
     <module>taoshop-common</module>
+    <module>taoshop-provider-api</module>
     <module>taoshop-portal</module>
 
 

@@ -9,10 +9,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>project-search</artifactId>
+    <artifactId>taoshop-search</artifactId>
     <packaging>jar</packaging>
 
-    <name>project-search Maven Webapp</name>
+    <name>taoshop-search Maven Webapp</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 

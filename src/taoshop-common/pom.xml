@@ -16,6 +16,8 @@
     <modules>
         <module>taoshop-common-zk</module>
         <module>taoshop-common-core</module>
+        <module>taoshop-security-core</module>
+        <module>taoshop-security-auth2</module>
     </modules>
 
     <name>taoshop-common</name>
