@@ -42,6 +42,8 @@
     <module>taoshop-provider</module>
     <module>taoshop-manager</module>
     <module>taoshop-portal</module>
+    <module>taoshop-cms</module>
+    <module>taoshop-order</module>
 
 
   </modules>
