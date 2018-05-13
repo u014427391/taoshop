@@ -40,9 +40,9 @@
     <module>project-remote</module>
     <module>project-search</module>
     <module>project-sso</module>
-    <module>taoshop-api</module>
     <module>taoshop-common</module>
     <module>taoshop-portal</module>
+
 
   </modules>
 
