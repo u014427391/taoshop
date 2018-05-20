@@ -34,6 +34,53 @@ taoshop使用Apache2.0开源协议
 * 负载均衡：Nginx
 * 后台主要框架：SpringBoot、Mybatis
 * 微服务搭建：SpringCloud或者阿里的Dubbo
+### 平台工程目录
+
+```
+├─taoshop----------------------------父项目，公共依赖
+│  │
+│  ├─taoshop-search--------------------------全局搜索
+│  │
+│  ├─taoshop-quartz-----------------------任务调度系统
+│  │
+│  ├─taoshop-sso-------------------------单点登录工程
+│  │
+│  ├─taoshop-portal--------------------------门户网站
+│  │
+│  ├─taoshop-cms--------------------------平台cms系统
+|  |
+|  |─taoshop-order--------------------------平台订单系统
+│  │
+│  ├─paascloud-provider
+│  │  │
+│  │  │
+│  │  ├─taoshop-provider-osc------------------订单信息服务中心
+│  │  │
+│  │  └─taoshop-provider-usc------------------用户信息服务中心
+│  │
+│  ├─taoshop-provider-api
+│  │  │
+│  │  │-taoshop-provider-api-usc------------------用户信息服务API
+|  |  |
+│  │  └─taoshop-provider-api-osc------------------订单信息服务API
+│  │
+│  ├─taoshop-common
+│  │  │
+│  │  ├─taoshop-common-core------------------平台核心依赖服务
+│  │  │
+│  │  ├─taoshop-common-zk------------------zookeeper配置工程
+│  │  │
+│  │  ├─taoshop-security-core------------------安全服务核心服务
+│  │  │
+│  │  └─taoshop-security-auth2------------------API认证授权服务
+│  │
+
+
+
+
+```
+
+
 
 ### 架构设计
 
