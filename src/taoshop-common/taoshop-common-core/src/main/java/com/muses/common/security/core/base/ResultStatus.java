@@ -1,4 +1,4 @@
-package com.muses.core.base;
+package com.muses.common.security.core.base;
 
 /**
  * <pre>
