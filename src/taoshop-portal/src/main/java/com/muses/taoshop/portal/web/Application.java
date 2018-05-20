@@ -1,4 +1,4 @@
-package org.muses.taoshop.web;
+package com.muses.taoshop.portal.web;
 
 
 import org.springframework.boot.*;
