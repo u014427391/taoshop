@@ -70,6 +70,8 @@ taoshop使用Apache2.0开源协议
 │  │  │
 │  │  ├─taoshop-common-zk------------------zookeeper配置工程
 │  │  │
+│  │  ├─taoshop-common-quartz------------------任务调度服务
+│  │  │
 │  │  ├─taoshop-security-core------------------安全服务核心服务
 │  │  │
 │  │  └─taoshop-security-auth2------------------API认证授权服务
