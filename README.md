@@ -1,7 +1,7 @@
 ﻿# 电子商务项目
 ## 电商项目简介
 电子商务项目[taoshop](https://github.com/u014427391/taoshop)</br>
-本开源项目拟采用B2C的商业模式，采用SpringBoot+Dubbo技术栈实现微服务，实现一款分布式集群的高性能电商系统。(开发中...)
+本开源电商项目，SpringBoot+Dubbo技术栈实现微服务，实现一款分布式集群的电商系统。(开发中...)
 
 ## 开源协议
 taoshop使用Apache2.0开源协议
@@ -30,7 +30,7 @@ taoshop使用Apache2.0开源协议
 
 ### 技术栈
 * 模板引擎：Thymeleaf
-* 搜索引擎：Solr
+* 搜索引擎：Lucene
 * 负载均衡：Nginx
 * 后台主要框架：SpringBoot、Mybatis
 * 微服务搭建：SpringCloud或者阿里的Dubbo
