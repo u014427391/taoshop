@@ -1,8 +1,8 @@
-package com.muses.common.security.core.base;
+package com.muses.common.core.base;
 
 /**
  * <pre>
- *  TODO 类说明
+ *  返回结果枚举类 TODO 代补充完善
  * </pre>
  *
  * @author nicky.ma
