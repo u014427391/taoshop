@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 @SpringBootApplication(exclude={DataSourceAutoConfiguration.class,})
 public class Application {
 
-
     @RequestMapping("/")
     @ResponseBody
     String home() {

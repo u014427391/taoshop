@@ -27,17 +27,17 @@ public class BaseConfig {
     /**
      * repository 所在包
      */
-    public static final String REPOSITORY_PACKAGES = "org.muses.jeeplatform.core.dao.repository.admin";
+    public static final String REPOSITORY_PACKAGES = "com.muses.taoshop";
 
     /**
      * mapper 所在包
      */
-    public static final String MAPPER_PACKAGES = "org.muses.jeeplatform.core.dao.mapper.admin";
+    public static final String MAPPER_PACKAGES = "com.muses.taoshop";
 
     /**
      * 实体类 所在包
      */
-    public static final String ENTITY_PACKAGES = "org.muses.jeeplatform.core.entity.admin";
+    public static final String ENTITY_PACKAGES = "com.muses.taoshop";
 
     /**
      * JPA 实体管理器

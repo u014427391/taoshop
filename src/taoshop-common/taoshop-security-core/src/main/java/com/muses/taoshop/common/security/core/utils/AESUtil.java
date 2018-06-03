@@ -1,4 +1,4 @@
-package com.muses.common.security.core.utils;
+package com.muses.taoshop.common.security.core.utils;
 
 import sun.misc.BASE64Encoder;
 
