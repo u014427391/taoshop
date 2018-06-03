@@ -99,6 +99,11 @@
       <artifactId>mybatis-spring-boot-starter</artifactId>
       <version>${mybatis-spring-boot.version}</version>
     </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-devtools</artifactId>
+      <optional>true</optional>
+    </dependency>
 
     <dependency>
       <groupId>com.alibaba</groupId>
@@ -149,6 +154,7 @@
       <artifactId>fastjson</artifactId>
       <version>${fastjson.version}</version>
     </dependency>
+
   </dependencies>
   <!--  设定Maven主仓库为阿里私服 -->
   <repositories>

@@ -1,4 +1,4 @@
-package com.muses.common.core.database.typehandler;
+package com.muses.taoshop.common.core.database.typehandler;
 
 import org.apache.ibatis.type.JdbcType;
 import org.apache.ibatis.type.TypeHandler;

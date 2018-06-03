@@ -1,4 +1,4 @@
-package com.muses.common.core.exception;
+package com.muses.taoshop.common.core.exception;
 
 /**
  * <pre>

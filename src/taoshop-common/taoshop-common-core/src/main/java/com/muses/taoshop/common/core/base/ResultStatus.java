@@ -1,4 +1,4 @@
-package com.muses.common.core.base;
+package com.muses.taoshop.common.core.base;
 
 /**
  * <pre>

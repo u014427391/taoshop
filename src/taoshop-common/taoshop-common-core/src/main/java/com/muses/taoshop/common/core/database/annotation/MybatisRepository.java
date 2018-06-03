@@ -1,4 +1,4 @@
-package com.muses.common.core.database.annotation;
+package com.muses.taoshop.common.core.database.annotation;
 
 import org.springframework.stereotype.Component;
 
