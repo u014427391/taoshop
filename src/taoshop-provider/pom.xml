@@ -14,6 +14,9 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>taoshop-provider-usc</module>
+        <module>taoshop-provider-item</module>
+        <module>taoshop-provider-order</module>
+        <module>taoshop-provider-shop</module>
     </modules>
     <packaging>pom</packaging>
 
