@@ -54,15 +54,23 @@ taoshop使用Apache2.0开源协议
 │  ├─paascloud-provider
 │  │  │
 │  │  │
-│  │  ├─taoshop-provider-osc------------------订单信息服务中心
+│  │  ├─taoshop-provider-usc------------------用户信息服务中心
+|  |  |
+|  |  |-taoshop-provider-item------------------商品信息服务中心
+|  |  |
+|  |  |-taoshop-provider-shop------------------商铺信息服务中心
 │  │  │
-│  │  └─taoshop-provider-usc------------------用户信息服务中心
+│  │  └─taoshop-provider-order------------------订单信息服务中心
 │  │
 │  ├─taoshop-provider-api
 │  │  │
 │  │  │-taoshop-provider-api-usc------------------用户信息服务API
 |  |  |
-│  │  └─taoshop-provider-api-osc------------------订单信息服务API
+|  |  |-taosho-provider-api-item------------------商品信息服务API
+|  |  |
+|  |  |-taoshop-provider-api-shop------------------商铺信息服务API
+|  |  |
+│  │  └─taoshop-provider-api-order------------------订单信息服务API
 │  │
 │  ├─taoshop-common
 │  │  │
