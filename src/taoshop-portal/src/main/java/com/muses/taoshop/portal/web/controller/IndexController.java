@@ -8,6 +8,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+/**
+ * <pre>
+ *  控制类
+ * </pre>
+ *
+ * @author nicky
+ * @version 1.00.00
+ * <pre>
+ * 修改记录
+ *    修改后版本:     修改人：  修改日期:     修改内容:
+ * </pre>
+ */
 @Controller
 @RequestMapping("/portal")
 public class IndexController {
