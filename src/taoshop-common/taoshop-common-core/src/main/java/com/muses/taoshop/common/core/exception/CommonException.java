@@ -13,4 +13,5 @@ package com.muses.taoshop.common.core.exception;
  * </pre>
  */
 public class CommonException {
+
 }

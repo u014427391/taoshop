@@ -29,9 +29,9 @@ import org.springframework.web.bind.annotation.*;
 @EnableTransactionManagement
 //@EnableCaching
 @EnableAsync
-@EnableAutoConfiguration
+//@EnableAutoConfiguration
 @SpringBootApplication(exclude={DataSourceAutoConfiguration.class,
-        DataSourceTransactionManagerAutoConfiguration.class, JpaRepositoriesAutoConfiguration.class, MybatisAutoConfiguration.class})
+        DataSourceTransactionManagerAutoConfiguration.class,  MybatisAutoConfiguration.class})
 public class Application {
 
     @RequestMapping("/")

@@ -6,7 +6,7 @@ import java.lang.annotation.*;
 
 /**
  * <pre>
- *  TODO 定义一个元注解类扫描repository接口类
+ *  定义一个元注解类扫描repository接口类
  *  @see @link org.mybatis.spring.mapper.MapperScannerConfigurer}
  * </pre>
  *
