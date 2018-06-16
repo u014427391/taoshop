@@ -1,4 +1,4 @@
-package com.muses.taoshop.service;
+package com.muses.taoshop.item.service;
 
 import org.springframework.stereotype.Service;
 

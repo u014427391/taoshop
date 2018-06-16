@@ -1,4 +1,4 @@
-package com.muses.taoshop.vo;
+package com.muses.taoshop.item.dto;
 
 import java.math.BigDecimal;
 import java.util.Date;

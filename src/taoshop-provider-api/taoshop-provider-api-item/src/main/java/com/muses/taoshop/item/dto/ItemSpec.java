@@ -1,10 +1,10 @@
-package com.muses.taoshop.vo;
+package com.muses.taoshop.item.dto;
 
 import java.util.Date;
 
 /**
  * <pre>
- *  商品品类
+ *  商品规格VO类
  * </pre>
  * @author nicky
  * @version 1.00.00
@@ -13,30 +13,22 @@ import java.util.Date;
  *    修改后版本:     修改人：  修改日期: 2018.06.09 21:49    修改内容:
  * </pre>
  */
-public class ItemCategory {
+public class ItemSpec {
     /**
-     * 商品品类id
+     * id
      */
     private Long id;
-
     /**
-     * 商品品类名称
+     * 规格编号
      */
-    private String categoryName;
-
+    private String specNo;
     /**
-     * 上级id
+     * 规格名称
      */
-    private Long sjid;
+    private String specName;
 
-    /**
-     * 上次修改时间
-     */
     private Date lastModifyTime;
 
-    /**
-     * 创建时间
-     */
     private Date createTime;
 
     public Long getId() {
@@ -47,21 +39,20 @@ public class ItemCategory {
         this.id = id;
     }
 
-    public String getCategoryName() {
-        return categoryName;
+    public String getSpecNo() {
+        return specNo;
     }
 
-
-    public void setCategoryName(String categoryName) {
-        this.categoryName = categoryName == null ? null : categoryName.trim();
+    public void setSpecNo(String specNo) {
+        this.specNo = specNo == null ? null : specNo.trim();
     }
 
-    public Long getSjid() {
-        return sjid;
+    public String getSpecName() {
+        return specName;
     }
 
-    public void setSjid(Long sjid) {
-        this.sjid = sjid;
+    public void setSpecName(String specName) {
+        this.specName = specName == null ? null : specName.trim();
     }
 
     public Date getLastModifyTime() {

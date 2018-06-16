@@ -1,4 +1,4 @@
-package com.muses.taoshop.vo;
+package com.muses.taoshop.item.dto;
 
 import java.util.ArrayList;
 import java.util.Date;

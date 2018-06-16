@@ -22,9 +22,9 @@
     <!-- 外部依赖 -->
     <log4j.version>1.2.17</log4j.version>
     <mysql.version>5.1.27</mysql.version>
-    <oss.version>2.4.0</oss.version>
-    <cxf.version>2.7.18</cxf.version>
-    <mybatis-spring-boot.version>1.1.1</mybatis-spring-boot.version>
+    <mybatis.version>3.4.0</mybatis.version>
+    <mybatis.spring.version>1.3.0</mybatis.spring.version>
+    <mybatis.springboot.version>1.3.1</mybatis.springboot.version>
     <mysql-connector.version>5.1.39</mysql-connector.version>
     <spring-boot.version>1.5.7.RELEASE</spring-boot.version>
     <druid.version>1.1.2</druid.version>
@@ -91,28 +91,32 @@
       <artifactId>spring-boot-starter-web</artifactId>
       <version>${spring-boot.version}</version>
     </dependency>
+    <!-- redis -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-data-redis</artifactId>
       <version>${spring-boot.version}</version>
     </dependency>
+    <!-- springboot mybatis-->
+    <dependency>
+      <groupId>org.mybatis.spring.boot</groupId>
+      <artifactId>mybatis-spring-boot-starter</artifactId>
+      <version>${mybatis.springboot.version}</version>
+    </dependency>
+    <!-- Spring data jpa
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-data-jpa</artifactId>
       <version>${spring-boot.version}</version>
     </dependency>
-    <dependency>
-      <groupId>org.mybatis.spring.boot</groupId>
-      <artifactId>mybatis-spring-boot-starter</artifactId>
-      <version>${mybatis-spring-boot.version}</version>
-    </dependency>
+    -->
+   <!-- 热部署-->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-devtools</artifactId>
       <scope>provided</scope>
       <optional>true</optional>
     </dependency>
-
 
     <!--  alibaba druid -->
     <dependency>
@@ -125,6 +129,19 @@
       <artifactId>druid-spring-boot-starter</artifactId>
       <version>${druid.version}</version>
     </dependency>
+
+    <!-- mybatis
+    <dependency>
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis</artifactId>
+      <version>${mybatis.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis-spring</artifactId>
+      <version>${mybatis.spring.version}</version>
+    </dependency>
+     -->
 
     <!-- pagehelper -->
     <dependency>
@@ -139,7 +156,7 @@
       <artifactId>mysql-connector-java</artifactId>
       <version>${mysql-connector.version}</version>
     </dependency>
-
+    <!-- fastjson -->
     <dependency>
       <groupId>com.alibaba</groupId>
       <artifactId>fastjson</artifactId>

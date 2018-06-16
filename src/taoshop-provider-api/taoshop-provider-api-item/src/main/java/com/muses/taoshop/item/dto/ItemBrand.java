@@ -1,10 +1,10 @@
-package com.muses.taoshop.vo;
+package com.muses.taoshop.item.dto;
 
 import java.util.Date;
 
 /**
  * <pre>
- *  商品规格VO类
+ *  商品品牌VO类
  * </pre>
  * @author nicky
  * @version 1.00.00
@@ -13,22 +13,25 @@ import java.util.Date;
  *    修改后版本:     修改人：  修改日期: 2018.06.09 21:49    修改内容:
  * </pre>
  */
-public class ItemSpec {
+public class ItemBrand {
     /**
-     * id
+     * 品牌id
      */
     private Long id;
-    /**
-     * 规格编号
-     */
-    private String specNo;
-    /**
-     * 规格名称
-     */
-    private String specName;
 
+    /**
+     * 品牌名称
+     */
+    private String brandName;
+
+    /**
+     * 上次修改时间
+     */
     private Date lastModifyTime;
 
+    /**
+     * 创建时间
+     */
     private Date createTime;
 
     public Long getId() {
@@ -39,20 +42,12 @@ public class ItemSpec {
         this.id = id;
     }
 
-    public String getSpecNo() {
-        return specNo;
+    public String getBrandName() {
+        return brandName;
     }
 
-    public void setSpecNo(String specNo) {
-        this.specNo = specNo == null ? null : specNo.trim();
-    }
-
-    public String getSpecName() {
-        return specName;
-    }
-
-    public void setSpecName(String specName) {
-        this.specName = specName == null ? null : specName.trim();
+    public void setBrandName(String brandName) {
+        this.brandName = brandName == null ? null : brandName.trim();
     }
 
     public Date getLastModifyTime() {

@@ -1,4 +1,4 @@
-package com.muses.taoshop.common.core.base.config;
+package com.muses.taoshop.common.core.database.config;
 
 /**
  * <pre>
@@ -17,7 +17,7 @@ public class BaseConfig {
     /**
      * 设置主数据源名称
      */
-    public static final String DATA_SOURCE_NAME = "shopDataSource";
+    public static final String DATA_SOURCE_NAME = "shop";
 
     /**
      * 加载配置文件信息
@@ -27,17 +27,17 @@ public class BaseConfig {
     /**
      * repository 所在包
      */
-    public static final String REPOSITORY_PACKAGES = "com.muses.taoshop";
+    public static final String REPOSITORY_PACKAGES = "com.muses.taoshop.repository";
 
     /**
      * mapper 所在包
      */
-    public static final String MAPPER_PACKAGES = "com.muses.taoshop";
+    public static final String MAPPER_PACKAGES = "com.muses.taoshop.**.mapper";
 
     /**
      * 实体类 所在包
      */
-    public static final String ENTITY_PACKAGES = "com.muses.taoshop";
+    public static final String ENTITY_PACKAGES = "com.muses.taoshop.dto";
 
     /**
      * JPA 实体管理器

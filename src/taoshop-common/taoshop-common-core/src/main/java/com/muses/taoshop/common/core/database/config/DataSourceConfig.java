@@ -7,7 +7,8 @@ import org.springframework.context.annotation.Configuration;
 
 import javax.sql.DataSource;
 
-import static com.muses.taoshop.common.core.base.config.BaseConfig.*;
+import static com.muses.taoshop.common.core.database.config.BaseConfig.*;
+
 
 /**
  * <pre>

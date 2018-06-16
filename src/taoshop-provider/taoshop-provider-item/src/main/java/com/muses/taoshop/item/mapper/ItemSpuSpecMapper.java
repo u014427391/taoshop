@@ -1,9 +1,9 @@
-package com.muses.taoshop.repository;
+package com.muses.taoshop.item.mapper;
 
 import com.muses.taoshop.common.core.database.annotation.MybatisRepository;
-import com.muses.taoshop.vo.ItemSpuSpec;
 import java.util.List;
 
+import com.muses.taoshop.item.dto.ItemSpuSpec;
 import org.apache.ibatis.annotations.Param;
 
 @MybatisRepository

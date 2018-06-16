@@ -1,9 +1,7 @@
-package com.muses.taoshop.repository;
+package com.muses.taoshop.item.mapper;
 
 import com.muses.taoshop.common.core.database.annotation.MybatisRepository;
-import com.muses.taoshop.vo.ItemSku;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import com.muses.taoshop.item.dto.ItemSku;
 
 @MybatisRepository
 public interface ItemSkuMapper {
