@@ -29,7 +29,7 @@ import org.springframework.web.bind.annotation.*;
 @EnableTransactionManagement
 //@EnableCaching
 @EnableAsync
-//@EnableAutoConfiguration
+@EnableAutoConfiguration //TODO 修改该注解可以实现自动部署
 @SpringBootApplication(exclude={DataSourceAutoConfiguration.class,
         DataSourceTransactionManagerAutoConfiguration.class,  MybatisAutoConfiguration.class})
 public class Application {
