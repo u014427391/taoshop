@@ -1,0 +1,547 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title>电商门户网站</title>
+    <link th:href="@{../static/css/public.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{../static/css/index.css}" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" th:src="@{../static/js/jquery-1.3.2.min.js}"></script>
+    <script type="text/javascript" th:src="@{../static/js/html5.js}"></script>
+    <script type="text/javascript" th:src="@{../static/js/popbox.js}"></script>
+    <style type="text/css">
+        .item-list { display: none; position: absolute; width: 705px; min-height: 200px; _height: 200px; background: #FFF; left: 198px; box-shadow: 0px 0px 10px #DDDDDD; border: 1px solid #DDD; top: 3px; z-index: 1000000; }
+        /* Remove Float */
+        .clear { display: block; height: 0; overflow: hidden; clear: both; }
+        .clearfix:after { content: '\20'; display: block; height: 0; clear: both; }
+        .clearfix { *zoom:1;
+        }
+        .hover { position: relative; z-index: 1000000000; background: #FFF; border-color: #DDD; border-width: 1px 0px; border-style: solid; }
+    </style>
+
+</head>
+<body>
+<!--header-->
+<header class="header">
+    <!--topBar-->
+    <div class="topBar">
+        <div class="layout"> <span class="hello-notice f-orange1 f-b" style="position:absolute;left:50%;margin-left:-600px;top:1px;display:block;font-size:14px;text-align:left;">本商城在试运行阶段，暂不接收任何订单。</span>
+            <!--welcome-->
+            <span class="topBar-userWelcome">您好，欢迎来商城！<a href="#" rel="popbox">[登录]</a> <a href="#">[注册]</a></span>
+            <!--登录后
+      <span class="topBar-userWelcome logined">
+        欢迎您
+        <span class="user">
+          <a href="#" class="user-link">fanyanxia<em class="icon-arr"></em></a>
+          <span class="user-cs" style="display:none;">
+            <span class="user-cs-con">
+              <s class="icon-arr"></s>
+              <p><a href="#">个人中心</a></p>
+              <p><a href="#">退出登录</a></p>
+            </span>
+          </span>
+        </span>
+        |
+      </span>
+      <script>
+		$(function(){
+		  $(".user").hover(function(){
+			$(this).find(".user-cs").show();
+		  },function(){
+			$(this).find(".user-cs").hide();
+		  });
+		});
+      </script>
+      -->
+            <!--//welcome-->
+            <!--topBar-menu-->
+            <span class="topBar-menu"> <a href="#">商户入驻申请</a>| <a href="#">我的订单</a>| <a href="#">网上营业厅</a> </span>
+            <!--//topBar-menu-->
+        </div>
+    </div>
+    <!--//topBar-->
+    <!--headerMain-->
+    <div class="headerMain layout clearfix">
+        <!--logo-->
+        <h1 class="siteLogo"><a href="#" title="商城" class="siteLogo-homepage"></a><a href="#" title="商城" class="siteLogo-mallpage"></a></h1>
+        <!--//logo-->
+        <!--search-->
+        <div class="search">
+            <div class="search-area">
+                <input type="text" placeholder="请输入搜索关键字" class="search-input-text" />
+                <input type="button" title="搜索" class="search-input-submit" />
+                <div class="search-suggest" style="display:none;">
+                    <ol>
+                        <li class="search-suggest-key">三星<b>I9500</b></li>
+                        <li class="search-suggest-key">三星<b>I9501</b></li>
+                        <li class="search-suggest-key">三星<b>I9001</b></li>
+                        <li class="search-suggest-key">三星<b>I9505</b></li>
+                        <li class="search-suggest-key">三星<b>I9503</b></li>
+                    </ol>
+                </div>
+            </div>
+            <p class="search-hotkey">热门搜索：<a href="#">三星手机</a><a href="#">手机套</a><a href="#">手机电源线</a></p>
+        </div>
+        <!--//search-->
+        <!--我的翼猫-->
+        <div class="myYmall"> <em class="icon-user"></em><a href="#">我的翼猫</a> </div>
+        <!--//我的翼猫-->
+        <!--去购物车结算-->
+        <div class="to-cart">
+            <dl>
+                <dt> <span class="shop-amount">0</span> <em class="icon-cart"></em> <a href="#">去购物车结算</a> <span class="angle"></span> </dt>
+                <dd style="display:none;">
+                    <!--购物车为空-->
+                    <div class="nogoods" style="display:none;"> 购物车中还没有商品，赶紧选购吧！ </div>
+                    <!--//购物车为空-->
+                    <!--有商品-->
+                    <div class="cart-table">
+                        <div class="cart-table-body">
+                            <ul class="cart-item clearfix">
+                                <li class="item-img"><a href="#"><img th:src="@{../static/images/img_small_350x350.jpg}" /></a></li>
+                                <li class="item-intro"><a href="#">三星手机NNOTOS9S</a></li>
+                                <li class="item-extra"><em class="item-price">￥<span>799</span></em>x<span>2</span>
+                                    <p><a href="#" class="delete">删除</a></p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="cart-info">
+                            <div class="cart-bottom">
+                                <p> 共<span class="f-red2">1</span>件商品，共计<em class="item-price">￥<span>5399</span></em> <br />
+                                    <a href="#" class="cart-goMyCart btn btn-red">去购物车结算</a> </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--//有商品-->
+                </dd>
+            </dl>
+        </div>
+        <!--//去购物车结算-->
+        <script>
+            $(function(){
+                $(".to-cart").hover(function(){
+                    $(this).find(".angle").addClass("down").end().find("dt").addClass("selected").end().find("dd").show();
+                },function(){
+                    $(this).find(".angle").removeClass("down").end().find("dt").removeClass("selected").end().find("dd").hide();
+                });
+                if($(".cart-table .cart-item").size()>2){
+                    $(".cart-table .cart-table-body").css("overflow-y","auto");
+                }
+            });
+        </script>
+    </div>
+    <!--//headerMain-->
+    <!--headerNav-->
+    <div class="headerNav">
+        <div class="layout">
+            <dl class="all-brands">
+                <dt class="all-brands-head"> <a href="#">全部商品分类</a> </dt>
+                <dd class="all-brands-list">
+                    <div class="wrap">
+                        <div class="all-sort-list">
+                            <div class="item bo">
+                                <h3><a href="">智能终端</a></h3>
+                                <div class="item-list clearfix">
+                                    <div class="close">x</div>
+                                    <div class="subitem">
+                                        <dl class="fore1">
+                                            <dt><a href="#">手机终端</a></dt>
+                                            <dd><em><a href="#">苹果</a></em><em><a href="#">三星</a></em><em><a href="#">华为</a></em><em><a href="#">酷派</a></em><em><a href="#">中兴</a></em><em><a href="#">小米</a></em><em><a href="#">HTC</a></em><em><a href="#">联想</a></em><em><a href="#">海信</a></em><em><a href="#">天语</a></em><em><a href="#">语信</a></em><em><a href="#">广信</a></em><em><a href="#">美图</a></em><em><a href="#">其他</a></em></dd>
+                                        </dl>
+                                        <dl class="fore2">
+                                            <dt><a href="#">智能平板</a></dt>
+                                            <dd><em><a href="#">三星</a></em><em><a href="#">小米</a></em><em><a href="#">纽曼</a></em><em><a href="#">其他</a></em></dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <h3><a href="">天翼通信</a></h3>
+                                <div class="item-list clearfix">
+                                    <div class="close">x</div>
+                                    <div class="subitem">
+                                        <dl class="fore1">
+                                            <dt><a href="#">手机通信</a></dt>
+                                            <dd><em><a href="#">购机送费</a></em><em><a href="#">0元购机</a></em><em><a href="#">选号入网</a></em><em><a href="#">3G/4G上网卡</a></em></dd>
+                                        </dl>
+                                        <dl class="fore2">
+                                            <dt><a href="#">家庭宽带</a></dt>
+                                            <dd><em><a href="#">4M</a></em><em><a href="#">8M</a></em><em><a href="#">20M</a></em><em><a href="#">100M</a></em></dd>
+                                        </dl>
+                                        <dl class="fore3">
+                                            <dt><a href="#">海外</a></dt>
+                                            <dd><em><a href="#">欧洲通信</a></em><em><a href="#">亚洲通信</a></em><em><a href="#">20M</a></em><em><a href="#">其他</a></em></dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <h3><a href="">数码配件</a></h3>
+                                <div class="item-list clearfix">
+                                    <div class="close">x</div>
+                                    <div class="subitem">
+                                        <dl class="fore1">
+                                            <dt><a href="#">数码配件</a></dt>
+                                            <dd><em><a href="#">存储卡</a></em><em><a href="#">移动电源</a></em><em><a href="#">充电器</a></em><em><a href="#">数据线</a></em><em><a href="#">手机贴膜</a></em><em><a href="#">手机壳</a></em><em><a href="#">创意配件</a></em></dd>
+                                        </dl>
+                                        <dl class="fore2">
+                                            <dt><a href="#">时尚影音</a></dt>
+                                            <dd><em><a href="#">手机耳机</a></em><em><a href="#">蓝牙耳机</a></em><em><a href="#">蓝牙音箱</a></em><em><a href="#">小音箱</a></em></dd>
+                                        </dl>
+                                        <dl class="fore3">
+                                            <dt><a href="#">电子教育</a></dt>
+                                            <dd><em><a href="#">点读笔</a></em></dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <h3><a href="">智能装备</a></h3>
+                                <div class="item-list clearfix">
+                                    <div class="close">x</div>
+                                    <div class="subitem">
+                                        <dl class="fore1">
+                                            <dt><a href="#">家庭智能</a></dt>
+                                            <dd><em><a href="#">智能路由</a></em><em><a href="#">智能机顶盒</a></em><em><a href="#">家庭智能</a></em></dd>
+                                        </dl>
+                                        <dl class="fore2">
+                                            <dt><a href="#">智能穿戴</a></dt>
+                                            <dd><em><a href="#">智能手环</a></em><em><a href="#">智能手表</a></em><em><a href="#">智能配饰</a></em></dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <h3><a href="">电脑办公</a></h3>
+                                <div class="item-list clearfix">
+                                    <div class="close">x</div>
+                                    <div class="subitem">
+                                        <dl class="fore1">
+                                            <dt><a href="#">外设产品</a></dt>
+                                            <dd><em><a href="#">优盘</a></em><em><a href="#">读卡器</a></em><em><a href="#">USB插排</a></em><em><a href="#">鼠标</a></em><em><a href="#">键盘</a></em><em><a href="#">移动硬盘</a></em></dd>
+                                        </dl>
+                                        <dl class="fore2">
+                                            <dt><a href="#">网络产品</a></dt>
+                                            <dd><em><a href="#">路由器</a></em><em><a href="#">WIFI</a></em><em><a href="#">MIFI</a></em><em><a href="#">网络配件</a></em></dd>
+                                        </dl>
+                                        <dl class="fore3">
+                                            <dt><a href="#">电脑产品</a></dt>
+                                            <dd><em><a href="#">台式电脑</a></em><em><a href="#">笔记本</a></em><em><a href="#">电脑配件</a></em></dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <h3><a href="">家用电器</a></h3>
+                                <div class="item-list clearfix">
+                                    <div class="close">x</div>
+                                    <div class="subitem">
+                                        <dl class="fore1">
+                                            <dt><a href="#">个人护理</a></dt>
+                                            <dd><em><a href="#">电吹风</a></em><em><a href="#">剃须刀</a></em><em><a href="#">洁面仪</a></em><em><a href="#">美容美发</a></em><em><a href="#">其他</a></em></dd>
+                                        </dl>
+                                        <dl class="fore2">
+                                            <dt><a href="#">厨房电器</a></dt>
+                                            <dd><em><a href="#">电水壶</a></em><em><a href="#">电磁炉</a></em><em><a href="#">电烤箱</a></em><em><a href="#">电饭煲</a></em><em><a href="#">面包机</a></em><em><a href="#">豆浆机</a></em><em><a href="#">料理机</a></em><em><a href="#">榨汁机</a></em><em><a href="#">其他</a></em></dd>
+                                        </dl>
+                                        <dl class="fore3">
+                                            <dt><a href="#">生活家电</a></dt>
+                                            <dd><em><a href="#">家用多媒体</a></em><em><a href="#">吸尘器</a></em><em><a href="#">电风扇</a></em><em><a href="#">加湿器</a></em><em><a href="#">台灯</a></em><em><a href="#">其他</a></em></dd>
+                                        </dl>
+                                        <dl class="fore3">
+                                            <dt><a href="#">大家电</a></dt>
+                                            <dd><em><a href="#">电视机</a></em><em><a href="#">净化器</a></em><em><a href="#">其他</a></em></dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <h3><a href="">汽车用品</a></h3>
+                                <div class="item-list clearfix">
+                                    <div class="close">x</div>
+                                    <div class="subitem">
+                                        <dl class="fore1">
+                                            <dt><a href="#">车载智能</a></dt>
+                                            <dd><em><a href="#">导航仪</a></em><em><a href="#">行车记录仪</a></em><em><a href="#">蓝牙设备</a></em><em><a href="#">时尚影音</a></em><em><a href="#">智能监控</a></em></dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </dd>
+                <script type="text/javascript">
+                    $('.all-sort-list > .item').hover(function(){
+                        $(this).addClass('hover');
+                        $(this).children('.item-list').css('display','block');
+                    },function(){
+                        $(this).removeClass('hover');
+                        $(this).children('.item-list').css('display','none');
+                    });
+
+                    $('.item > .item-list > .close').click(function(){
+                        $(this).parent().parent().removeClass('hover');
+                        $(this).parent().hide();
+                    });
+                </script>
+            </dl>
+            <div class="headerNav-main clearfix">
+                <!--headerNav-nav-->
+                <nav class="headerNav-nav">
+                    <ul class="clearfix">
+                        <li><a href="#" class="selected">首页</a></li>
+                        <li><a href="#">手机汇</a></li>
+                        <li><a href="#">聚优惠</a></li>
+                        <li><a href="#">商业街</a></li>
+                    </ul>
+                </nav>
+                <!--//headerNav-nav-->
+            </div>
+        </div>
+    </div>
+    <!--//headerNav-->
+</header>
+<!--//header-->
+<!--container-->
+<div class="container">
+    <div class="layout clearfix">
+        <!--banner-->
+        <div class="banner">
+            <div class="banner-img">
+                <ul>
+                    <li><a href="#"><img width="727" height="350" th:src="@{../static/images/banner_970x355.jpg}" /></a></li>
+                    <li><a href="#"><img width="727" height="350" th:src="@{../static/images/banner_970x355.jpg}" /></a></li>
+                    <li><a href="#"><img width="727" height="350" th:src="@{../static/images/banner_970x355.jpg}" /></a></li>
+                </ul>
+            </div>
+            <ul class="banner-btn">
+                <li class="current"></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <script type="text/javascript">
+            //banner
+            $(document).ready(function(){
+                var demo = $(".banner");
+                var btn = $(".banner-btn li");
+                var slide = $(".banner-img ul");
+                var slideItem = slide.find("li");
+                var c = 0, speed = 4000 , t;
+                btn.each(function(number){
+                    $(this).click(function(){
+                        $(this).addClass("current").siblings().removeClass("current");
+                        slide.animate({"left":-slideItem.width()*number},300);
+                        c = number;
+                    });
+                });
+
+                if(btn.size()>1){
+                    autoSlide();
+                }
+
+                function timedCount()
+                {
+                    c = c + 1;
+                    if(c>=btn.size())c = 0;
+                    btn.eq(c).click();
+                }
+
+                function autoSlide(){
+                    t = setInterval(function(){timedCount();},speed);
+                }
+                //鼠标移入停止播放
+                demo.mouseover(function(){
+                    clearInterval(t);
+                });
+                demo.mouseout(function(){
+                    autoSlide();
+                });
+            });
+        </script>
+        <!--//banner-->
+        <!--快捷充值-->
+        <div class="index-fast-recharge">
+            <div class="recharge-body">
+                <div class="recharge-head">
+                    <h2><em class="icon-phone"></em>话费充值</h2>
+                </div>
+                <div class="recharge-con">
+                    <div class="recharge-form">
+                        <p>
+                            <label class="name">手机号：</label>
+                            <input placeholder="支持电信" type="text" class="text-box" />
+                        </p>
+                        <p>
+                            <label class="name">充值方式：</label>
+                            <label>
+                                <input type="radio" class="rd" />
+                                电信充值卡</label>
+                            <label>
+                                <input type="radio" class="rd" />
+                                银行卡</label>
+                        </p>
+                        <div class="recharge-sub-btn"> <a href="#" class="btn btn-red">立即充值</a> </div>
+                    </div>
+                    <div class="recharge-ad"> <img th:src="@{../static/images/rachange_ad.jpg}" /> </div>
+                </div>
+            </div>
+        </div>
+        <!--//快捷充值-->
+        <div class="clearfix"></div>
+        <!--最新上架-->
+        <div class="first-pannel clearfix">
+            <div class="index-f clearfix">
+                <h3 class="index-f-head"> 最新上架 <span>每天都有上新，每天都有惊喜</span> </h3>
+                <div class="index-f-body">
+                    <div class="top-sales newProduct">
+                        <ul class="top-sales-list clearfix">
+                            <li class="top-sales-item newProduct">
+                                <p class="item-img"> <a href="#"><img th:src="@{../static/images/img_small_350x350.jpg}" /></a> </p>
+                                <p class="item-buss"><a href="#">中兴N900</a></p>
+                                <p class="item-name spec"><a href="#">500元以内品牌智能机，性价比高</a></p>
+                                <p class="item-price spec"><em>499</em>元</p>
+                            </li>
+                            <li class="top-sales-item newProduct">
+                                <p class="item-img"> <a href="#"><img th:src="@{../static/images/img_small_350x350.jpg}" /></a> </p>
+                                <p class="item-buss"><a href="#">中兴N799D</a></p>
+                                <p class="item-name spec"><a href="#">500元以内品牌智能机，性价比高</a></p>
+                                <p class="item-price newProduct spec"><em>488</em>元</p>
+                            </li>
+                            <li class="top-sales-item newProduct">
+                                <p class="item-img"> <a href="#"><img th:src="@{../static/images/img_small_350x350.jpg}" /></a> </p>
+                                <p class="item-buss"><a href="#">HT-586</a></p>
+                                <p class="item-name spec"><a href="#">500元以内品牌智能机，性价比高</a></p>
+                                <p class="item-price newProduct spec"><em>268</em>元</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--最新上架//-->
+    </div>
+</div>
+<!--//container-->
+<!--footer-->
+<footer class="footer">
+    <div class="layout clearfix">
+        <!--footService-->
+        <div class="footer-service">
+            <dl>
+                <dt><em class="icon-aq"></em>购物指南</dt>
+                <dd><a href="#">咨询与投诉</a></dd>
+            </dl>
+            <dl>
+                <dt><em class="icon-service"></em>售后服务</dt>
+                <dd><a href="#">七天包退</a></dd>
+                <dd><a href="#">十五天包换</a></dd>
+                <dd><a href="#">手机维修咨询</a></dd>
+            </dl>
+            <dl>
+                <dt><em class="icon-pay"></em>支付方式</dt>
+                <dd><a href="#">网上支付</a></dd>
+            </dl>
+        </div>
+        <!--//footService-->
+        <!--在线咨询-->
+        <ul class="online">
+            <li class="line1"><a href="#"></a></li>
+            <li class="line2"><a href="#"></a></li>
+            <li class="line3"><a href="#"></a></li>
+            <li class="line4"><a href="#"></a></li>
+            <li class="line5"><a href="#"></a></li>
+            <li class="line6"><a href="#"></a></li>
+        </ul>
+        <!--在线咨询-->
+    </div>
+    <!--copyright-->
+    <div class="footer-copyright">
+        <p class="copyright">版权所有 ©2018 </p>
+        <s class="cr-icon"></s> </div>
+    <!--//copyright-->
+</footer>
+<!--//footer-->
+<div class="mark" style="display:none;"></div>
+<!--登录弹框-->
+<div class="popbox tabs" style="display:none;">
+    <div class="pop-head">
+        <h2>登录<em class="f-red1">账号</em></h2>
+        <a href="javascript:;" class="pop-close"></a> </div>
+    <ul class="pop-login-cut cut clearfix">
+        <li class="current">注册用户登录</li>
+        <li>手机用户登录</li>
+    </ul>
+    <div class="pop-body">
+        <!--注册用户登录-->
+        <div class="tab">
+            <div class="pop-login-form">
+                <p>
+                    <label class="label"><em class="f-red1">*</em>用 户 名：</label>
+                    <input type="text" size="35" class="text-box" />
+                </p>
+                <p>
+                    <label class="label"><em class="f-red1">*</em>登录密码：</label>
+                    <input type="password" size="20" class="text-box" />
+                </p>
+                <p>
+                    <label class="label"><em class="f-red1">*</em>验 证 码：</label>
+                    <input type="text" size="10" class="text-box" />
+                    <span class="code-img"><img src="images/code_img.png" /></span><a href="#" class="cg">换一张</a></p>
+                <p class="sub-btn">
+                    <label class="label">&nbsp;</label>
+                    <input type="submit" value="登 录" class="btn btn-red" />
+                </p>
+            </div>
+            <div class="pop-login-extra"> 您还不是商城会员？<a href="#">立即注册</a> </div>
+        </div>
+        <!--//注册用户登录-->
+        <!--手机用户登录-->
+        <div class="tab" style="display:none;">
+            <div class="pop-login-form">
+                <p>
+                    <label class="label"><em class="f-red1">*</em>手机号码：</label>
+                    <input type="text" size="35" class="text-box" />
+                </p>
+                <p class="tyhz">
+                    <label class="label"><em class="f-red1">*</em>密码类型：</label>
+                    <label>
+                        <input type="radio" />
+                        动态密码</label>
+                </p>
+                <p>
+                    <label class="label"><em class="f-red1">*</em>动态密码：</label>
+                    <input type="password" size="20" class="text-box" />
+                    <a href="#" class="gt btn btn-coffee">获取</a></p>
+                <p>
+                    <label class="label"><em class="f-red1">*</em>验 证 码：</label>
+                    <input type="text" size="10" class="text-box" />
+                    <span class="code-img"><img src="images/code_img.png" /></span><a href="#" class="cg">换一张</a></p>
+                <p class="sub-btn">
+                    <label class="label">&nbsp;</label>
+                    <input type="submit" value="登 录" class="btn btn-red" />
+                </p>
+            </div>
+        </div>
+        <!--//手机用户登录-->
+    </div>
+</div>
+<!--//登录弹框-->
+<script>
+    //tabs
+    $(function(){
+        $(".tabs .cut li").click(function(){
+            var td_index=$(".tabs .cut li").index(this);
+            $(this).addClass("current").siblings().removeClass("current");
+            $(".tabs .tab").eq(td_index).show().siblings(".tab").hide();
+        });
+    });
+
+    /*弹框*/
+    $(function(){
+        $("[rel='popbox']").click(function(){/*rel=popbox*/
+            popPosition('.popbox');
+        });
+    });
+</script>
+</body>
+</html>
