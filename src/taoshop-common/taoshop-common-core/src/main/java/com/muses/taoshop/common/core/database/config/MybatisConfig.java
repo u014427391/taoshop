@@ -57,7 +57,7 @@ public class MybatisConfig {
         //factoryBean.setConfigLocation(new ClassPathResource("mybatis-config.xml"));
         ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
         try{
-            factoryBean.setTypeAliasesPackage("com.muses.taoshop.**.dto");
+            factoryBean.setTypeAliasesPackage(ENTITY_PACKAGES);
             factoryBean.setVfs(SpringBootVFS.class);
             factoryBean.setMapperLocations(resolver.getResources("classpath*:/mybatis/*Mapper.xml"));
             return factoryBean.getObject();
