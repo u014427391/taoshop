@@ -27,7 +27,7 @@ public class BaseConfig {
     /**
      * repository 所在包
      */
-    public static final String REPOSITORY_PACKAGES = "com.muses.taoshop.repository";
+    public static final String REPOSITORY_PACKAGES = "com.muses.taoshop.**.repository";
 
     /**
      * mapper 所在包
@@ -37,37 +37,17 @@ public class BaseConfig {
     /**
      * 实体类 所在包
      */
-    public static final String ENTITY_PACKAGES = "com.muses.taoshop.dto";
-
-    /**
-     * JPA 实体管理器
-     */
-    public static final String ENTITY_MANAGER = "shopEntityManager";
-
-    /**
-     * JPA 实体管理器工厂
-     */
-    public static final String ENTITY_MANAGER_FACTORY = "shopEntityManagerFactory";
-
-    /**
-     * JPA 事务管理器
-     */
-    public static final String JPA_TRANSACTION_MANAGER = "shopJpaTransactionManager";
-
-    /**
-     * JPA 持久化单元
-     */
-    public static final String PERSISTENCE_UNIT = "shopPersistenceUnit";
+    public static final String ENTITY_PACKAGES = "com.muses.taoshop.**.dto";
 
     /**
      * Mybatis session 工厂
      */
-    public static final String SQL_SESSION_FACTORY = "shopSqlSessionFactory";
+    public static final String SQL_SESSION_FACTORY = "sqlSessionFactory";
 
     /**
      * Mybatis 事务管理器
      */
-    public static final String MYBATIS_TRANSACTION_MANAGER = "shopMybatisTransactionManager";
+    public static final String MYBATIS_TRANSACTION_MANAGER = "mybatisTransactionManager";
 
     /**
      * Jedis连接池

@@ -1,5 +1,9 @@
 package com.muses.taoshop.item.service;
 
+import com.muses.taoshop.item.dto.ItemBrand;
+
+import java.util.List;
+
 /**
  * <pre>
  *  TODO 类说明
@@ -13,4 +17,5 @@ package com.muses.taoshop.item.service;
  * </pre>
  */
 public interface IItemBrankService {
+    List<ItemBrand> listItemBrand();
 }

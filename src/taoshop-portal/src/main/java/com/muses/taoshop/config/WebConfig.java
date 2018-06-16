@@ -1,4 +1,4 @@
-package com.muses.taoshop.portal.config;
+package com.muses.taoshop.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.util.ResourceUtils;

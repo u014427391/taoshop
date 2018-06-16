@@ -4,7 +4,7 @@ import com.muses.taoshop.common.core.database.annotation.MybatisRepository;
 import com.muses.taoshop.item.dto.ItemCategory;
 
 @MybatisRepository
-public interface ItemCategoryRepository {
+public interface ItemCategoryMapper {
 
     int deleteByPrimaryKey(Long id);
 

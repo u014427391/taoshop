@@ -4,19 +4,17 @@ import com.muses.taoshop.common.core.database.annotation.MybatisRepository;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.mybatis.spring.boot.autoconfigure.SpringBootVFS;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceBuilder;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
-import org.springframework.context.annotation.Profile;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.core.io.support.ResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.springframework.web.servlet.resource.PathResourceResolver;
 
 import javax.sql.DataSource;
 
@@ -59,7 +57,9 @@ public class MybatisConfig {
         //factoryBean.setConfigLocation(new ClassPathResource("mybatis-config.xml"));
         ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
         try{
-            factoryBean.setMapperLocations(resolver.getResources("classpath*:/mybatis/mapper/*Mapper.xml"));
+            factoryBean.setTypeAliasesPackage("com.muses.taoshop.**.dto");
+            factoryBean.setVfs(SpringBootVFS.class);
+            factoryBean.setMapperLocations(resolver.getResources("classpath*:/mybatis/*Mapper.xml"));
             return factoryBean.getObject();
         }catch (Exception e){
             e.printStackTrace();

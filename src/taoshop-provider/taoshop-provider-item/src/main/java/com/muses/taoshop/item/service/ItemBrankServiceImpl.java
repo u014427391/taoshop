@@ -1,6 +1,11 @@
 package com.muses.taoshop.item.service;
 
+import com.muses.taoshop.item.dto.ItemBrand;
+import com.muses.taoshop.item.mapper.ItemBrandMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * <pre>
@@ -16,6 +21,14 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class ItemBrankServiceImpl implements IItemBrankService{
+
+    @Autowired
+    ItemBrandMapper itemBrandMapper;
+
+    @Override
+    public List<ItemBrand> listItemBrand() {
+        return itemBrandMapper.listItemBrand();
+    }
 
 
 

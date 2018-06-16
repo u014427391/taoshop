@@ -4,8 +4,10 @@ import com.muses.taoshop.common.core.database.annotation.MybatisRepository;
 
 import com.muses.taoshop.item.dto.ItemBrand;
 
+import java.util.List;
+
 @MybatisRepository
-public interface ItemBrandRepository {
+public interface ItemBrandMapper {
 
     int deleteByPrimaryKey(Long id);
 
@@ -22,4 +24,6 @@ public interface ItemBrandRepository {
     int updateByPrimaryKeySelective(ItemBrand record);
 
     int updateByPrimaryKey(ItemBrand record);
+
+    List<ItemBrand> listItemBrand();
 }
