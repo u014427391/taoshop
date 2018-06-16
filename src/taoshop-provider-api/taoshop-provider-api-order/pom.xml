@@ -6,10 +6,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.muses.provider.api</groupId>
-    <artifactId>taoshop-provider-api-osc</artifactId>
+    <artifactId>taoshop-provider-api-order</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <name>taoshop-provider-api-osc</name>
+    <name>taoshop-provider-api-order</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 
