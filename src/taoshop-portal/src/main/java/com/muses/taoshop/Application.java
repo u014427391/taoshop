@@ -27,7 +27,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @Controller
 @EnableScheduling//开启对计划任务的支持
-@EnableTransactionManagement
+@EnableTransactionManagement//开启对事务管理配置的支持
 @EnableCaching
 @EnableAsync//开启对异步方法的支持
 @EnableAutoConfiguration //TODO 修改该注解可以实现自动部署
