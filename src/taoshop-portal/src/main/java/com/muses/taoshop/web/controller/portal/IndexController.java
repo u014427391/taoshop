@@ -1,4 +1,4 @@
-package com.muses.taoshop.web.controller;
+package com.muses.taoshop.web.controller.portal;
 
 import com.alibaba.fastjson.JSON;
 import com.muses.taoshop.item.dto.ItemBrand;
@@ -12,7 +12,7 @@ import java.util.List;
 
 /**
  * <pre>
- *  控制类
+ *  门户网站控制类
  * </pre>
  *
  * @author nicky
