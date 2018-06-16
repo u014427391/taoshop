@@ -1,4 +1,4 @@
-package com.muses.taoshop.portal.config;
+package com.muses.taoshop.common.core.database.config;
 
 import com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceBuilder;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 
 import javax.sql.DataSource;
 
-import static com.muses.taoshop.portal.config.BaseConfig.*;
+import static com.muses.taoshop.common.core.base.config.BaseConfig.*;
 
 /**
  * <pre>

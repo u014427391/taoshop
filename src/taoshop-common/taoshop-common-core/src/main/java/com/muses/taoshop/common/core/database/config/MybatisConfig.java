@@ -1,4 +1,4 @@
-package com.muses.taoshop.portal.config;
+package com.muses.taoshop.common.core.database.config;
 
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
@@ -8,13 +8,12 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
 
-import static com.muses.taoshop.portal.config.BaseConfig.*;
+import static com.muses.taoshop.common.core.base.config.BaseConfig.*;
 
 /**
  * <pre>

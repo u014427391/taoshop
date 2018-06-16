@@ -1,7 +1,7 @@
-package com.muses.taoshop.portal.web.filter;
+package com.muses.taoshop.common.security.core.filter;
 
 
-import net.sf.json.JSONObject;
+import com.alibaba.fastjson.JSON;
 import org.apache.shiro.cache.Cache;
 import org.apache.shiro.cache.CacheManager;
 import org.apache.shiro.session.Session;
@@ -142,7 +142,7 @@ public class SysAccessControllerFilter extends AccessControlFilter{
         try {
             hresponse.setCharacterEncoding("UTF-8");
             PrintWriter out = hresponse.getWriter();
-            out.println(JSONObject.fromObject(resultMap));
+            out.println(JSON.toJSON(resultMap));
             out.flush();
             out.close();
         } catch (Exception e) {

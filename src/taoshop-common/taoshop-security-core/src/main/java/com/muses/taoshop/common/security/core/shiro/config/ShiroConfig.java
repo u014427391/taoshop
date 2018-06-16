@@ -1,7 +1,7 @@
-package com.muses.taoshop.portal.config;
+package com.muses.taoshop.common.security.core.shiro.config;
 
-import com.muses.taoshop.portal.core.security.ShiroRealm;
-import com.muses.taoshop.portal.web.filter.SysAccessControllerFilter;
+import com.muses.taoshop.common.security.core.filter.SysAccessControllerFilter;
+import com.muses.taoshop.common.security.core.shiro.realm.ShiroRealm;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;

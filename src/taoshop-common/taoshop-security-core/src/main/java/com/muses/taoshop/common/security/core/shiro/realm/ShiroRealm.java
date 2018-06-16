@@ -1,4 +1,4 @@
-package com.muses.taoshop.portal.core.security;
+package com.muses.taoshop.common.security.core.shiro.realm;
 
 import javax.annotation.Resource;
 

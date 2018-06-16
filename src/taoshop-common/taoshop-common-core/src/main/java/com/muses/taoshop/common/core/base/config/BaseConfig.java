@@ -1,4 +1,4 @@
-package com.muses.taoshop.portal.config;
+package com.muses.taoshop.common.core.base.config;
 
 /**
  * <pre>
