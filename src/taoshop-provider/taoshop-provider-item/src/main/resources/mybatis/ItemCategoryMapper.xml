@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.muses.taoshop.mapper.ItemCategoryMapper" >
+<mapper namespace="com.muses.taoshop.item.mapper.ItemCategoryMapper" >
   <resultMap id="BaseResultMap" type="com.muses.taoshop.item.entity.ItemCategory" >
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="category_name" property="categoryName" jdbcType="VARCHAR" />
@@ -9,14 +9,17 @@
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
   </resultMap>
 
-
-  <sql id="Base_Column_List" >
+  <sql id="BaseColumnList" >
     id, category_name, sjid, last_modify_time, create_time
   </sql>
   <!-- 获取所有的根据品类信息-->
   <select id="listRootCategory" resultType="ItemCategory">
-      SELECT id , category_name
+     SELECT
+        <include refid="BaseColumnList" />
         FROM item_category t
+        <where>
+          t.sjid = 0
+        </where>
   </select>
 
 </mapper>

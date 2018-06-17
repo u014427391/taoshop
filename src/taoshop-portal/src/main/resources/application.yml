@@ -3,7 +3,7 @@ server:
 logging:
   config: classpath:logback.xml
   level:
-    com.muses.taoshop.item.mapper: debug
+    com.muses.taoshop.*.mapper: trace
 
 spring:
   datasource:

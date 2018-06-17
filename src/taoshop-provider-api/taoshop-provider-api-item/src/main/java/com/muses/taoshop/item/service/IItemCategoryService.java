@@ -1,6 +1,7 @@
 package com.muses.taoshop.item.service;
 
 import com.muses.taoshop.item.entity.ItemCategory;
+import com.muses.taoshop.item.entity.dto.ItemCategoryDTO;
 
 import java.util.List;
 
@@ -21,5 +22,5 @@ public interface IItemCategoryService {
      * 查询根级商品品类信息
      * @return
      */
-    List<ItemCategory> listCategory();
+    List<ItemCategoryDTO> listCategory();
 }
