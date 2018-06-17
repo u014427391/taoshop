@@ -1,6 +1,6 @@
 package com.muses.taoshop.item.service;
 
-import com.muses.taoshop.item.dto.ItemBrand;
+import com.muses.taoshop.item.entity.ItemBrand;
 
 import java.util.List;
 
@@ -17,5 +17,9 @@ import java.util.List;
  * </pre>
  */
 public interface IItemBrankService {
+    /**
+     * 查询所有的商品品牌信息
+     * @return
+     */
     List<ItemBrand> listItemBrand();
 }

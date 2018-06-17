@@ -1,10 +1,10 @@
-package com.muses.taoshop.item.dto;
+package com.muses.taoshop.item.entity;
 
 import java.util.Date;
 
 /**
  * <pre>
- *  商品规格VO类
+ *  商品SPU规格类
  * </pre>
  * @author nicky
  * @version 1.00.00
@@ -13,19 +13,19 @@ import java.util.Date;
  *    修改后版本:     修改人：  修改日期: 2018.06.09 21:49    修改内容:
  * </pre>
  */
-public class ItemSpec {
+public class ItemSpuSpec {
     /**
      * id
      */
     private Long id;
     /**
-     * 规格编号
+     * spu id
      */
-    private String specNo;
+    private Long spuId;
     /**
-     * 规格名称
+     * 规格值id
      */
-    private String specName;
+    private Long specId;
 
     private Date lastModifyTime;
 
@@ -39,20 +39,20 @@ public class ItemSpec {
         this.id = id;
     }
 
-    public String getSpecNo() {
-        return specNo;
+    public Long getSpuId() {
+        return spuId;
     }
 
-    public void setSpecNo(String specNo) {
-        this.specNo = specNo == null ? null : specNo.trim();
+    public void setSpuId(Long spuId) {
+        this.spuId = spuId;
     }
 
-    public String getSpecName() {
-        return specName;
+    public Long getSpecId() {
+        return specId;
     }
 
-    public void setSpecName(String specName) {
-        this.specName = specName == null ? null : specName.trim();
+    public void setSpecId(Long specId) {
+        this.specId = specId;
     }
 
     public Date getLastModifyTime() {

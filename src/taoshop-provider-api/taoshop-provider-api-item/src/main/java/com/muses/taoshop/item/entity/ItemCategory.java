@@ -1,10 +1,11 @@
-package com.muses.taoshop.item.dto;
+package com.muses.taoshop.item.entity;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * <pre>
- *  商品SKU规格值VO类
+ *  商品品类
  * </pre>
  * @author nicky
  * @version 1.00.00
@@ -13,27 +14,36 @@ import java.util.Date;
  *    修改后版本:     修改人：  修改日期: 2018.06.09 21:49    修改内容:
  * </pre>
  */
-public class ItemSkuSpecValue {
+public class ItemCategory {
     /**
-     * id
+     * 商品品类id
      */
     private Long id;
+
     /**
-     * spu id
+     * 商品品类名称
      */
-    private Long spuId;
+    private String categoryName;
+
     /**
-     * 规格值id
+     * 上级id
      */
-    private Long specValueId;
+    private Long sjid;
+
     /**
-     * 上一次修改时间
+     * 上次修改时间
      */
     private Date lastModifyTime;
+
     /**
      * 创建时间
      */
     private Date createTime;
+
+    /**
+     * 子菜单
+     */
+    private List<ItemCategory> subCategorys;
 
     public Long getId() {
         return id;
@@ -43,20 +53,21 @@ public class ItemSkuSpecValue {
         this.id = id;
     }
 
-    public Long getSpuId() {
-        return spuId;
+    public String getCategoryName() {
+        return categoryName;
     }
 
-    public void setSpuId(Long spuId) {
-        this.spuId = spuId;
+
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName == null ? null : categoryName.trim();
     }
 
-    public Long getSpecValueId() {
-        return specValueId;
+    public Long getSjid() {
+        return sjid;
     }
 
-    public void setSpecValueId(Long specValueId) {
-        this.specValueId = specValueId;
+    public void setSjid(Long sjid) {
+        this.sjid = sjid;
     }
 
     public Date getLastModifyTime() {
@@ -73,5 +84,13 @@ public class ItemSkuSpecValue {
 
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
+    }
+
+    public List<ItemCategory> getSubCategorys() {
+        return subCategorys;
+    }
+
+    public void setSubCategorys(List<ItemCategory> subCategorys) {
+        this.subCategorys = subCategorys;
     }
 }

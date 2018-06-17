@@ -1,3 +1,10 @@
+server:
+  port: 8080
+logging:
+  config: classpath:logback.xml
+  level:
+    com.muses.taoshop.item.mapper: debug
+
 spring:
   datasource:
 
@@ -43,7 +50,7 @@ spring:
 #      format_sql: true
 #      ddl-auto: none
 #      naming:
-#        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+#        physical-strategy: org.hibernate.boot.entity.naming.PhysicalNamingStrategyStandardImpl
 
 #  mvc:
 #    view:

@@ -37,7 +37,7 @@ public class BaseConfig {
     /**
      * 实体类 所在包
      */
-    public static final String ENTITY_PACKAGES = "com.muses.taoshop.**.dto";
+    public static final String ENTITY_PACKAGES = "com.muses.taoshop.*.entity";
 
     /**
      * Mybatis session 工厂

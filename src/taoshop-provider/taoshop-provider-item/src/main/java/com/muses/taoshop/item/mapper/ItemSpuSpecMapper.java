@@ -3,7 +3,7 @@ package com.muses.taoshop.item.mapper;
 import com.muses.taoshop.common.core.database.annotation.MybatisRepository;
 import java.util.List;
 
-import com.muses.taoshop.item.dto.ItemSpuSpec;
+import com.muses.taoshop.item.entity.ItemSpuSpec;
 import org.apache.ibatis.annotations.Param;
 
 @MybatisRepository

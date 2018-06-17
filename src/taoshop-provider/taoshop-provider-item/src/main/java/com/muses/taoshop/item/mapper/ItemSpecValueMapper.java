@@ -1,7 +1,7 @@
 package com.muses.taoshop.item.mapper;
 
 import com.muses.taoshop.common.core.database.annotation.MybatisRepository;
-import com.muses.taoshop.item.dto.ItemSpecValue;
+import com.muses.taoshop.item.entity.ItemSpecValue;
 
 @MybatisRepository
 public interface ItemSpecValueMapper {

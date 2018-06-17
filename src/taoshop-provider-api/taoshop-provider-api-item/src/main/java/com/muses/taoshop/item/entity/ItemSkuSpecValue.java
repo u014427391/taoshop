@@ -1,9 +1,10 @@
-package com.muses.taoshop.item.dto;
+package com.muses.taoshop.item.entity;
 
 import java.util.Date;
+
 /**
  * <pre>
- *  商品规格值VO类
+ *  商品SKU规格值VO类
  * </pre>
  * @author nicky
  * @version 1.00.00
@@ -12,22 +13,26 @@ import java.util.Date;
  *    修改后版本:     修改人：  修改日期: 2018.06.09 21:49    修改内容:
  * </pre>
  */
-public class ItemSpecValue {
+public class ItemSkuSpecValue {
     /**
      * id
      */
     private Long id;
     /**
-     * 规格id
+     * spu id
      */
-    private Long specId;
+    private Long spuId;
     /**
-     * 规格值
+     * 规格值id
      */
-    private String specValue;
-
+    private Long specValueId;
+    /**
+     * 上一次修改时间
+     */
     private Date lastModifyTime;
-
+    /**
+     * 创建时间
+     */
     private Date createTime;
 
     public Long getId() {
@@ -38,20 +43,20 @@ public class ItemSpecValue {
         this.id = id;
     }
 
-    public Long getSpecId() {
-        return specId;
+    public Long getSpuId() {
+        return spuId;
     }
 
-    public void setSpecId(Long specId) {
-        this.specId = specId;
+    public void setSpuId(Long spuId) {
+        this.spuId = spuId;
     }
 
-    public String getSpecValue() {
-        return specValue;
+    public Long getSpecValueId() {
+        return specValueId;
     }
 
-    public void setSpecValue(String specValue) {
-        this.specValue = specValue == null ? null : specValue.trim();
+    public void setSpecValueId(Long specValueId) {
+        this.specValueId = specValueId;
     }
 
     public Date getLastModifyTime() {

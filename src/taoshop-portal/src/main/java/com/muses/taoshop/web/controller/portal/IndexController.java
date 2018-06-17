@@ -1,13 +1,18 @@
 package com.muses.taoshop.web.controller.portal;
 
 import com.alibaba.fastjson.JSON;
-import com.muses.taoshop.item.dto.ItemBrand;
+import com.muses.taoshop.item.entity.ItemBrand;
+import com.muses.taoshop.item.entity.ItemCategory;
 import com.muses.taoshop.item.service.IItemBrankService;
+import com.muses.taoshop.item.service.IItemCategoryService;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -28,24 +33,39 @@ public class IndexController {
 
     @Autowired
     IItemBrankService iItemBrankService;
+    @Autowired
+    IItemCategoryService iItemCategoryService;
 
     //@RequestMapping(value = "/toIndex" ,method = RequestMethod.GET)
+
+    /**
+     * 跳转到门户网站
+     * @return
+     */
     @GetMapping(value = "/toIndex.do")
     public String toIndex(){
         return "/index";
     }
 
-    public String test(){
-
-        return  "";
-    }
-
     @GetMapping(value = "/doTest")
     @ResponseBody
-    public String doTest(){
+    public    String doTest(){
         List<ItemBrand> itemBrands = iItemBrankService.listItemBrand();
         String str = JSON.toJSON(itemBrands).toString();
         return str;
+    }
+
+    @GetMapping(value = "/listRootCategory")
+    @ResponseBody
+    public String listRootCategory(){
+        List<ItemCategory> categories = new ArrayList<ItemCategory>();
+        categories = iItemCategoryService.listCategory();
+        String jsonString = "";
+        if(!CollectionUtils.isEmpty(categories)){
+            jsonString = JSON.toJSON(categories).toString();
+            return jsonString;
+        }
+        return jsonString;
     }
 
 }
