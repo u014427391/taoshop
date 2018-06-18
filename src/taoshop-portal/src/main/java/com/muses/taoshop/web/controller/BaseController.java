@@ -2,6 +2,10 @@ package com.muses.taoshop.web.controller;
 
 
 import org.apache.log4j.Logger;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * <pre>
@@ -15,7 +19,6 @@ import org.apache.log4j.Logger;
  *    修改后版本:     修改人：  修改日期: 2018.06.18 00:12    修改内容:
  * </pre>
  */
-
 public class BaseController {
     public Logger log = Logger.getLogger(getClass());
 
@@ -32,5 +35,12 @@ public class BaseController {
         log.error(message , e);
     }
 
+    /***
+     * 获取request值
+     * @return
+     */
+    public HttpServletRequest getRequest() {
+        return ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+    }
 
 }

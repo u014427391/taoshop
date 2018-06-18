@@ -40,6 +40,11 @@ public class BaseConfig {
     public static final String ENTITY_PACKAGES = "com.muses.taoshop.*.entity";
 
     /**
+     * 自定义TypeHandler
+     */
+    public static final String TYPE_HANDLERS_PACKAGES = "com.muses.taoshop.common.core.database.typehandlers";
+
+    /**
      * Mybatis session 工厂
      */
     public static final String SQL_SESSION_FACTORY = "sqlSessionFactory";

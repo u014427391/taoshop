@@ -5,6 +5,7 @@ import org.apache.ibatis.io.DefaultVFS;
 import org.apache.ibatis.io.ResolverUtil;
 import org.apache.ibatis.io.VFS;
 import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.type.TypeHandler;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 import org.mybatis.spring.boot.autoconfigure.MybatisProperties;
@@ -85,6 +86,7 @@ public class MybatisConfig {
             //factoryBean.setVfs(SpringBootVFS.class);
             String typeAliasesPackage=setTypeAliasesPackage(ENTITY_PACKAGES);
             factoryBean.setTypeAliasesPackage(typeAliasesPackage);
+//            factoryBean.setTypeHandlersPackage(TYPE_HANDLERS_PACKAGES);
             SqlSessionFactory sqlSessionFactory = factoryBean.getObject();
             return sqlSessionFactory;
         }catch (Exception e){

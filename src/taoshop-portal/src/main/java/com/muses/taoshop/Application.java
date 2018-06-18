@@ -42,6 +42,14 @@ public class Application {
         return "Hello World!";
     }
 
+    @RequestMapping("/doTest")
+    @ResponseBody
+    String doTest(){
+        System.out.println(Thread.currentThread().getName());
+        String threadName = Thread.currentThread().getName();
+        return threadName;
+    }
+
     public static void main(String[] args) throws Exception {
         SpringApplication.run(Application.class, args);
     }

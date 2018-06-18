@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -57,6 +58,10 @@ public class IndexController extends BaseController{
     @ResponseBody
     public String listRootCategory(){
         List<ItemCategory> categories = iItemCategoryService.listCategory();
+        for(ItemCategory itemCategory : categories){
+            Date unixlongTime = itemCategory.getCreateTime();
+            log.debug("create time!!!!!!!!!"+unixlongTime);
+        }
         String jsonString = "";
         if(!CollectionUtils.isEmpty(categories)){
             jsonString = JSON.toJSON(categories).toString();
