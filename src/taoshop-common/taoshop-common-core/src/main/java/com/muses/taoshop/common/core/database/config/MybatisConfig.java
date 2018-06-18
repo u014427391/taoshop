@@ -58,10 +58,10 @@ import static com.muses.taoshop.common.core.database.config.BaseConfig.*;
 )
 @EnableTransactionManagement
 @Configuration
-@ConditionalOnClass({ SqlSessionFactory.class, SqlSessionFactoryBean.class })
-@ConditionalOnBean(DataSource.class)
-@EnableConfigurationProperties(MybatisProperties.class)
-@AutoConfigureAfter(DataSourceAutoConfiguration.class)
+//@ConditionalOnClass({ SqlSessionFactory.class, SqlSessionFactoryBean.class })
+//@ConditionalOnBean(DataSource.class)
+//@EnableConfigurationProperties(MybatisProperties.class)
+//@AutoConfigureAfter(DataSourceAutoConfiguration.class)
 public class MybatisConfig {
 
     @Bean(name = DATA_SOURCE_NAME)
@@ -81,7 +81,6 @@ public class MybatisConfig {
         //factoryBean.setConfigLocation(new ClassPathResource("mybatis-config.xml"));
         ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
         try{
-            //factoryBean.setVfs(SpringBootVFS.class);
             factoryBean.setMapperLocations(resolver.getResources("classpath*:/mybatis/*Mapper.xml"));
             //factoryBean.setVfs(SpringBootVFS.class);
             String typeAliasesPackage=setTypeAliasesPackage(ENTITY_PACKAGES);
@@ -118,7 +117,7 @@ public class MybatisConfig {
                         metadataReader = metadataReaderFactory
                                 .getMetadataReader(resource);
                         try {
-                            // System.out.println(Class.forName(metadataReader.getClassMetadata().getClassName()).getPackage().getName());
+//                            System.out.println(Class.forName(metadataReader.getClassMetadata().getClassName()).getPackage().getName());
                             result.add(Class
                                     .forName(
                                             metadataReader.getClassMetadata()
@@ -135,7 +134,7 @@ public class MybatisConfig {
                 result.clear();
                 result.addAll(h);
                 typeAliasesPackage=String.join(",",(String[]) result.toArray(new String[0]));
-                System.out.println(typeAliasesPackage);
+//                System.out.println(typeAliasesPackage);
             } else {
                 throw new RuntimeException(
                         "mybatis typeAliasesPackage 路径扫描错误,参数typeAliasesPackage:"

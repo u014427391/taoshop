@@ -1,11 +1,11 @@
 package com.muses.taoshop.web.controller;
 
+
 import org.apache.log4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * <pre>
- *  TODO 类说明
+ *  基础控制类
  * </pre>
  *
  * @author nicky
@@ -17,16 +17,20 @@ import org.slf4j.LoggerFactory;
  */
 
 public class BaseController {
-    public Logger log = null;
+    public Logger log = Logger.getLogger(getClass());
 
-    /**
-     * 获取日志对象
-     * @return
-     */
-    public Logger getInstance(){
-        if(log == null){
-            log = (Logger) LoggerFactory.getLogger(BaseController.class);
-        }
-        return log;
+
+    public void debug(String message , Exception e){
+        log.debug(message , e);
     }
+
+    public void info(String message,Exception e){
+        log.info(message , e);
+    }
+
+    public void error(String message,Exception e){
+        log.error(message , e);
+    }
+
+
 }

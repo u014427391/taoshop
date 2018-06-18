@@ -1,7 +1,6 @@
 package com.muses.taoshop.item.service;
 
 import com.muses.taoshop.item.entity.ItemCategory;
-import com.muses.taoshop.item.entity.dto.ItemCategoryDTO;
 import com.muses.taoshop.item.mapper.ItemCategoryMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,7 +31,7 @@ public class ItemCategoryServiceImpl implements IItemCategoryService{
      * @return
      */
     @Override
-    public List<ItemCategoryDTO> listCategory() {
+    public List<ItemCategory> listCategory() {
         return itemCategoryMapper.listRootCategory();
     }
 }

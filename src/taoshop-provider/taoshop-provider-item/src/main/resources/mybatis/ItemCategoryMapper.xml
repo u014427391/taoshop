@@ -10,10 +10,14 @@
   </resultMap>
 
   <sql id="BaseColumnList" >
-    id, category_name, sjid, last_modify_time, create_time
+    id,
+        category_name as categoryName,
+        sjid,
+        last_modify_time as lastModifyTime,
+        create_time as createTime
   </sql>
   <!-- 获取所有的根据品类信息-->
-  <select id="listRootCategory" resultType="ItemCategory">
+  <select id="listRootCategory" resultType="ItemCategory" >
      SELECT
         <include refid="BaseColumnList" />
         FROM item_category t
