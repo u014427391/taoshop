@@ -1,7 +1,10 @@
 package com.muses.taoshop.item.entity;
 
 
+import com.alibaba.fastjson.annotation.JSONField;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.muses.taoshop.common.core.utils.JsonDateSerializer;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
@@ -37,15 +40,19 @@ public class ItemCategory {
     /**
      * 上次修改时间
      */
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-//    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+//    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JSONField(format ="yyyy-MM-dd HH:mm:ss")
+//    @JsonFormat(pattern="yyyy-MM-dd",timezone = "GMT+8")
+//    @JsonSerialize(using=JsonDateSerializer.class)
     private Date lastModifyTime;
 
     /**
      * 创建时间
      */
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss" )
-//    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
+//    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss" )
+    @JSONField(format ="yyyy-MM-dd HH:mm:ss")
+//    @JsonFormat(pattern="yyyy-MM-dd",timezone = "GMT+8")
+//    @JsonSerialize(using=JsonDateSerializer.class)
     private Date createTime;
 
     /**
