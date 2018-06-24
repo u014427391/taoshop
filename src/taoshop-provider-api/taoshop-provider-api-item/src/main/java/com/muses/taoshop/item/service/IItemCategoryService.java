@@ -21,5 +21,7 @@ public interface IItemCategoryService {
      * 查询根级商品品类信息
      * @return
      */
+    List<ItemCategory> listRootCategory();
+
     List<ItemCategory> listCategory();
 }

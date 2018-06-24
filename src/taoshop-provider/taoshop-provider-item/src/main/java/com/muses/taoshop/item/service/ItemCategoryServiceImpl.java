@@ -26,12 +26,23 @@ public class ItemCategoryServiceImpl implements IItemCategoryService{
     ItemCategoryMapper itemCategoryMapper;
 
     /**
-     * 查询跟级商品品类信息
+     * 查询根级商品品类信息
      *
      * @return
      */
     @Override
-    public List<ItemCategory> listCategory() {
+    public List<ItemCategory> listRootCategory() {
         return itemCategoryMapper.listRootCategory();
     }
+
+    /**
+     * 查询所有的商品品类信息
+     * @return
+     */
+    @Override
+    public List<ItemCategory> listCategory() {
+        return itemCategoryMapper.listCategory();
+    }
+
+
 }

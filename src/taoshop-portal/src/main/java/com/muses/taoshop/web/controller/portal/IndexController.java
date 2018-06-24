@@ -5,11 +5,14 @@ import com.muses.taoshop.item.entity.ItemBrand;
 import com.muses.taoshop.item.entity.ItemCategory;
 import com.muses.taoshop.item.service.IItemBrankService;
 import com.muses.taoshop.item.service.IItemCategoryService;
+import com.muses.taoshop.util.CategoryTreeUtil;
 import com.muses.taoshop.web.controller.BaseController;
+import com.sun.tools.internal.ws.processor.model.Model;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Date;
 import java.util.List;
@@ -42,8 +45,14 @@ public class IndexController extends BaseController{
      * @return
      */
     @GetMapping(value = "/toIndex.do")
-    public String toIndex(){
-        return "/index";
+    public ModelAndView toIndex(){
+        ModelAndView mv = this.getModelAndView();
+        mv.setViewName("index");
+        CategoryTreeUtil treeUtil = new CategoryTreeUtil();
+        List<ItemCategory> list = iItemCategoryService.listCategory();
+        List<ItemCategory> categories = treeUtil.buildCategoryTree(list);
+        mv.addObject("categories",categories);
+        return mv;
     }
 
     @GetMapping(value = "/doTest")
@@ -54,10 +63,16 @@ public class IndexController extends BaseController{
         return str;
     }
 
-    @GetMapping(value = "/listRootCategory")
+    /**
+     * 加载root级商品品类
+     * @return
+     */
+    @GetMapping(value = "/listRootCategory" , produces = "application/json;charset=UTF-8")
     @ResponseBody
     public String listRootCategory(){
-        List<ItemCategory> categories = iItemCategoryService.listCategory();
+        CategoryTreeUtil treeUtil = new CategoryTreeUtil();
+        List<ItemCategory> list = iItemCategoryService.listCategory();
+        List<ItemCategory> categories = treeUtil.buildCategoryTree(list);
         for(ItemCategory itemCategory : categories){
             Date unixlongTime = itemCategory.getCreateTime();
             log.debug("create time!!!!!!!!!"+unixlongTime);

@@ -4,6 +4,7 @@ package com.muses.taoshop.web.controller;
 import org.apache.log4j.Logger;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -41,6 +42,13 @@ public class BaseController {
      */
     public HttpServletRequest getRequest() {
         return ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+    }
+
+    /**
+     * 得到ModelAndView
+     */
+    public ModelAndView getModelAndView(){
+        return new ModelAndView();
     }
 
 }

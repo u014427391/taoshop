@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
-<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8" />
     <title>电商门户网站</title>
@@ -131,137 +132,25 @@
     </div>
     <!--//headerMain-->
     <!--headerNav-->
+    
     <div class="headerNav">
         <div class="layout">
             <dl class="all-brands">
                 <dt class="all-brands-head"> <a href="#">全部商品分类</a> </dt>
                 <dd class="all-brands-list">
-                    <div class="wrap">
+                    <div class="wrap" th:each="c : ${categories}">
                         <div class="all-sort-list">
                             <div class="item bo">
-                                <h3><a href="">智能终端</a></h3>
+                                <h3>
+                                <a href="" th:text="${c.categoryName}"></a></h3>
                                 <div class="item-list clearfix">
                                     <div class="close">x</div>
-                                    <div class="subitem">
+                                    <div class="subitem" th:each="s: ${c.subCategorys}">
                                         <dl class="fore1">
-                                            <dt><a href="#">手机终端</a></dt>
-                                            <dd><em><a href="#">苹果</a></em><em><a href="#">三星</a></em><em><a href="#">华为</a></em><em><a href="#">酷派</a></em><em><a href="#">中兴</a></em><em><a href="#">小米</a></em><em><a href="#">HTC</a></em><em><a href="#">联想</a></em><em><a href="#">海信</a></em><em><a href="#">天语</a></em><em><a href="#">语信</a></em><em><a href="#">广信</a></em><em><a href="#">美图</a></em><em><a href="#">其他</a></em></dd>
-                                        </dl>
-                                        <dl class="fore2">
-                                            <dt><a href="#">智能平板</a></dt>
-                                            <dd><em><a href="#">三星</a></em><em><a href="#">小米</a></em><em><a href="#">纽曼</a></em><em><a href="#">其他</a></em></dd>
-                                        </dl>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <h3><a href="">天翼通信</a></h3>
-                                <div class="item-list clearfix">
-                                    <div class="close">x</div>
-                                    <div class="subitem">
-                                        <dl class="fore1">
-                                            <dt><a href="#">手机通信</a></dt>
-                                            <dd><em><a href="#">购机送费</a></em><em><a href="#">0元购机</a></em><em><a href="#">选号入网</a></em><em><a href="#">3G/4G上网卡</a></em></dd>
-                                        </dl>
-                                        <dl class="fore2">
-                                            <dt><a href="#">家庭宽带</a></dt>
-                                            <dd><em><a href="#">4M</a></em><em><a href="#">8M</a></em><em><a href="#">20M</a></em><em><a href="#">100M</a></em></dd>
-                                        </dl>
-                                        <dl class="fore3">
-                                            <dt><a href="#">海外</a></dt>
-                                            <dd><em><a href="#">欧洲通信</a></em><em><a href="#">亚洲通信</a></em><em><a href="#">20M</a></em><em><a href="#">其他</a></em></dd>
-                                        </dl>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <h3><a href="">数码配件</a></h3>
-                                <div class="item-list clearfix">
-                                    <div class="close">x</div>
-                                    <div class="subitem">
-                                        <dl class="fore1">
-                                            <dt><a href="#">数码配件</a></dt>
-                                            <dd><em><a href="#">存储卡</a></em><em><a href="#">移动电源</a></em><em><a href="#">充电器</a></em><em><a href="#">数据线</a></em><em><a href="#">手机贴膜</a></em><em><a href="#">手机壳</a></em><em><a href="#">创意配件</a></em></dd>
-                                        </dl>
-                                        <dl class="fore2">
-                                            <dt><a href="#">时尚影音</a></dt>
-                                            <dd><em><a href="#">手机耳机</a></em><em><a href="#">蓝牙耳机</a></em><em><a href="#">蓝牙音箱</a></em><em><a href="#">小音箱</a></em></dd>
-                                        </dl>
-                                        <dl class="fore3">
-                                            <dt><a href="#">电子教育</a></dt>
-                                            <dd><em><a href="#">点读笔</a></em></dd>
-                                        </dl>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <h3><a href="">智能装备</a></h3>
-                                <div class="item-list clearfix">
-                                    <div class="close">x</div>
-                                    <div class="subitem">
-                                        <dl class="fore1">
-                                            <dt><a href="#">家庭智能</a></dt>
-                                            <dd><em><a href="#">智能路由</a></em><em><a href="#">智能机顶盒</a></em><em><a href="#">家庭智能</a></em></dd>
-                                        </dl>
-                                        <dl class="fore2">
-                                            <dt><a href="#">智能穿戴</a></dt>
-                                            <dd><em><a href="#">智能手环</a></em><em><a href="#">智能手表</a></em><em><a href="#">智能配饰</a></em></dd>
-                                        </dl>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <h3><a href="">电脑办公</a></h3>
-                                <div class="item-list clearfix">
-                                    <div class="close">x</div>
-                                    <div class="subitem">
-                                        <dl class="fore1">
-                                            <dt><a href="#">外设产品</a></dt>
-                                            <dd><em><a href="#">优盘</a></em><em><a href="#">读卡器</a></em><em><a href="#">USB插排</a></em><em><a href="#">鼠标</a></em><em><a href="#">键盘</a></em><em><a href="#">移动硬盘</a></em></dd>
-                                        </dl>
-                                        <dl class="fore2">
-                                            <dt><a href="#">网络产品</a></dt>
-                                            <dd><em><a href="#">路由器</a></em><em><a href="#">WIFI</a></em><em><a href="#">MIFI</a></em><em><a href="#">网络配件</a></em></dd>
-                                        </dl>
-                                        <dl class="fore3">
-                                            <dt><a href="#">电脑产品</a></dt>
-                                            <dd><em><a href="#">台式电脑</a></em><em><a href="#">笔记本</a></em><em><a href="#">电脑配件</a></em></dd>
-                                        </dl>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <h3><a href="">家用电器</a></h3>
-                                <div class="item-list clearfix">
-                                    <div class="close">x</div>
-                                    <div class="subitem">
-                                        <dl class="fore1">
-                                            <dt><a href="#">个人护理</a></dt>
-                                            <dd><em><a href="#">电吹风</a></em><em><a href="#">剃须刀</a></em><em><a href="#">洁面仪</a></em><em><a href="#">美容美发</a></em><em><a href="#">其他</a></em></dd>
-                                        </dl>
-                                        <dl class="fore2">
-                                            <dt><a href="#">厨房电器</a></dt>
-                                            <dd><em><a href="#">电水壶</a></em><em><a href="#">电磁炉</a></em><em><a href="#">电烤箱</a></em><em><a href="#">电饭煲</a></em><em><a href="#">面包机</a></em><em><a href="#">豆浆机</a></em><em><a href="#">料理机</a></em><em><a href="#">榨汁机</a></em><em><a href="#">其他</a></em></dd>
-                                        </dl>
-                                        <dl class="fore3">
-                                            <dt><a href="#">生活家电</a></dt>
-                                            <dd><em><a href="#">家用多媒体</a></em><em><a href="#">吸尘器</a></em><em><a href="#">电风扇</a></em><em><a href="#">加湿器</a></em><em><a href="#">台灯</a></em><em><a href="#">其他</a></em></dd>
-                                        </dl>
-                                        <dl class="fore3">
-                                            <dt><a href="#">大家电</a></dt>
-                                            <dd><em><a href="#">电视机</a></em><em><a href="#">净化器</a></em><em><a href="#">其他</a></em></dd>
-                                        </dl>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <h3><a href="">汽车用品</a></h3>
-                                <div class="item-list clearfix">
-                                    <div class="close">x</div>
-                                    <div class="subitem">
-                                        <dl class="fore1">
-                                            <dt><a href="#">车载智能</a></dt>
-                                            <dd><em><a href="#">导航仪</a></em><em><a href="#">行车记录仪</a></em><em><a href="#">蓝牙设备</a></em><em><a href="#">时尚影音</a></em><em><a href="#">智能监控</a></em></dd>
+                                            <dt th:text="${s.categoryName}"><a href="#"></a></dt>
+                                            <dd>
+                                                <em th:each="ss : ${s.subCategorys} "><a href="#" th:text="${ss.categoryName}"></a></em>
+                                            </dd>
                                         </dl>
                                     </div>
                                 </div>

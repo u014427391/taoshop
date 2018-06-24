@@ -25,5 +25,10 @@
           t.sjid = 0
         </where>
   </select>
-
+    <!-- 获取所有的商品品类信息-->
+    <select id="listCategory" resultType="ItemCategory">
+        SELECT 
+        <include refid="BaseColumnList" />
+        FROM item_category t
+    </select>
 </mapper>

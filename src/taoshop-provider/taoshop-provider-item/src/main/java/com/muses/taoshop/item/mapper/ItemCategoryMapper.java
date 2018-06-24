@@ -10,4 +10,5 @@ public interface ItemCategoryMapper {
 
     List<ItemCategory> listRootCategory();
 
+    List<ItemCategory> listCategory();
 }
