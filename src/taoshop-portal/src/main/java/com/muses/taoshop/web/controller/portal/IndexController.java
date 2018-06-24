@@ -7,7 +7,6 @@ import com.muses.taoshop.item.service.IItemBrankService;
 import com.muses.taoshop.item.service.IItemCategoryService;
 import com.muses.taoshop.util.CategoryTreeUtil;
 import com.muses.taoshop.web.controller.BaseController;
-import com.sun.tools.internal.ws.processor.model.Model;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.CollectionUtils;
@@ -67,9 +66,9 @@ public class IndexController extends BaseController{
      * 加载root级商品品类
      * @return
      */
-    @GetMapping(value = "/listRootCategory" , produces = "application/json;charset=UTF-8")
+    @GetMapping(value = "/listCategory" , produces = "application/json;charset=UTF-8")
     @ResponseBody
-    public String listRootCategory(){
+    public String listCategory(){
         CategoryTreeUtil treeUtil = new CategoryTreeUtil();
         List<ItemCategory> list = iItemCategoryService.listCategory();
         List<ItemCategory> categories = treeUtil.buildCategoryTree(list);
@@ -80,7 +79,7 @@ public class IndexController extends BaseController{
         String jsonString = "";
         if(!CollectionUtils.isEmpty(categories)){
             jsonString = JSON.toJSON(categories).toString();
-            log.debug("get root category info:"+jsonString);
+            log.debug("get category info:"+jsonString);
             return jsonString;
         }
         return jsonString;
