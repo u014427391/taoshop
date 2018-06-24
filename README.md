@@ -97,6 +97,11 @@ taoshop使用Apache2.0开源协议
 
 ![Image text](https://github.com/u014427391/taoshop/raw/master/screenshot/架构图20180409.png)
 
+### 数据库设计
+概要设计
+
+![Image text](https://github.com/u014427391/taoshop/raw/master/screenshot/数据库设计.png)
+
 ### 平台演示
 
 ![Image text](https://github.com/u014427391/taoshop/raw/master/screenshot/门户平台.png)
