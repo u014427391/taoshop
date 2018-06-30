@@ -1,5 +1,6 @@
 package com.muses.taoshop.item.entity;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -16,9 +17,7 @@ import lombok.ToString;
  *    修改后版本:     修改人：  修改日期: 2018.06.30 17:17    修改内容:
  * </pre>
  */
-@Setter
-@Getter
-@ToString
+@Data
 public class ItemPortal {
 
     /**

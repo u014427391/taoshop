@@ -4,6 +4,7 @@ package com.muses.taoshop.item.entity;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -24,9 +25,7 @@ import java.util.List;
  *    修改后版本:     修改人：  修改日期: 2018.06.09 21:49    修改内容:
  * </pre>
  */
-@Setter
-@Getter
-@ToString
+@Data
 public class ItemCategory {
     /**
      * 商品品类id

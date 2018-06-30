@@ -68,6 +68,14 @@
           <compilerVersion>1.8</compilerVersion>
           <encoding>UTF-8</encoding>
           <skipMain></skipMain>
+          <annotationProcessorPaths>
+            <path>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok</artifactId>
+              <version>${lombok.version}</version>
+            </path>
+          </annotationProcessorPaths>
+
         </configuration>
       </plugin>
 
