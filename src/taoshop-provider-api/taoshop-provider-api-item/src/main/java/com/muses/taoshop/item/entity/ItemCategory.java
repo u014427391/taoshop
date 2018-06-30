@@ -4,6 +4,9 @@ package com.muses.taoshop.item.entity;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.validation.constraints.NotNull;
@@ -21,6 +24,9 @@ import java.util.List;
  *    修改后版本:     修改人：  修改日期: 2018.06.09 21:49    修改内容:
  * </pre>
  */
+@Setter
+@Getter
+@ToString
 public class ItemCategory {
     /**
      * 商品品类id
@@ -54,54 +60,5 @@ public class ItemCategory {
      */
     private List<ItemCategory> subCategorys;
 
-    public Long getId() {
-        return id;
-    }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getCategoryName() {
-        return categoryName;
-    }
-
-
-    public void setCategoryName(String categoryName) {
-        this.categoryName = categoryName == null ? null : categoryName.trim();
-    }
-
-    public Long getSjid() {
-        return sjid;
-    }
-
-    public void setSjid(Long sjid) {
-        this.sjid = sjid;
-    }
-
-    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-    public Date getLastModifyTime() {
-        return lastModifyTime;
-    }
-
-    public void setLastModifyTime(Date lastModifyTime) {
-        this.lastModifyTime = lastModifyTime;
-    }
-
-//    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    public List<ItemCategory> getSubCategorys() {
-        return subCategorys;
-    }
-
-    public void setSubCategorys(List<ItemCategory> subCategorys) {
-        this.subCategorys = subCategorys;
-    }
 }

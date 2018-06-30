@@ -1,5 +1,9 @@
 package com.muses.taoshop.item.entity;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
 import java.util.Date;
 
 /**
@@ -13,6 +17,9 @@ import java.util.Date;
  *    修改后版本:     修改人：  修改日期: 2018.06.09 21:49    修改内容:
  * </pre>
  */
+@Setter
+@Getter
+@ToString
 public class ItemSkuSpecValue {
     /**
      * id
@@ -35,43 +42,5 @@ public class ItemSkuSpecValue {
      */
     private Date createTime;
 
-    public Long getId() {
-        return id;
-    }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getSpuId() {
-        return spuId;
-    }
-
-    public void setSpuId(Long spuId) {
-        this.spuId = spuId;
-    }
-
-    public Long getSpecValueId() {
-        return specValueId;
-    }
-
-    public void setSpecValueId(Long specValueId) {
-        this.specValueId = specValueId;
-    }
-
-    public Date getLastModifyTime() {
-        return lastModifyTime;
-    }
-
-    public void setLastModifyTime(Date lastModifyTime) {
-        this.lastModifyTime = lastModifyTime;
-    }
-
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
 }
