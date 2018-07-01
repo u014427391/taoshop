@@ -16,7 +16,7 @@
         last_modify_time as lastModifyTime,
         create_time as createTime
   </sql>
-  <!-- 获取所有的根据品类信息-->
+  <!-- 获取所有的根级品类信息-->
   <select id="listRootCategory" resultType="ItemCategory" >
      SELECT
         <include refid="BaseColumnList" />

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.muses.taoshop.item.mapper.ItemMapper" >
+
+    <sql id="BaseColumnList" >
+        id ,
+        sku_code ,
+        sku_name ,
+        price ,
+        stock ,
+        last_modify_time as lastModifyTime,
+        create_time as createTime
+    </sql>
+    <sql id="OrderBy">
+        ORDER BY price
+    </sql>
+    <!-- 在门户网站列出商品粗略信息-->
+    <select id="listItemPortal" resultType="ItemPortal">
+        SELECT spu_id , spu.item_name as itemName , MIN(price) AS mPrice
+        FROM item_sku sku , item_spu spu
+        WHERE spu_id
+        IN (SELECT id FROM item_spu)
+    </select>
+</mapper>

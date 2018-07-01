@@ -3,8 +3,10 @@ package com.muses.taoshop.web.controller.portal;
 import com.alibaba.fastjson.JSON;
 import com.muses.taoshop.item.entity.ItemBrand;
 import com.muses.taoshop.item.entity.ItemCategory;
+import com.muses.taoshop.item.entity.ItemPortal;
 import com.muses.taoshop.item.service.IItemBrankService;
 import com.muses.taoshop.item.service.IItemCategoryService;
+import com.muses.taoshop.item.service.IItemService;
 import com.muses.taoshop.util.CategoryTreeUtil;
 import com.muses.taoshop.web.controller.BaseController;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +35,8 @@ import java.util.List;
 public class IndexController extends BaseController{
 
     @Autowired
+    IItemService iItemService;
+    @Autowired
     IItemBrankService iItemBrankService;
     @Autowired
     IItemCategoryService iItemCategoryService;
@@ -47,10 +51,12 @@ public class IndexController extends BaseController{
     public ModelAndView toIndex(){
         ModelAndView mv = this.getModelAndView();
         mv.setViewName("index");
+        List<ItemPortal> items = iItemService.listItemPortal();
         CategoryTreeUtil treeUtil = new CategoryTreeUtil();
         List<ItemCategory> list = iItemCategoryService.listCategory();
         List<ItemCategory> categories = treeUtil.buildCategoryTree(list);
-        mv.addObject("categories",categories);
+        mv.addObject("items" , items);
+        mv.addObject("categories" , categories);
         return mv;
     }
 

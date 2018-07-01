@@ -83,10 +83,8 @@ public class MybatisConfig {
         ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
         try{
             factoryBean.setMapperLocations(resolver.getResources("classpath*:/mybatis/*Mapper.xml"));
-            //factoryBean.setVfs(SpringBootVFS.class);
             String typeAliasesPackage=setTypeAliasesPackage(ENTITY_PACKAGES);
             factoryBean.setTypeAliasesPackage(typeAliasesPackage);
-//            factoryBean.setTypeHandlersPackage(TYPE_HANDLERS_PACKAGES);
             SqlSessionFactory sqlSessionFactory = factoryBean.getObject();
             return sqlSessionFactory;
         }catch (Exception e){
