@@ -25,14 +25,14 @@ taoshop使用Apache2.0开源协议
 - [ ] 采购平台
 - [ ] 内容管理
 
-### 技术栈
+## 技术栈
 * 模板引擎：Thymeleaf
 * 搜索引擎：Lucene
 * 负载均衡：Nginx
 * 缓存处理：Redis
 * 后台主要框架：SpringBoot、Mybatis
 * 微服务搭建：SpringCloud或者阿里的Dubbo
-### 平台工程目录
+## 平台工程目录
 
 ```
 ├─taoshop----------------------------父项目，公共依赖
@@ -90,16 +90,16 @@ taoshop使用Apache2.0开源协议
 
 
 
-### 架构设计
+## 架构设计
 
 ![Image text](https://github.com/u014427391/taoshop/raw/master/screenshot/架构图20180409.png)
 
-### 数据库设计
+## 数据库设计
 概要设计
 
 ![Image text](https://github.com/u014427391/taoshop/raw/master/screenshot/数据库设计.png)
 
-### 平台功能演示
+## 平台功能演示
 门户网站
 ![Image text](https://github.com/u014427391/taoshop/raw/master/screenshot/门户平台.png)
 
