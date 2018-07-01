@@ -106,4 +106,5 @@ taoshop使用Apache2.0开源协议
 商品详情
 ![Image text](https://github.com/u014427391/taoshop/raw/master/screenshot/商品详情.png)
 
-
+运营系统登录
+![Image text](https://github.com/u014427391/taoshop/raw/master/screenshot/运营平台登录.png)
