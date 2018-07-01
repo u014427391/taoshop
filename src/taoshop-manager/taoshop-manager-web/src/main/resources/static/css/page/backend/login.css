@@ -1,0 +1,143 @@
+.logo {
+    height:74px;
+    line-height:74px
+}
+.logo h1 {
+    float:left
+}
+.logo h1 a {
+    display:block;
+    height:74px;
+    padding-left:170px;
+    line-height:80px;
+    font-weight:bold;
+    background:url('../../../images/backend/login/login_logo.png?1462242749') left center no-repeat;
+    font-size:18px;
+    color:#000
+}
+.logo h1 a:hover {
+    text-decoration:none
+}
+.logo .head-link {
+    float:right
+}
+.logo .head-link li {
+    float:left;
+    margin-left:20px;
+    font-size:12px
+}
+.logo .head-link li a {
+    color:#808080
+}
+.login-bd {
+    margin-bottom:38px;
+    height:529px;
+    background:#00a2ca
+}
+.login-bd .main-content {
+    position:relative;
+    height:100%;
+    background:url('../../../images/backend/login/loginbg.png?1462242749') no-repeat
+}
+.login-bd .input-box {
+    position:absolute;
+    right:80px;
+    top:50%;
+    margin-top:-200px;
+    background:#fff;
+    box-shadow:2px 2px 3px #696363, -2px 0 3px #696363
+}
+.login-bd .input-box .input-hd {
+    margin-top:22px;
+    padding:0 10px;
+    border-left:4px solid #fc880c;
+    font-size:22px;
+    color:#000
+}
+.login-bd .input-box .input-hd h2 {
+    padding-bottom:8px;
+    border-bottom:1px solid #d9d9d9;
+    font-size:20px
+}
+.login-bd .input-box .alert {
+    margin-bottom:10px;
+    height:26px;
+    line-height:26px;
+    font-size:12px
+}
+.login-bd .input-box .input-area {
+    padding:0 22px;
+    padding-top:20px
+}
+.login-bd .input-box .input-area .input-item {
+    margin-bottom:15px
+}
+.login-bd .input-box .input-area .input-item p {
+    margin-bottom:5px;
+    font-size:12px;
+    font-weight:bold
+}
+.login-bd .input-box .input-area .input-item img {
+    cursor:pointer;
+    width:98px;
+    height:32px
+}
+.login-bd .input-box input {
+    padding:0 10px;
+    border:1px solid #cacaca;
+    width:264px;
+    height:32px;
+    outline:none;
+    background:url('../../../images/backend/login/logininputbg.png?1462242749');
+    border-radius:3px
+}
+.login-bd .input-box .img-code {
+    float:left;
+    width:160px;
+    margin-right:5px;
+    border-radius:3px
+}
+.login-bd .input-box .login-btn {
+    display:block;
+    width:100%;
+    height:36px;
+    text-align:center;
+    line-height:36px;
+    background:#00a2ca;
+    border-radius:4px;
+    border:none;
+    color:#fff;
+    cursor:pointer;
+    font-size:16px;
+    outline:none
+}
+.login-bd .input-box .reg {
+    padding:22px;
+    text-align:right
+}
+.login-bd .input-box .reg a {
+    margin-left:10px
+}
+.login-ft {
+    padding-top:20px;
+    padding-bottom:35px;
+    border-top:1px solid #e5e5e5;
+    font-size:12px
+}
+.login-ft .footer-copyright {
+    text-align:center
+}
+.login-ft .footer-copyright p {
+    color:#999;
+    margin-top:10px
+}
+.login-ft .footer-copyright p:first-child {
+    margin-top:0
+}
+.login-ft .footer-copyright .links a {
+    margin-left:15px;
+    color:#666666
+}
+.login-ft .footer-copyright .links a:first-child {
+    margin-left:0
+}

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8" />
-    <title>电商平台登录页</title>
-    <link href="../css/style.css" rel="stylesheet" />
-    <link href="../css/page/backend/login.css" rel="stylesheet" />
+    <title>运营系统登录页</title>
+    <link th:href="@{../static/css/style.css}" rel="stylesheet" />
+    <link th:href="@{../static/css/page/backend/login.css}" rel="stylesheet" />
 </head>
 <body>
 <div id="hd">
@@ -30,18 +31,18 @@
                 <form>
                     <div class="input-item">
                         <p>登录名：</p>
-                        <input type="text" placeholder="请输入账号/邮箱">
+                        <input type="text" placeholder="请输入账号/邮箱" />
                     </div>
 
                     <div class="input-item">
                         <p>登录密码：</p>
-                        <input type="text" placeholder="请输入密码">
+                        <input type="text" placeholder="请输入密码" />
                     </div>
 
                     <div class="input-item">
                         <p>验证码：</p>
-                        <input type="text" placeholder="" class="img-code">
-                        <img src="" alt="验证码图片">
+                        <input type="text" placeholder="" class="img-code" />
+                        <img src="" alt="验证码图片" />
                     </div>
 
                     <div class="login-btn"  onclick="javascript:window.location='mgt_console.html'">登录</div>
@@ -65,7 +66,7 @@
     </div>
 </div>
 
-<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" th:src="@{../js/jquery.js}"></script>
 <script type="text/javascript">
 
 
