@@ -13,6 +13,8 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>taoshop-manager-web</module>
+        <module>taoshop-manager-api</module>
+        <module>taoshop-manager-service</module>
     </modules>
     <packaging>pom</packaging>
 
