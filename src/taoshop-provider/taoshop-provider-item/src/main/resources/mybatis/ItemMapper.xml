@@ -23,6 +23,6 @@
           item_spu spu
           LEFT JOIN item_sku sku
             ON spu.id = sku.spu_id
-        GROUP BY sku.spu_id
+        GROUP BY sku.spu_id ORDER BY spu.create_time DESC
     </select>
 </mapper>
