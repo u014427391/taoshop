@@ -8,7 +8,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
+    <groupId>com.muses.taoshop.manager</groupId>
     <artifactId>taoshop-manager</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
