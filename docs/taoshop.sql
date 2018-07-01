@@ -26,9 +26,11 @@ CREATE TABLE `item_brand` (
   `last_modify_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `create_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 /*Data for the table `item_brand` */
+
+insert  into `item_brand`(`id`,`brand_name`,`last_modify_time`,`create_time`) values (1,'test','2018-06-24 20:42:35','2018-06-24 20:42:37');
 
 /*Table structure for table `item_category` */
 
@@ -52,19 +54,21 @@ insert  into `item_category`(`id`,`category_name`,`sjid`,`last_modify_time`,`cre
 DROP TABLE IF EXISTS `item_sku`;
 
 CREATE TABLE `item_sku` (
-  `id` bigint(11) NOT NULL AUTO_INCREMENT,
-  `sku_code` varchar(50) NOT NULL,
-  `sku_name` varchar(50) NOT NULL,
-  `price` decimal(9,2) NOT NULL,
-  `stock` int(11) NOT NULL,
-  `shop_id` bigint(11) NOT NULL,
-  `spu_id` bigint(11) NOT NULL,
+  `id` bigint(11) NOT NULL AUTO_INCREMENT COMMENT 'id，主键',
+  `sku_code` varchar(50) NOT NULL COMMENT 'sku编号，唯一',
+  `sku_name` varchar(50) DEFAULT NULL COMMENT 'sku名称，冗余spu_name',
+  `price` decimal(9,2) NOT NULL COMMENT '售价',
+  `stock` int(11) NOT NULL COMMENT '库存',
+  `shop_id` bigint(11) NOT NULL COMMENT '商铺id，为0表示自营',
+  `spu_id` bigint(11) NOT NULL COMMENT 'spu id，外键',
   `last_modify_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `create_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 /*Data for the table `item_sku` */
+
+insert  into `item_sku`(`id`,`sku_code`,`sku_name`,`price`,`stock`,`shop_id`,`spu_id`,`last_modify_time`,`create_time`) values (1,'112233','112233','1122.00',111,1,1,'2018-06-30 15:50:08','2018-06-30 15:50:10'),(2,'112234','test','1123.00',111,2,2,'2018-07-01 16:58:37','2018-06-30 15:55:27'),(3,'112235','112223','1234.00',123,3,2,'2018-07-01 16:56:45','2018-07-01 16:56:47');
 
 /*Table structure for table `item_sku_spec_value` */
 
@@ -122,11 +126,13 @@ CREATE TABLE `item_spu` (
   `category_id` bigint(11) NOT NULL COMMENT '分类id',
   `brand_id` bigint(11) NOT NULL COMMENT '品牌id',
   `last_modify_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `create_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `create_time` timestamp NOT NULL DEFAULT '1978-01-01 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 /*Data for the table `item_spu` */
+
+insert  into `item_spu`(`id`,`spu_code`,`item_name`,`category_id`,`brand_id`,`last_modify_time`,`create_time`) values (1,'112233','小米手机',1,1,'2018-06-30 15:49:29','2018-06-30 15:49:26'),(2,'112234','三星手机',2,2,'2018-06-30 15:54:47','1978-01-01 00:00:00');
 
 /*Table structure for table `item_spu_spec` */
 
