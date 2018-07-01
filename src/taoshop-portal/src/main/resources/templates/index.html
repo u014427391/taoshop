@@ -282,9 +282,9 @@
             <div class="index-f clearfix">
                 <h3 class="index-f-head"> 最新上架 <span>每天都有上新，每天都有惊喜</span> </h3>
                 <div class="index-f-body">
-                    <div class="top-sales newProduct" th:each="item : ${items} ">
+                    <div class="top-sales newProduct">
                         <ul class="top-sales-list clearfix">
-                            <li class="top-sales-item newProduct">
+                            <li class="top-sales-item newProduct" th:each="item : ${items}">
                                 <p class="item-img"> <a href="#"><img th:src="@{../static/images/img_small_350x350.jpg}" /></a> </p>
                                 <p class="item-buss"><a href="#" th:text="${item.itemName}"></a></p>
                                 <p class="item-name spec"><a href="#">500元以内品牌智能机，性价比高</a></p>
