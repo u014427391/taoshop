@@ -1,4 +1,4 @@
-package com.muses.taoshop.sys.entity;
+package com.muses.taoshop.manager.entity;
 
 import lombok.Data;
 

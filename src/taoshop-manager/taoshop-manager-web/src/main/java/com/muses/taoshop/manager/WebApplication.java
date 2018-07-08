@@ -39,8 +39,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
         DataSourceTransactionManagerAutoConfiguration.class})
 public class WebApplication {
 
-
-
     @RequestMapping("/doTest1")
     @ResponseBody
     String doTest(){

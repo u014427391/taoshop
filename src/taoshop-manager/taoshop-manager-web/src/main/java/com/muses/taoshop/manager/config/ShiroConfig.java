@@ -1,4 +1,4 @@
-package com.muses.taoshop.common.security.core.shiro.config;
+package com.muses.taoshop.manager.config;
 
 import com.muses.taoshop.common.security.core.filter.SysAccessControllerFilter;
 import com.muses.taoshop.common.security.core.shiro.realm.ShiroRealm;
@@ -36,14 +36,15 @@ public class ShiroConfig {
         filterChainDefinitionMap.put("/static/**", "anon");
         filterChainDefinitionMap.put("/upload/**", "anon");
         filterChainDefinitionMap.put("/plugins/**", "anon");
-        filterChainDefinitionMap.put("/code", "anon");
-        filterChainDefinitionMap.put("/login", "anon");
-        filterChainDefinitionMap.put("/logincheck", "anon");
+        filterChainDefinitionMap.put("/templates/**", "anon");
+        filterChainDefinitionMap.put("/admin/code/generate", "anon");
+        filterChainDefinitionMap.put("/admin/toLogin", "anon");
+        filterChainDefinitionMap.put("/admin/loginCheck", "anon");
         filterChainDefinitionMap.put("/**", "authc");
 
-        shiroFilterFactoryBean.setLoginUrl("/portal/toIndex.do");
-        shiroFilterFactoryBean.setSuccessUrl("/index");
-        shiroFilterFactoryBean.setUnauthorizedUrl("/portal/toIndex.do");
+        shiroFilterFactoryBean.setLoginUrl("/admin/toLogin");
+        shiroFilterFactoryBean.setSuccessUrl("/admin/toIndex");
+        shiroFilterFactoryBean.setUnauthorizedUrl("/admin/toIndex");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
         return shiroFilterFactoryBean;
     }

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.muses.taoshop.manager.mapper.SysUserMapper">
+  <resultMap id="BaseResultMap" type="com.muses.taoshop.manager.entity.SysUser">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="sex" jdbcType="VARCHAR" property="sex" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="mark" jdbcType="VARCHAR" property="mark" />
+    <result column="rank" jdbcType="VARCHAR" property="rank" />
+    <result column="lastLogin" jdbcType="DATE" property="lastlogin" />
+    <result column="loginIp" jdbcType="VARCHAR" property="loginip" />
+    <result column="imageUrl" jdbcType="VARCHAR" property="imageurl" />
+    <result column="regTime" jdbcType="DATE" property="regtime" />
+    <result column="locked" jdbcType="BIT" property="locked" />
+    <result column="rights" jdbcType="VARCHAR" property="rights" />
+  </resultMap>
+
+  <sql id="BaseColumn">
+    id, username, password, phone, sex, email, mark, rank, lastLogin, loginIp, imageUrl, 
+    regTime, locked, rights
+  </sql>
+
+  <select id="getSysUserInfo" parameterType="String" resultType="SysUser">
+    select 
+    <include refid="BaseColumn" />
+    from sys_user
+    where username = #{username}
+    and password = #{password}
+  </select>
+
+</mapper>

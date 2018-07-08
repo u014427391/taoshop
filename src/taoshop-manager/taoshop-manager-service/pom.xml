@@ -4,12 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>taoshop-manager</artifactId>
-        <groupId>com.muses.taoshop</groupId>
+        <groupId>com.muses.taoshop.manager</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.muses.taoshop</groupId>
+    <groupId>com.muses.taoshop.manager</groupId>
     <artifactId>taoshop-manager-service</artifactId>
     <version>1.0-SNAPSHOT</version>
 
@@ -24,6 +24,21 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>com.muses.taoshop.manager</groupId>
+            <artifactId>taoshop-manager-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.muses.taoshop.common</groupId>
+            <artifactId>taoshop-common-core</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.muses.taoshop.common</groupId>
+            <artifactId>taoshop-security-core</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>

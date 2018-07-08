@@ -1,4 +1,4 @@
-package com.muses.taoshop.manager.web;
+package com.muses.taoshop.manager.web.controller;
 
 
 import org.apache.log4j.Logger;
@@ -22,7 +22,6 @@ import javax.servlet.http.HttpServletRequest;
  */
 public class BaseController {
     public Logger log = Logger.getLogger(getClass());
-
 
     public void debug(String message , Exception e){
         log.debug(message , e);

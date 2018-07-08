@@ -1,4 +1,6 @@
-package com.muses.taoshop.sys.service;
+package com.muses.taoshop.manager.service;
+
+import com.muses.taoshop.manager.entity.SysUser;
 
 /**
  * <pre>
@@ -13,5 +15,5 @@ package com.muses.taoshop.sys.service;
  * </pre>
  */
 public interface ISysUserService {
-
+    SysUser getSysUser(String username , String password);
 }

@@ -24,28 +24,25 @@
             <div class="input-hd"><h2>用户登录</h2></div>
 
             <div class="input-area">
-                <div class="alert alert-error">
-                    <i class="iconfont">&#xe617;</i>
-                    <span>请输入用户名</span>
-                </div>
                 <form>
                     <div class="input-item">
                         <p>登录名：</p>
-                        <input type="text" placeholder="请输入账号/邮箱" />
+                        <input type="text" id="username" th:value="admin" placeholder="请输入账号/邮箱" />
                     </div>
 
                     <div class="input-item">
                         <p>登录密码：</p>
-                        <input type="text" placeholder="请输入密码" />
+                        <input type="text" id="password" th:value="123" placeholder="请输入密码" />
                     </div>
 
                     <div class="input-item">
                         <p>验证码：</p>
-                        <input type="text" placeholder="" class="img-code" />
-                        <img src="" alt="验证码图片" />
+                        <input type="text" placeholder="" id="code" th:value="1223" class="img-code" />
+                        <img src=""  id="codeImg" alt="点击更换"
+                             title="点击更换" />
                     </div>
 
-                    <div class="login-btn"  onclick="javascript:window.location='mgt_console.html'">登录</div>
+                    <div class="login-btn" onclick="loginCheck();">登录</div>
                 </form>
             </div>
             <p class="reg" >忘记密码？ <a href="javascript:;" >立即注册</a></p>
@@ -66,10 +63,121 @@
     </div>
 </div>
 
-<script type="text/javascript" th:src="@{../js/jquery.js}"></script>
+<script type="text/javascript" th:src="@{../static/js/jquery.js}"></script>
+<!-- 引入JQuery提示库 start-->
+<script type="text/javascript" th:src="@{../static/js/jquery.tips.js}"></script>
+<!-- 引入JQuery提示库 end-->
+<!-- 引入Cookie库 start-->
+<script type="text/javascript" th:src="@{../static/js/jquery.cookie.js}"></script>
+<!-- 引入Cookie库 end -->
 <script type="text/javascript">
 
-
+    /**加载页面时获取验证码**/
+    $(document).ready(function() {
+        changeCode();
+        $("#codeImg").bind("click", changeCode);
+    });
+    /**按回车键触发登录按钮事件**/
+    $(document).keyup(function(event) {
+        if (event.keyCode == 13) {
+            $(".login-btn").trigger("click");
+        }
+    });
+    /**获取时间戳**/
+    function genTimestamp() {
+        var time = new Date();
+        return time.getTime();
+    }
+    /**刷新验证码的脚本处理**/
+    function changeCode() {
+        $("#codeImg").attr("src", "code/generate?t=" + genTimestamp());
+    }
+    /**客户端校验**/
+    function checkValidity() {
+        if ($("#username").val() == "") {
+            $("#username").tips({
+                side : 2,
+                msg : '用户名不得为空',
+                bg : '#AE81FF',
+                time : 3
+            });
+            $("#username").focus();
+            return false;
+        }
+        if ($("#password").val() == "") {
+            $("#password").tips({
+                side : 2,
+                msg : '密码不得为空',
+                bg : '#AE81FF',
+                time : 3
+            });
+            $("#password").focus();
+            return false;
+        }
+        if ($("#code").val() == "") {
+            $("#code").tips({
+                side : 1,
+                msg : '验证码不得为空',
+                bg : '#AE81FF',
+                time : 3
+            });
+            $("#code").focus();
+            return false;
+        }
+        return true;
+    }
+    /**服务器校验**/
+    function loginCheck(){
+        if(checkValidity()){
+            var username = $("#username").val();
+            var password = $("#password").val();
+            var code = username+","+password+","+$("#code").val();
+            $.ajax({
+                type: "POST",//请求方式为POST
+                url: 'loginCheck',//检验url
+                data: {LOGINDATA:code,tm:new Date().getTime()},//请求数据
+                dataType:'json',//数据类型为JSON类型
+                cache: false,//关闭缓存
+                success: function(data){//响应成功
+                    if("success" == data.result){
+                        $("#login").tips({
+                            side : 1,
+                            msg : '正在登录 , 请稍后 ...',
+                            bg : '#68B500',
+                            time : 10
+                        });
+                        window.location.href="toIndex";
+                    }else if("uerror" == data.result){
+                        $("#username").tips({
+                            side : 1,
+                            msg : "用户名或密码有误",
+                            bg : '#FF5080',
+                            time : 15
+                        });
+                        $("#username").focus();
+                    }else if("codeerror" == data.result){
+                        $("#code").tips({
+                            side : 1,
+                            msg : "验证码输入有误",
+                            bg : '#FF5080',
+                            time : 15
+                        });
+                        $("#code").focus();
+                    }else if("locked" == data.result){
+                        alert('您的账号被锁定了，呜呜');
+                    }else{
+                        $("#username").tips({
+                            side : 1,
+                            msg : "缺少参数",
+                            bg : '#FF5080',
+                            time : 15
+                        });
+                        $("#username").focus();
+                    }
+                }
+            });
+        }
+    }
 </script>
 </body>
 </html>
