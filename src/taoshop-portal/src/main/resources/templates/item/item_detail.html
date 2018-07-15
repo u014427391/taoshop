@@ -3,7 +3,7 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8" />
-    <title>无标题文档</title>
+    <title>商品详情</title>
     <link th:href="@{/static/css/public.css}" rel="stylesheet" type="text/css" />
     <link th:href="@{/static/css/detail.css}" rel="stylesheet" type="text/css" />
     <link th:href="@{/static/css/you_like.css}" rel="stylesheet" type="text/css" />
@@ -333,13 +333,13 @@
                         <li>
                             <span class="sp_l">商&nbsp;城&nbsp;价：</span>
                             <div class="fl-l">
-                                <del th:text="${i.price}">¥</del>
+                                <del th:text="'￥'+${i.price}">¥</del>
                             </div>
                         </li>
                         <li>
                             <span class="sp_l">活&nbsp;动&nbsp;价：</span>
                             <div class="fl-l">
-                                <strong><em class="tb-rmb-num" th:text="${i.promotionPrice}">¥3558</em></strong>
+                                <strong><em class="tb-rmb-num" th:text="'￥'+${i.promotionPrice}">¥3558</em></strong>
                             </div>
                         </li>
                         <li>
