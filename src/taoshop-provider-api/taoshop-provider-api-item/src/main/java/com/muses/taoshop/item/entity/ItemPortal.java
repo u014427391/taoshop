@@ -21,6 +21,11 @@ import lombok.ToString;
 public class ItemPortal {
 
     /**
+     * spuId
+     */
+    private int spuId;
+
+    /**
      * sku的最低售价
      */
     private long mPrice;

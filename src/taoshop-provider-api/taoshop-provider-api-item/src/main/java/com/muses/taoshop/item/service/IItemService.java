@@ -1,5 +1,6 @@
 package com.muses.taoshop.item.service;
 
+import com.muses.taoshop.item.entity.ItemDetail;
 import com.muses.taoshop.item.entity.ItemPortal;
 
 import java.util.List;
@@ -22,4 +23,10 @@ public interface IItemService {
      * @return
      */
     List<ItemPortal> listItemPortal();
+
+    /**
+     * 获取商品详情信息
+     * @return ItemDetail
+     */
+    ItemDetail getItemDetailInfo(int spuId);
 }

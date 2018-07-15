@@ -1,9 +1,13 @@
 package com.muses.taoshop.web.controller.portal;
 
+import com.muses.taoshop.item.entity.ItemDetail;
+import com.muses.taoshop.item.service.IItemService;
 import com.muses.taoshop.web.controller.BaseController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -23,10 +27,14 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/portal")
 public class ItemDetailController extends BaseController{
 
-    @RequestMapping(value = "/item/toDetail.do")
-    @GetMapping
-    public ModelAndView toDetail(){
+    @Autowired
+    IItemService iItemService;
+
+    @GetMapping("/item/toDetail/{spuId}")
+    public ModelAndView toDetail(@PathVariable Integer spuId){
         ModelAndView mv = this.getModelAndView();
+        ItemDetail itemDetail = iItemService.getItemDetailInfo(spuId);
+        mv.addObject("itemDetail" , itemDetail);
         mv.setViewName("item/item_detail");
         return mv;
     }

@@ -17,12 +17,42 @@
     <!-- 在门户网站列出商品粗略信息-->
     <select id="listItemPortal" resultType="ItemPortal">
         SELECT
+          spu.id AS spuId,
           spu.item_name AS itemName,
           sku.price AS mPrice
         FROM
           item_spu spu
-          LEFT JOIN item_sku sku
+          LEFT JOIN
+            (SELECT
+              s.price,
+              s.spu_id
+            FROM
+              item_sku s
+            GROUP BY s.spu_id) sku
             ON spu.id = sku.spu_id
-        GROUP BY sku.spu_id ORDER BY spu.create_time DESC
+    </select>
+
+    <select id="getItemDetail" resultType="ItemDetail">
+        SELECT
+          itb.brand_name AS brandName,
+          spu.item_name AS itemName,
+          sku.price,
+          sku.promotion_price AS promotionPrice
+        FROM
+          item_spu spu
+          RIGHT JOIN item_brand itb
+            ON itb.id = spu.brand_id
+          LEFT JOIN
+            (SELECT
+              s.price,
+              s.promotion_price,
+              s.spu_id
+            FROM
+              item_sku s
+            GROUP BY s.spu_id) sku
+            ON sku.spu_id = spu.id
+        <where>
+            spu.id = #{spuId}
+        </where>
     </select>
 </mapper>
