@@ -20,10 +20,10 @@ import org.springframework.web.servlet.ModelAndView;
  * </pre>
  */
 @Controller
-@RequestMapping("/item/detail")
+@RequestMapping("/portal")
 public class ItemDetailController extends BaseController{
 
-    @RequestMapping(value = "/toDetail.do")
+    @RequestMapping(value = "/item/toDetail.do")
     @GetMapping
     public ModelAndView toDetail(){
         ModelAndView mv = this.getModelAndView();

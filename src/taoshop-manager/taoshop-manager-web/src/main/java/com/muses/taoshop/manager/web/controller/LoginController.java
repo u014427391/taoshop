@@ -32,7 +32,7 @@ import java.util.Random;
 
 /**
  * <pre>
- *  TODO 类说明
+ *  登录控制类
  * </pre>
  *
  * @author nicky

