@@ -286,8 +286,8 @@
                         <ul class="top-sales-list clearfix">
                             <li class="top-sales-item newProduct" th:each="item : ${items}">
                                 <p class="item-img"> <a href="/portal/item/toDetail.do"><img th:src="@{../static/picture/img_small_350x350.jpg}" /></a> </p>
-                                <p class="item-buss"><a href="#" th:text="${item.itemName}"></a></p>
-                                <p class="item-name spec"><a href="#">500元以内品牌智能机，性价比高</a></p>
+                                <p class="item-buss"><a href="/portal/item/toDetail.do" th:text="${item.itemName}"></a></p>
+                                <p class="item-name spec"><a href="/portal/item/toDetail.do">500元以内品牌智能机，性价比高</a></p>
                                 <p class="item-price spec"><em th:text="${item.mPrice}"></em>元</p>
                             </li>
                         </ul>
