@@ -14,18 +14,21 @@
     <sql id="OrderBy">
         ORDER BY price
     </sql>
+
     <!-- 在门户网站列出商品粗略信息-->
     <select id="listItemPortal" resultType="ItemPortal">
         SELECT
           spu.id AS spuId,
           spu.item_name AS itemName,
-          sku.price AS mPrice
+          sku.price AS mPrice,
+          sku.img_path AS imgPath
         FROM
           item_spu spu
           LEFT JOIN
             (SELECT
               s.price,
-              s.spu_id
+              s.spu_id,
+              s.img_path
             FROM
               item_sku s
             GROUP BY s.spu_id) sku

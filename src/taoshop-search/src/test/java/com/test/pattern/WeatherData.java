@@ -3,6 +3,9 @@ package com.test.pattern;
 import java.util.ArrayList;
 import java.util.Observable;
 
+/**
+ * 用JDK内置类来实现
+ */
 public class WeatherData extends Observable {
 	private ArrayList observers;
 	private float temperature;

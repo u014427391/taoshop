@@ -28,6 +28,8 @@ import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.Observable;
+import java.util.Observer;
 import java.util.Random;
 
 /**

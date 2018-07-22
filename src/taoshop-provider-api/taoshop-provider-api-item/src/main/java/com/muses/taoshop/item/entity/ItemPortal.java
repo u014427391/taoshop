@@ -35,5 +35,9 @@ public class ItemPortal {
      */
     private String itemName ;
 
+    /**
+     * 图片路径
+     */
+    private String imgPath;
 
 }
