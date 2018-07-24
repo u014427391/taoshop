@@ -324,28 +324,28 @@
             <!--商品说明右侧 开始-->
             <div class="fl-l product_property">
                 <!--属性-->
-                <div class="pro_meta" th:each="i : ${itemDetail}">
+                <div class="pro_meta" >
                     <ul class="clearfix">
                         <li class="name border-b">
-                            <span th:text="${i.itemName}">苹果（APPLE）iPhone 5s 16G版 3G手机（金色）WCDMA/GSM</span> <span class="span01">商品卖点显示在商品名称之后字体字
+                            <span th:text="${itemDetail.itemName}">苹果（APPLE）iPhone 5s 16G版 3G手机（金色）WCDMA/GSM</span> <span class="span01">商品卖点显示在商品名称之后字体字
 号粗细同商品名称，字体颜色为红色。卖点最多为50个字符。每行最多显示50字符，超出换行。</span>
                         </li>
                         <li>
                             <span class="sp_l">商&nbsp;城&nbsp;价：</span>
                             <div class="fl-l">
-                                <del th:text="'￥'+${i.price}">¥</del>
+                                <del th:text="'￥'+${itemDetail.price}">¥</del>
                             </div>
                         </li>
                         <li>
                             <span class="sp_l">活&nbsp;动&nbsp;价：</span>
                             <div class="fl-l">
-                                <strong><em class="tb-rmb-num" th:text="'￥'+${i.promotionPrice}">¥3558</em></strong>
+                                <strong><em class="tb-rmb-num" th:text="'￥'+${itemDetail.promotionPrice}">¥3558</em></strong>
                             </div>
                         </li>
                         <li>
-                            <span class="sp_l">促销信息：</span>
+                            <span class="sp_l">品牌信息：</span>
                             <div class="fl-l">
-                                <span class="span02">促销优惠</span> <em class="em01">天翼专享优惠促销</em> <a class="to-detail" href="#">详情说明</a>
+                                <span class="span02" th:text="${itemDetail.brandName}"></span>  <a class="to-detail" href="#">详情说明</a>
                             </div>
                         </li>
                         <li>
@@ -369,7 +369,7 @@
                         <li>
                             <span class="sp_l">库　　存：</span>
                             <div class="fl-l">
-                                <span>现货</span>
+                                <span th:text="${itemDetail.stock}">现货</span>
                             </div>
                         </li>
                     </ul>
@@ -389,7 +389,7 @@
                 <!--phone_key-->
                 <!--已选择-->
                 <div class="phone_choosed">
-                    <span>此商品由　<a href="#" class="f-big f-orange1">上海万虎光大通信设备有限公司</a>　负责销售及发货</span>
+                    <span>此商品由　<a href="#" class="f-big f-orange1" th:text="${itemDetail.shopName}"></a>　负责销售及发货</span>
                     <div class="add_btn"><a href="#" class="btn btn-red">立即购买</a><a href="#" class="btn btn-coffee">加入购物车</a>请移步购物车选择合约套餐</div>
                 </div>
                 <!--已选择-->

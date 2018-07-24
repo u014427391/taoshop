@@ -22,6 +22,11 @@ public class ItemDetail {
     private String brandName;
 
     /**
+     * 商铺名称
+     */
+    private String shopName;
+
+    /**
      * 商品名称
      */
     private String itemName;
@@ -35,4 +40,14 @@ public class ItemDetail {
      * 促销售价
      */
     private long promotionPrice;
+
+    /**
+     * 图片路径
+     */
+    private String imgPath;
+
+    /**
+     * 商品库存(SKU)
+     */
+    private int stock;
 }
