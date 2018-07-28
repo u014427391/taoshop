@@ -285,9 +285,9 @@
                     <div class="top-sales newProduct">
                         <ul class="top-sales-list clearfix">
                             <li class="top-sales-item newProduct" th:each="item : ${items}">
-                                <p class="item-img"> <a th:href="@{'/portal/item/toDetail/'+${item.spuId}}"><img th:src="@{${item.imgPath}}" /></a> </p>
-                                <p class="item-buss"><a th:href="@{'/portal/item/toDetail/'+${item.spuId}}"></a></p>
-                                <p class="item-name spec"><a th:href="@{'/portal/item/toDetail/'+${item.spuId}}" th:text="${item.itemName}"></a></p>
+                                <p class="item-img"> <a th:href="@{'/portal/item/toDetail/'+${item.spuId}+'/'+${item.skuId}}"><img th:src="@{${item.imgPath}}" /></a> </p>
+                                <p class="item-buss"><a th:href="@{'/portal/item/toDetail/'+${item.spuId}+'/'+${item.skuId}}"></a></p>
+                                <p class="item-name spec"><a th:href="@{'/portal/item/toDetail/'+${item.spuId}+'/'+${item.skuId}}" th:text="${item.itemName}"></a></p>
                                 <p class="item-price spec"><em th:text="${item.mPrice}"></em>元</p>
                             </li>
                         </ul>

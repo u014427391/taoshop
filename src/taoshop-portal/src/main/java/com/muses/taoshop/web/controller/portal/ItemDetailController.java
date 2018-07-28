@@ -1,7 +1,10 @@
 package com.muses.taoshop.web.controller.portal;
 
 import com.muses.taoshop.item.entity.ItemDetail;
+import com.muses.taoshop.item.entity.ItemSpec;
+import com.muses.taoshop.item.entity.ItemSpecValue;
 import com.muses.taoshop.item.service.IItemService;
+import com.muses.taoshop.item.service.IItemSpecService;
 import com.muses.taoshop.web.controller.BaseController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,6 +13,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.List;
 
 /**
  * <pre>
@@ -29,12 +34,18 @@ public class ItemDetailController extends BaseController{
 
     @Autowired
     IItemService iItemService;
+    @Autowired
+    IItemSpecService iItemSpecService;
 
-    @GetMapping("/item/toDetail/{spuId}")
-    public ModelAndView toDetail(@PathVariable Integer spuId){
+    @GetMapping("/item/toDetail/{spuId}/{skuId}")
+    public ModelAndView toDetail(@PathVariable int spuId, @PathVariable int skuId){
         ModelAndView mv = this.getModelAndView();
         ItemDetail itemDetail = iItemService.getItemDetailInfo(spuId);
-        mv.addObject("itemDetail" , itemDetail);
+        List<ItemSpec> itemSpecList = iItemSpecService.getSpecBySpuId(spuId);
+        List<ItemSpecValue> itemSpecValueList = iItemSpecService.getSpecValueBySkuId(skuId);
+        mv.addObject("itemDetail", itemDetail);
+        mv.addObject("itemSpec", itemSpecList);
+        mv.addObject("itemSpecValue", itemSpecValueList);
         mv.setViewName("item/item_detail");
         return mv;
     }

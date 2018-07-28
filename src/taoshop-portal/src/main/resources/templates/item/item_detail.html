@@ -473,13 +473,11 @@
                 <div class="tab detail-main">
                     <h4>规格参数</h4>
                     <table>
-                        <tr>
-                            <th>商品名称：</th>
-                            <td>苹果iPhone 5s</td>
-                            <th>品牌：</th>
-                            <td>苹果（Apple）</td>
+                        <tr th:each="s : ${itemSpec}">
+                            <th ><span th:text="${s.specName}+':'"></span></th>
+                            <td><span>测试数据</span></td>
                         </tr>
-                        <tr>
+                        <!--<tr>
                             <th>上架时间：</th>
                             <td>2014-01-26 09:06:16</td>
                             <th>商品编号：</th>
@@ -496,7 +494,7 @@
                             <td>联通3G（WCDMA），移动2G/联通2G（GSM），移动3G（TD-SCD）</td>
                             <th>商品产地：</th>
                             <td>中国大陆</td>
-                        </tr>
+                        </tr>-->
                     </table>
                 </div><!--//规格参数-->
                 <div class="tab detail-main">

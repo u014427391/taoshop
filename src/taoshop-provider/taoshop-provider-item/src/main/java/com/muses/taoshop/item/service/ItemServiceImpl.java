@@ -2,6 +2,7 @@ package com.muses.taoshop.item.service;
 
 import com.muses.taoshop.item.entity.ItemDetail;
 import com.muses.taoshop.item.entity.ItemPortal;
+import com.muses.taoshop.item.entity.ItemSpec;
 import com.muses.taoshop.item.mapper.ItemMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -45,4 +46,6 @@ public class ItemServiceImpl implements IItemService {
         ItemDetail itemDetail = itemMapper.getItemDetail(spuId);
         return  itemDetail;
     }
+
+
 }

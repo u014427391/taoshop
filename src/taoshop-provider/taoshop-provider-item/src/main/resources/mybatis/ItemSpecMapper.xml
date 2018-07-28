@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.muses.taoshop.item.mapper.ItemSpecMapper" >
+
+    <!-- 通过SpuID查询规格参数 -->
+    <select id="getSpecBySpuId" resultType="ItemSpec">
+        SELECT  spec.spec_name AS specName
+          FROM item_spu_spec sspec
+        LEFT JOIN item_spec spec
+        ON spec.id = sspec.spec_id
+        <where>
+            sspec.spu_id = #{spuId}
+        </where>
+    </select>
+    <!-- 通过SkuID查询规格参数Value -->
+    <select id="getSpecValueBySkuId" resultType="ItemSpecValue">
+        SELECT
+          sv.spec_value AS specValue
+        FROM
+          item_sku_spec_value ssv
+          LEFT JOIN item_spec_value sv
+            ON sv.id = ssv.spec_value_id
+        <where>
+            ssv.sku_id = #{skuId}
+        </where>
+    </select>
+</mapper>

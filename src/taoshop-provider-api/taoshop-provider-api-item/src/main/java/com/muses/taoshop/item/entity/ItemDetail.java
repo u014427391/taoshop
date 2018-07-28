@@ -2,6 +2,8 @@ package com.muses.taoshop.item.entity;
 
 import lombok.Data;
 
+import java.util.List;
+
 /**
  * <pre>
  *  商品详情DTO类
@@ -50,4 +52,15 @@ public class ItemDetail {
      * 商品库存(SKU)
      */
     private int stock;
+
+    /**
+     * 规格名称
+     */
+    private String specName;
+
+    /**
+     * 规格参数
+     */
+    private List<ItemSpec> itemSpecs;
+
 }

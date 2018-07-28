@@ -2,6 +2,7 @@ package com.muses.taoshop.item.service;
 
 import com.muses.taoshop.item.entity.ItemDetail;
 import com.muses.taoshop.item.entity.ItemPortal;
+import com.muses.taoshop.item.entity.ItemSpec;
 
 import java.util.List;
 
@@ -29,4 +30,5 @@ public interface IItemService {
      * @return ItemDetail
      */
     ItemDetail getItemDetailInfo(int spuId);
+
 }

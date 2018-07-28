@@ -21,6 +21,11 @@ import lombok.ToString;
 public class ItemPortal {
 
     /**
+     * skuId
+     */
+    private int skuId;
+
+    /**
      * spuId
      */
     private int spuId;
