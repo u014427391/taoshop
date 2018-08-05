@@ -27,32 +27,33 @@
     <div class="topBar">
         <div class="layout"> <span class="hello-notice f-orange1 f-b" style="position:absolute;left:50%;margin-left:-600px;top:1px;display:block;font-size:14px;text-align:left;">本商城在试运行阶段，暂不接收任何订单。</span>
             <!--welcome-->
-            <span class="topBar-userWelcome">您好，欢迎来商城！<a href="#" rel="popbox">[登录]</a> <a href="#">[注册]</a></span>
-            <!--登录后
-      <span class="topBar-userWelcome logined">
-        欢迎您
-        <span class="user">
-          <a href="#" class="user-link">fanyanxia<em class="icon-arr"></em></a>
-          <span class="user-cs" style="display:none;">
-            <span class="user-cs-con">
-              <s class="icon-arr"></s>
-              <p><a href="#">个人中心</a></p>
-              <p><a href="#">退出登录</a></p>
-            </span>
-          </span>
-        </span>
-        |
-      </span>
-      <script>
-		$(function(){
-		  $(".user").hover(function(){
-			$(this).find(".user-cs").show();
-		  },function(){
-			$(this).find(".user-cs").hide();
-		  });
-		});
-      </script>
-      -->
+            <span class="topBar-userWelcome" th:if="${session.sessionUser == null}">您好，欢迎来商城！<a th:href="@{/portal/toLogin.do}" id="loginHref" rel="popbox">[登录]</a> <a id="registerHref" th:href="@{/portal/toLogin.do}">[注册]</a></span>
+            <!--登录后   -->
+              <span class="topBar-userWelcome logined" th:if="${session.sessionUser != null}" th:onshow="true">
+                欢迎您
+                <span class="user">
+                  <a href="#" class="user-link" th:text="${session.sessionUser}"><em class="icon-arr"></em></a>
+                  <span class="user-cs" style="display:none;">
+                    <span class="user-cs-con">
+                      <s class="icon-arr"></s>
+                      <p><a href="#">个人中心</a></p>
+                      <p><a href="#">退出登录</a></p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+
+
+              <script>
+                $(function(){
+                  $(".user").hover(function(){
+                    $(this).find(".user-cs").show();
+                  },function(){
+                    $(this).find(".user-cs").hide();
+                  });
+                });
+              </script>
+
             <!--//welcome-->
             <!--topBar-menu-->
             <span class="topBar-menu"> <a href="#">商户入驻申请</a>| <a href="#">我的订单</a>| <a href="#">网上营业厅</a> </span>
@@ -177,7 +178,7 @@
                 <!--headerNav-nav-->
                 <nav class="headerNav-nav">
                     <ul class="clearfix">
-                        <li><a href="#" class="selected">首页</a></li>
+                        <li><a th:href="@{/portal/toIndex.do}" class="selected">首页</a></li>
                         <li><a href="#">手机汇</a></li>
                         <li><a href="#">聚优惠</a></li>
                         <li><a href="#">商业街</a></li>
@@ -333,92 +334,16 @@
     </div>
     <!--copyright-->
     <div class="footer-copyright">
-        <p class="copyright">版权所有 ©2018 </p>
+        <p class="copyright">版权所有 ©2017 </p>
         <s class="cr-icon"></s> </div>
     <!--//copyright-->
 </footer>
 <!--//footer-->
-<div class="mark" style="display:none;"></div>
-<!--登录弹框-->
-<div class="popbox tabs" style="display:none;">
-    <div class="pop-head">
-        <h2>登录<em class="f-red1">账号</em></h2>
-        <a href="javascript:;" class="pop-close"></a> </div>
-    <ul class="pop-login-cut cut clearfix">
-        <li class="current">注册用户登录</li>
-        <li>手机用户登录</li>
-    </ul>
-    <div class="pop-body">
-        <!--注册用户登录-->
-        <div class="tab">
-            <div class="pop-login-form">
-                <p>
-                    <label class="label"><em class="f-red1">*</em>用 户 名：</label>
-                    <input type="text" size="35" class="text-box" />
-                </p>
-                <p>
-                    <label class="label"><em class="f-red1">*</em>登录密码：</label>
-                    <input type="password" size="20" class="text-box" />
-                </p>
-                <p>
-                    <label class="label"><em class="f-red1">*</em>验 证 码：</label>
-                    <input type="text" size="10" class="text-box" />
-                    <span class="code-img"><img src="images/code_img.png" /></span><a href="#" class="cg">换一张</a></p>
-                <p class="sub-btn">
-                    <label class="label">&nbsp;</label>
-                    <input type="submit" value="登 录" class="btn btn-red" />
-                </p>
-            </div>
-            <div class="pop-login-extra"> 您还不是商城会员？<a href="#">立即注册</a> </div>
-        </div>
-        <!--//注册用户登录-->
-        <!--手机用户登录-->
-        <div class="tab" style="display:none;">
-            <div class="pop-login-form">
-                <p>
-                    <label class="label"><em class="f-red1">*</em>手机号码：</label>
-                    <input type="text" size="35" class="text-box" />
-                </p>
-                <p class="tyhz">
-                    <label class="label"><em class="f-red1">*</em>密码类型：</label>
-                    <label>
-                        <input type="radio" />
-                        动态密码</label>
-                </p>
-                <p>
-                    <label class="label"><em class="f-red1">*</em>动态密码：</label>
-                    <input type="password" size="20" class="text-box" />
-                    <a href="#" class="gt btn btn-coffee">获取</a></p>
-                <p>
-                    <label class="label"><em class="f-red1">*</em>验 证 码：</label>
-                    <input type="text" size="10" class="text-box" />
-                    <span class="code-img"><img src="images/code_img.png" /></span><a href="#" class="cg">换一张</a></p>
-                <p class="sub-btn">
-                    <label class="label">&nbsp;</label>
-                    <input type="submit" value="登 录" class="btn btn-red" />
-                </p>
-            </div>
-        </div>
-        <!--//手机用户登录-->
-    </div>
-</div>
-<!--//登录弹框-->
-<script>
-    //tabs
-    $(function(){
-        $(".tabs .cut li").click(function(){
-            var td_index=$(".tabs .cut li").index(this);
-            $(this).addClass("current").siblings().removeClass("current");
-            $(".tabs .tab").eq(td_index).show().siblings(".tab").hide();
-        });
-    });
 
-    /*弹框*/
-    $(function(){
-        $("[rel='popbox']").click(function(){/*rel=popbox*/
-            popPosition('.popbox');
-        });
-    });
+<script>
+
+
+
 </script>
 </body>
 </html>

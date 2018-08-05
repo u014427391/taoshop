@@ -1,0 +1,201 @@
+﻿<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>登录注册页</title>
+<link th:href="@{/static/css/public.css}" rel="stylesheet" type="text/css" />
+<link th:href="@{/static/css/reg-login.css}" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="login-reg-page">
+<!--header-->
+<header class="header">
+  <!--headerMain-->
+  <div class="headerMain layout clearfix">
+    <!--logo-->
+    <h1 class="siteLogo"><a href="#" title="中国电信" class="siteLogo-homepage"></a><a href="#" title="翼猫商城" class="siteLogo-mallpage"></a></h1>
+    <!--//logo-->
+  </div>
+  <!--//headerMain-->
+</header>
+<!--//header-->
+
+
+<!--container-->
+<div class="container">
+	<div class="login-reg-section">
+    	<div class="login-reg-main">
+            <div class="login-pic">
+                <a href="#"><img th:src="@{/static/images/login-reg-pic.jpg}"/></a>
+            </div>
+            <div class="login">
+                <div class="login-hd">
+                    <ul class="clearfix">
+                        <li class="current">电信手机用户登录</li>
+                        <li>注册用户登录</li>
+                    </ul>
+                </div>
+                <div class="login-bd">
+                	<p class="login-tips">请输入正确的密码！</p>
+                    <div class="forms-box login-box login-box-phone" style="display:-none;">
+                        <p><label class="label"><b class="required">*</b>手机号码：</label><input type="text" class="user-text user-name" /></p>
+                        <p><label class="label"><b class="required">*</b>密码类型：</label><input type="radio" name="pwd-type" class="pwd-input" /><span class="pwd-type">动态密码</span><input type="radio" name="pwd-type" class="pwd-input" /><span class="pwd-type">服务密码</span></p>
+                        <p class="pwd-p"><label class="label"><b class="required">*</b>动态密码：</label><input type="text" class="user-text user-pwd"/><a class="brown-btn get-pwd" href="#" ><span>获取</span></a></p>
+                        <p class="pwd-p" style="display:none;"><label class="label"><b class="required">*</b>服务密码：</label><input type="text" class="user-text user-pwd"/></p>
+                        <p><label class="label">&nbsp;</label><input type="button" class="orange-btn enter-btn" value="登 录"/><a href="#" class="entry">忘记登录密码？</a></p>
+                    </div>
+                    <div class="forms-box login-box login-box-reg" style="display:none;">
+                        <p><label class="label"><b class="required">*</b>用 户 名：</label><input type="text" id="username" class="user-text user-name"/></p>
+                        <p><label class="label"><b class="required">*</b>登录密码：</label><input type="text" id="password" class="user-text user-pwd"/><a class="brown-btn get-pwd" href="#" ><span>获取</span></a></p>
+                        <p><label class="label"><b class="required">*</b>验 证 码：</label><input type="text" id="code" class="user-text user-code"/><img src="" id="codeImg" class="code-img"/><span class="smsCapt">看不清？</span><a href="#" onclick="javascript:changeCode();" class="input-tips"><span>换一张</span></a></p>
+                         <p><label class="label">&nbsp;</label><input type="button" id="login" class="orange-btn  enter-btn" onclick="javascript:loginCheck();" value="登 录"/><a href="#" class="entry">忘记登录密码？</a></p>
+                         <p class="reg-tips">
+                            您还不是翼猫商城会员？<a class="reg-now" href="register.html">立即注册</a>
+                         </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--//container-->
+
+<!--footer-->
+<footer class="footer">
+<!--copyright-->
+  <div class="footer-copyright">
+    <p class="footer-nav"><a href="#">关于我们</a> | <a href="#">网厅公告</a> | <a href="#">网站使用帮助</a> | <a href="#">网站导航</a> | <a href="#">业务合作</a> | <a href="#">友情链接</a></p>
+    <p class="copyright">版权所有 ©2009 中国电信集团公司 [ 增值电信业务经营许可证 A2.B1.B2-20090001 ] ICP证号京ICP备 09031924号</p>
+    <s class="cr-icon"></s>
+  </div>
+  <!--//copyright-->
+</footer>
+<!--//footer-->
+<script type="text/javascript" th:src="@{/static/js/jquery.js}"></script>
+<script type="text/javascript" th:src="@{/static/js/html5.js}"></script>
+<!-- 引入JQuery提示库 start-->
+<script type="text/javascript" th:src="@{/static/js/jquery.tips.js}"></script>
+<!-- 引入JQuery提示库 end-->
+<!-- 引入Cookie库 start-->
+<script type="text/javascript" th:src="@{/static/js/jquery.cookie.js}"></script>
+<!-- 引入Cookie库 end -->
+<script type="text/javascript">
+    $(function(){
+        var loginRegLi=$(".login-hd li"),
+            loginRegDiv=$(".login-bd .login-box");
+        loginRegLi.bind("click",function(){
+            var i=loginRegLi.index(this);
+            loginRegLi.removeClass("current").eq(i).addClass("current");
+            loginRegDiv.hide().eq(i).show();
+        })
+
+        var pwdInput=$(".pwd-input"),
+            pwdP=$(".pwd-p");
+
+        pwdInput.bind("click",function(){
+            var i=pwdInput.index(this);
+            pwdP.hide().eq(i).show();
+        })
+
+        changeCode();
+        $("#codeImg").bind("click", changeCode);
+    });
+
+
+    /**按回车键触发登录按钮事件**/
+    $(document).keyup(function(event) {
+        if (event.keyCode == 13) {
+            $("#login").trigger("click");
+        }
+    });
+    /**获取时间戳**/
+    function genTimestamp() {
+        var time = new Date();
+        return time.getTime();
+    }
+    /**刷新验证码的脚本处理**/
+    function changeCode() {
+        $("#codeImg").attr("src", "code/generate.do?t=" + genTimestamp());
+    }
+    /**客户端校验**/
+    function checkValidity() {
+        if ($("#username").val() == "") {
+            $("#username").tips({
+                side : 2,
+                msg : '用户名不得为空',
+                bg : '#AE81FF',
+                time : 3
+            });
+            $("#username").focus();
+            return false;
+        }
+        if ($("#password").val() == "") {
+            $("#password").tips({
+                side : 2,
+                msg : '密码不得为空',
+                bg : '#AE81FF',
+                time : 3
+            });
+            $("#password").focus();
+            return false;
+        }
+        if ($("#code").val() == "") {
+            $("#code").tips({
+                side : 1,
+                msg : '验证码不得为空',
+                bg : '#AE81FF',
+                time : 3
+            });
+            $("#code").focus();
+            return false;
+        }
+        return true;
+    }
+    /**服务器校验**/
+    function loginCheck(){
+        if(checkValidity()){
+            var username = $("#username").val();
+            var password = $("#password").val();
+            var code = username+","+password+","+$("#code").val();
+            $.ajax({
+                type: "POST",//请求方式为POST
+                url: 'loginCheck.do',//检验url
+                data: {LOGINDATA:code,tm:new Date().getTime()},//请求数据
+                dataType:'json',//数据类型为JSON类型
+                cache: false,//关闭缓存
+                success: function(data){//响应成功
+                    if("success" == data.flag){
+                        $("#login").tips({
+                            side : 1,
+                            msg : '正在登录 , 请稍后 ...',
+                            bg : '#68B500',
+                            time : 10
+                        });
+                        window.location.href="toIndex.do";
+                    }else if("faild" == data.flag){
+                        $("#username").tips({
+                            side : 1,
+                            msg : "用户名或密码有误",
+                            bg : '#FF5080',
+                            time : 15
+                        });
+                        $("#username").focus();
+                    }else if("codeError"== data.flag){
+                        $("#code").tips({
+                            side : 1,
+                            msg : "验证码输入有误",
+                            bg : '#FF5080',
+                            time : 15
+                        });
+                        $("#code").focus();
+                    }
+                }
+            });
+        }
+    }
+</script>
+
+
+</body>
+</html>
