@@ -1,12 +1,12 @@
 package com.muses.taoshop.item.mapper;
 
-import com.muses.taoshop.common.core.database.annotation.MybatisRepository;
 
 import com.muses.taoshop.item.entity.ItemBrand;
+import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
-@MybatisRepository
+@Mapper
 public interface ItemBrandMapper {
     List<ItemBrand> listItemBrand();
 

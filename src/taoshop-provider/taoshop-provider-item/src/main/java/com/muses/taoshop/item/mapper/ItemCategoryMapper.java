@@ -1,11 +1,10 @@
 package com.muses.taoshop.item.mapper;
 
-import com.muses.taoshop.common.core.database.annotation.MybatisRepository;
 import com.muses.taoshop.item.entity.ItemCategory;
+import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
-
-@MybatisRepository
+@Mapper
 public interface ItemCategoryMapper {
 
     List<ItemCategory> listRootCategory();

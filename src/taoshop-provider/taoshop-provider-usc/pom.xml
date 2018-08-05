@@ -12,17 +12,17 @@
     <groupId>com.muses.taoshop.provider</groupId>
     <artifactId>taoshop-provider-usc</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
 
-    <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 
-    <distributionManagement>
-        <site>
-            <id>website</id>
-            <url>scp://webhost.company.com/www/website</url>
-        </site>
-    </distributionManagement>
+    <dependencies>
+        <dependency>
+            <groupId>com.muses.taoshop.provider-api</groupId>
+            <artifactId>taoshop-provider-api-usc</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
