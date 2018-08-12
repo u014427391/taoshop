@@ -46,8 +46,8 @@
                         <p><label class="label">&nbsp;</label><input type="button" class="orange-btn enter-btn" value="登 录"/><a href="#" class="entry">忘记登录密码？</a></p>
                     </div>
                     <div class="forms-box login-box login-box-reg" style="display:none;">
-                        <p><label class="label"><b class="required">*</b>用 户 名：</label><input type="text" id="username" class="user-text user-name"/></p>
-                        <p><label class="label"><b class="required">*</b>登录密码：</label><input type="text" id="password" class="user-text user-pwd"/><a class="brown-btn get-pwd" href="#" ><span>获取</span></a></p>
+                        <p><label class="label"><b class="required">*</b>用 户 名：</label><input type="text" id="username" th:value="user" class="user-text user-name"/></p>
+                        <p><label class="label"><b class="required">*</b>登录密码：</label><input type="text" id="password" th:value="11" class="user-text user-pwd"/><a class="brown-btn get-pwd" href="#" ><span>获取</span></a></p>
                         <p><label class="label"><b class="required">*</b>验 证 码：</label><input type="text" id="code" class="user-text user-code"/><img src="" id="codeImg" class="code-img"/><span class="smsCapt">看不清？</span><a href="#" onclick="javascript:changeCode();" class="input-tips"><span>换一张</span></a></p>
                          <p><label class="label">&nbsp;</label><input type="button" id="login" class="orange-btn  enter-btn" onclick="javascript:loginCheck();" value="登 录"/><a href="#" class="entry">忘记登录密码？</a></p>
                          <p class="reg-tips">

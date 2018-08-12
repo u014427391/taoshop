@@ -69,9 +69,10 @@ public class LoginController extends BaseController{
             String username = logindata[0];
             String password = logindata[1];
             String code = logindata[2];
-            if(!code.equalsIgnoreCase(codeSession)){//验证码校验
-                flag = "codeError";
-            }else{ //账号密码校验
+            //TODO 先不要验证码校验
+            //if(!code.equalsIgnoreCase(codeSession)){//验证码校验
+               // flag = "codeError";
+            //}else{ //账号密码校验
                 User user =  userService.loginCheck(username, password);
                 if(user != null){//校验成功
                     session.setAttribute(Constants.SESSION_USER,username);
@@ -79,7 +80,7 @@ public class LoginController extends BaseController{
                 }else{//账号或者密码错误
                     flag = "faild";
                 }
-            }
+            //}
         }
         result.put("flag",flag);
         return result;
