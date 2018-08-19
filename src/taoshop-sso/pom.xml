@@ -10,11 +10,11 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <groupId>com.muses.taoshop.sso</groupId>
     <artifactId>taoshop-sso</artifactId>
     <packaging>war</packaging>
 
     <name>taoshop-sso Maven Webapp</name>
-    <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 
     <properties>
@@ -67,6 +67,12 @@
 
         <dependency>
             <groupId>org.jasig.cas</groupId>
+            <artifactId>cas-server-support-jdbc</artifactId>
+            <version>${cas.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jasig.cas</groupId>
             <artifactId>cas-server-core-logout</artifactId>
             <version>${cas.version}</version>
         </dependency>
@@ -100,7 +106,7 @@
         </dependency>
 
         <!--<dependency>
-            <groupId>org.jasig.cas</groupId>
+            <groupId>ren.boot</groupId>
             <artifactId>cas-server-integration-redis</artifactId>
             <version>${cas.integration.redis.version}</version>
         </dependency>-->

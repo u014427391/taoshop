@@ -15,10 +15,37 @@
        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
+    <bean id="dataSourceOA" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+        <property name="url" value="${oa.jdbc.jdbcUrl}"/>
+        <property name="username" value="${oa.jdbc.user}"/>
+        <property name="password" value="${oa.jdbc.password}"/>
+        <property name="initialSize" value="${oa.jdbc.initialSize}"/>
+        <property name="minIdle" value="${oa.jdbc.minIdle}"/>
+        <property name="maxActive" value="${oa.jdbc.maxActive}"/>
+        <property name="maxWait" value="60000"/>
+        <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+        <property name="timeBetweenEvictionRunsMillis" value="60000"/>
+        <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+        <property name="minEvictableIdleTimeMillis" value="300000"/>
+        <property name="validationQuery" value="SELECT 1"/>
+        <property name="testWhileIdle" value="true"/>
+        <property name="testOnBorrow" value="false"/>
+        <property name="testOnReturn" value="false"/>
+        <!-- 打开removeAbandoned功能 -->
+        <property name="removeAbandoned" value="true"/>
+        <property name="removeAbandonedTimeout" value="1800"/>
+        <!-- 1800秒，也就是30分钟 -->
+        <property name="logAbandoned" value="true"/>
+        <!-- 打开PSCache，并且指定每个连接上PSCache的大小,mysql 不使用 -->
+        <property name="poolPreparedStatements" value="false"/>
+        <property name="filters" value="config" />
+        <property name="connectionProperties" value="config.decrypt=true;config.decrypt.key=${oa.jdbc.publickey};druid.stat.slowSqlMillis=200;druid.stat.logSlowSql=true"/>
+    </bean>
 
     <util:map id="authenticationHandlersResolvers">
         <entry key-ref="proxyAuthenticationHandler" value-ref="proxyPrincipalResolver" />
-        <entry key-ref="primaryAuthenticationHandler" value-ref="primaryPrincipalResolver" />
+        <!--<entry key-ref="primaryAuthenticationHandler" value-ref="primaryPrincipalResolver" />-->
+        <entry key-ref="usernamePasswordAuthenticationHandler" value-ref="primaryPrincipalResolver" />
     </util:map>
 
     <util:list id="authenticationMetadataPopulators">
@@ -50,8 +77,25 @@
 
     <alias name="jsonServiceRegistryDao" alias="serviceRegistryDao" />
 
-    <alias name="defaultTicketRegistry" alias="ticketRegistry" />
-    
+    <!--<alias name="defaultTicketRegistry" alias="ticketRegistry" />-->
+    <!-- redis来保存Server Ticket，并设置TGC有效期，PS:这里设置的失效期是指Redis的，并非指ST的有效期-->
+    <!--<alias name="redisTicketRegistry" alias="ticketRegistry" />
+    <bean id="redisTicketRegistry" class="ren.boot.cas.ticket.registry.RedisTicketRegistry"
+          p:client-ref="ticketRedisTemplate"
+          p:tgtTimeout="${tgt.maxTimeToLiveInSeconds}"
+          p:stTimeout="${st.timeToKillInSeconds}"/>
+    &lt;!&ndash; redis连接池 &ndash;&gt;
+    <bean id="jedisConnFactory"
+          class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"
+          p:hostName="${redis.hostName}"
+          p:database="${redis.database}"
+          p:password="${redis.password}"
+          p:port="${redis.port}"
+          p:usePool="true"/>
+    <bean id="ticketRedisTemplate" class="ren.boot.cas.ticket.registry.TicketRedisTemplate"
+          p:connectionFactory-ref="jedisConnFactory"/>-->
+
+
     <alias name="ticketGrantingTicketExpirationPolicy" alias="grantingTicketExpirationPolicy" />
     <alias name="multiTimeUseOrTimeoutExpirationPolicy" alias="serviceTicketExpirationPolicy" />
 
@@ -74,4 +118,6 @@
     <alias name="defaultAuthenticationTransactionManager" alias="authenticationTransactionManager" />
     <alias name="defaultPrincipalElectionStrategy" alias="principalElectionStrategy" />
     <alias name="tgcCipherExecutor" alias="defaultCookieCipherExecutor" />
+
+
 </beans>
