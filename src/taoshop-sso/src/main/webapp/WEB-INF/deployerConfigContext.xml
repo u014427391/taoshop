@@ -8,20 +8,23 @@
        xmlns:tx="http://www.springframework.org/schema/tx"
        xmlns:util="http://www.springframework.org/schema/util"
        xmlns:sec="http://www.springframework.org/schema/security"
+       xmlns:task="http://www.springframework.org/schema/task"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
+       http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.2.xsd
        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
+
     <bean id="dataSourceOA" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
-        <property name="url" value="${oa.jdbc.jdbcUrl}"/>
-        <property name="username" value="${oa.jdbc.user}"/>
-        <property name="password" value="${oa.jdbc.password}"/>
-        <property name="initialSize" value="${oa.jdbc.initialSize}"/>
-        <property name="minIdle" value="${oa.jdbc.minIdle}"/>
-        <property name="maxActive" value="${oa.jdbc.maxActive}"/>
+        <property name="url" value="${portal.jdbc.jdbcUrl}"/>
+        <property name="username" value="${portal.jdbc.user}"/>
+        <property name="password" value="${portal.jdbc.password}"/>
+        <property name="initialSize" value="${portal.jdbc.initialSize}"/>
+        <property name="minIdle" value="${portal.jdbc.minIdle}"/>
+        <property name="maxActive" value="${portal.jdbc.maxActive}"/>
         <property name="maxWait" value="60000"/>
         <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
         <property name="timeBetweenEvictionRunsMillis" value="60000"/>
@@ -39,7 +42,7 @@
         <!-- 打开PSCache，并且指定每个连接上PSCache的大小,mysql 不使用 -->
         <property name="poolPreparedStatements" value="false"/>
         <property name="filters" value="config" />
-        <property name="connectionProperties" value="config.decrypt=true;config.decrypt.key=${oa.jdbc.publickey};druid.stat.slowSqlMillis=200;druid.stat.logSlowSql=true"/>
+        <property name="connectionProperties" value="config.decrypt=true;config.decrypt.key=${portal.jdbc.publickey};druid.stat.slowSqlMillis=200;druid.stat.logSlowSql=true"/>
     </bean>
 
     <util:map id="authenticationHandlersResolvers">
