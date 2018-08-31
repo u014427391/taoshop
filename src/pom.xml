@@ -36,7 +36,6 @@
   <modules>
     <module>taoshop-quartz</module>
     <module>taoshop-search</module>
-    <module>taoshop-sso</module>
     <module>taoshop-common</module>
     <module>taoshop-provider-api</module>
     <module>taoshop-provider</module>
