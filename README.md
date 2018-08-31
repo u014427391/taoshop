@@ -33,7 +33,7 @@ taoshop使用Apache2.0开源协议
 * 后台主要框架：SpringBoot、Mybatis
 * 微服务搭建：SpringCloud或者阿里的Dubbo
 ## 平台工程目录
-PS:taoshop-sso重新建个project，链接为https://github.com/u014427391/taoshop
+PS:taoshop-sso重新建个project，链接为https://github.com/u014427391/sso
 
 ```
 ├─taoshop----------------------------父项目，公共依赖
