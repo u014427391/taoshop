@@ -15,7 +15,7 @@
     <packaging>war</packaging>
 
     <name>taoshop-manager-web Maven Webapp</name>
-    <!-- FIXME change it to the project's website -->
+
     <url>http://www.example.com</url>
 
     <properties>
@@ -25,6 +25,13 @@
     </properties>
 
     <dependencies>
+        <!-- 热部署-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+        </dependency>
+
         <dependency>
             <groupId>com.muses.taoshop.manager</groupId>
             <artifactId>taoshop-manager-service</artifactId>
