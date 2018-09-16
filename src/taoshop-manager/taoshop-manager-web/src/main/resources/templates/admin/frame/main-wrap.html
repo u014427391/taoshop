@@ -1,0 +1,178 @@
+<div id="bd">
+    <div class="main-wrap-bk clearfix">
+        <div class="sider-bar-bk">
+            <div class="sider-bar-hd">
+                <i class="iconfont">&#xe616;</i>
+                <span>云服务</span>
+            </div>
+            <ul class="sider-nav">
+                <li class="sider-nav-item current">
+                    <h3>
+                        <a href="javascript:;">
+                            <i class="iconfont">&#xe610;</i>
+                            <span>云服务总览</span>
+                            <i class="iconfont arrow-right">&#xe611;</i>
+                            <i class="iconfont arrow-down">&#xe615;</i>
+                        </a>
+                    </h3>
+                    <ul class="sider-nav-s">
+                        <li class="current"><a href="order.html">订单管理</a></li>
+                        <li><a href="order-detail.html">订单详情</a></li>
+                        <li><a href="order-handle.html">订单处理</a></li>
+                    </ul>
+                </li>
+
+                <li class="sider-nav-item">
+                    <h3>
+                        <a href="javascript:;">
+                            <i class="iconfont">&#xe613;</i>
+                            <span>云检测预警</span>
+                            <i class="iconfont arrow-right">&#xe611;</i>
+                            <i class="iconfont arrow-down">&#xe615;</i>
+                        </a>
+                    </h3>
+                    <ul class="sider-nav-s">
+                        <li><a href="#">WEB网站检测服务</a></li>
+                        <li><a href="#">WEB网站检测服务</a></li>
+                        <li><a href="#">WEB网站检测服务</a></li>
+                        <li><a href="#">WEB网站检测服务</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="bd-content-wrap">
+            <div class="bd-content">
+                <div class="title-left-line">订单管理</div>
+
+                <div class="ip-manage page" data-tab="data-result">
+
+                    <div class="search-box clearfix">
+                        <div class="form-kv clearfix">
+                            <div class="form-kv-label">提交时间范围：</div>
+                            <div class="form-content">
+                                <div class="date-pick">
+                                    <input type="text" id="starttime" />
+                                    <i class="iconfont">&#xe619;</i>
+                                </div>
+                                <span class="divsion">-</span>
+                                <div class="date-pick">
+                                    <input type="text" id="endtime" />
+                                    <i class="iconfont">&#xe619;</i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-kv clearfix">
+                            <div class="form-kv-label">订单编号：</div>
+                            <div class="form-content">
+                                <input type="text" />
+                            </div>
+                        </div>
+
+                        <div class="form-kv leter4 clearfix">
+                            <div class="form-kv-label">服务商：</div>
+                            <div class="form-content">
+                                <select>
+                                    <option>请选择</option>
+                                    <option>电信</option>
+                                    <option>联通</option>
+                                    <option>移动</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-kv leter3 clearfix">
+                            <div class="form-kv-label">状态：</div>
+                            <div class="form-content">
+                                <select>
+                                    <option>请选择</option>
+                                    <option>已支付</option>
+                                    <option>已过期</option>
+                                </select>
+                                <button class="btn btn-blue search-btn">查询</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="grid">
+                        <div class="grid-opt clearfix">
+                            <button class="btn btn-red">
+                                <i class="iconfont">&#xe627;</i>
+                                <span>删除所选</span>
+                            </button>
+                        </div>
+
+                        <table>
+                            <colgroup>
+                                <col width="50"></col>
+                                <col width="50"></col>
+                                <col width="180"></col>
+                                <col width="*"></col>
+                                <col width="110"></col>
+                                <col width="80"></col>
+                                <col width="120"></col>
+                                <col width="180"></col>
+                            </colgroup>
+
+                            <thead>
+                            <tr>
+                                <th class="ck"><input type="checkbox" /></th>
+                                <th>序号</th>
+                                <th>订单编号</th>
+                                <th>服务名称</th>
+                                <th>服务商</th>
+                                <th>服务时长</th>
+                                <th>状态</th>
+                                <th>提交时间</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td class="ck"><input type="checkbox" /></td>
+                                <td class="num">1</td>
+                                <td>201604031212</td>
+                                <td>网站漏洞扫描</td>
+                                <td>dell</td>
+                                <td>1年</td>
+                                <td>正常</td>
+                                <td>2016-04-03</td>
+                                <td class="opt"><a href="order-detail.html">详情</a><a href="order-handle.html">处理</a><a href="javascript:;" class="disabled">续订</a></td>
+                            </tr>
+
+                            <tr>
+                                <td class="ck"><input type="checkbox" /></td>
+                                <td class="num">1</td>
+                                <td>201604031212</td>
+                                <td>网站漏洞扫描</td>
+                                <td>dell</td>
+                                <td>1年</td>
+                                <td class="impInfo">未支付</td>
+                                <td>2016-04-03</td>
+                                <td class="opt"><a href="order-detail.html">详情</a><a href="order-handle.html">处理</a><a href="javascript:;" class="disabled">续订</a></td>
+                            </tr>
+                            <tr>
+                                <td class="ck"><input type="checkbox" /></td>
+                                <td class="num">1</td>
+                                <td>201604031212</td>
+                                <td>网站漏洞扫描</td>
+                                <td>dell</td>
+                                <td>1年</td>
+                                <td>正常</td>
+                                <td>2016-04-03</td>
+                                <td class="opt"><a href="javascript:;">详情</a><a href="javascript:;">处理</a><a href="javascript:;" class="disabled">续订</a></td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="pagin pagination clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,4 +1,4 @@
-package com.muses.taoshop.common.core.utils;
+package com.muses.taoshop.common.core.util;
 
 /**
  * <pre>

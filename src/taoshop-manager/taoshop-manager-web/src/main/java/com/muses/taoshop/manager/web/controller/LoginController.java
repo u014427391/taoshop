@@ -162,7 +162,7 @@ public class LoginController extends BaseController {
 
         }else{
             //会话失效，返回登录界面
-            mv.setViewName("admin/frame/login");
+            mv.setViewName("login");
         }
         mv.setViewName("admin/frame/index");
         return mv;
