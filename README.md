@@ -8,33 +8,31 @@ taoshop使用Apache2.0开源协议
 
 ## 功能
 ### [前台]
-- [ ] 商品搜索(Solr)
-- [ ] 支付功能(支付接口)
-- [ ] 商品展示
+- [ ] 商品搜索(Lucene)
+- [x] 最新上架
 - [ ] 购物车功能
-- [ ] 会员中心
 - [ ] 优惠券秒杀(高并发处理)
-- [ ] 订单提交
 - [ ] 单点登录(SSO)
-- [ ] portal门户
+- [ ] 商品详情
+- [x] 商品品类多级联动
 
 ### [后台]
-- [ ] 报表统计
-- [ ] SCM供应链系统
-- [ ] 商品管理
-- [ ] 活动管理
-- [ ] 商品推荐
-- [ ] 订单管理
-- [ ] CMS内容管理系统
-- [ ] CRM客户关系管理系统
+- [ ] 会员中心
+- [ ] 订单系统
+- [ ] 店铺管理
+- [ ] 评论管理
+- [ ] 风控系统
+- [ ] 采购平台
+- [ ] 内容管理
 
-### 技术栈
+## 技术栈
 * 模板引擎：Thymeleaf
 * 搜索引擎：Lucene
 * 负载均衡：Nginx
+* 缓存处理：Redis
 * 后台主要框架：SpringBoot、Mybatis
 * 微服务搭建：SpringCloud或者阿里的Dubbo
-### 平台工程目录
+## 平台工程目录
 
 ```
 ├─taoshop----------------------------父项目，公共依赖
@@ -92,11 +90,25 @@ taoshop使用Apache2.0开源协议
 
 
 
-### 架构设计
+## 架构设计
 
 ![Image text](https://github.com/u014427391/taoshop/raw/master/screenshot/架构图20180409.png)
 
-### 平台演示
+## 数据库设计
+概要设计
 
+![Image text](https://github.com/u014427391/taoshop/raw/master/screenshot/数据库设计.png)
+
+## 平台功能演示
+门户网站
 ![Image text](https://github.com/u014427391/taoshop/raw/master/screenshot/门户平台.png)
 
+商品详情
+![Image text](https://github.com/u014427391/taoshop/raw/master/screenshot/商品详情.png)
+
+运营系统登录
+![Image text](https://github.com/u014427391/taoshop/raw/master/screenshot/运营平台登录.png)
+
+
+订单管理页面
+![Image text](https://github.com/u014427391/taoshop/raw/master/screenshot/订单管理.png)

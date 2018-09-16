@@ -1,5 +1,6 @@
 package com.muses.taoshop.common.core.database.annotation;
 
+import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Component;
 
 import java.lang.annotation.*;
@@ -21,6 +22,7 @@ import java.lang.annotation.*;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Component
+@Mapper
 public @interface MybatisRepository {
     String value() default "";
 }

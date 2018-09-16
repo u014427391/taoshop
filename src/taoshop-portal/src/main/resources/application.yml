@@ -1,3 +1,10 @@
+server:
+  port: 8081
+#logging:
+#  config: classpath:logback.xml
+#  level:
+#    com.muses.taoshop.*.mapper: trace
+
 spring:
   datasource:
 
@@ -35,14 +42,16 @@ spring:
       connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
       # 合并多个DruidDataSource的监控数据
       use-global-data-source-stat: true
-  jpa:
-    database: mysql
-    hibernate:
-      show_sql: true
-      format_sql: true
-      ddl-auto: none
-      naming:
-        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+#  jpa:
+#    database: mysql
+#    hibernate:
+#      show_sql: true
+#      format_sql: true
+#      ddl-auto: none
+#      naming:
+#        physical-strategy: org.hibernate.boot.entity.naming.PhysicalNamingStrategyStandardImpl
+
 #  mvc:
 #    view:
 #      prefix: /WEB-INF/jsp/

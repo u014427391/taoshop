@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title>运营系统登录页</title>
+    <link th:href="@{/static/css/style.css}" rel="stylesheet" />
+    <link th:href="@{/static/css/page/backend/login.css}" rel="stylesheet" />
+</head>
+<body>
+<div id="hd">
+    <div class="logo main-content">
+        <h1><a href="../index.html" title="电商平台">账号登录</a></h1>
+        <ul class="head-link">
+            <li><a href="">电商平台首页</a></li>
+            <li><a href="">帮助中心</a></li>
+        </ul>
+    </div>
+</div>
+
+<div id="bd" class="login-bd">
+    <div class="main-content">
+        <div class="input-box">
+            <div class="input-hd"><h2>用户登录</h2></div>
+
+            <div class="input-area">
+                <form>
+                    <div class="input-item">
+                        <p>登录名：</p>
+                        <input type="text" id="username" th:value="admin" placeholder="请输入账号/邮箱" />
+                    </div>
+
+                    <div class="input-item">
+                        <p>登录密码：</p>
+                        <input type="text" id="password" th:value="123" placeholder="请输入密码" />
+                    </div>
+
+                    <div class="input-item">
+                        <p>验证码：</p>
+                        <input type="text" placeholder="" id="code" th:value="1223" class="img-code" />
+                        <img src=""  id="codeImg" alt="点击更换"
+                             title="点击更换" />
+                    </div>
+
+                    <div class="login-btn" onclick="loginCheck();">登录</div>
+                </form>
+            </div>
+            <p class="reg" >忘记密码？ <a href="javascript:;" >立即注册</a></p>
+        </div>
+    </div>
+</div>
+
+<div id="ft" class="login-ft">
+    <div class="footer-copyright">
+        <p class="clearfix links">
+            <a href="javascript:;" target="_blank">关于我们</a>
+            <a href="javascript:;" target="_blank">法律声明</a>
+            <a href="javascript:;">服务条款</a>
+            <a href="javascript:;" target="_blank">联系方式</a>
+        </p>
+        <p style="font-family:arial;">地址：江苏省南京市建邺区88号&nbsp;&nbsp;增值电信业务许可证B1-20160901&nbsp;&nbsp;COPYRIGHT&nbsp;&nbsp;©&nbsp; 2010-2016<a href="http://www.uimaker.com">uimaker</a>&nbsp;版权所有&nbsp;ICP证：苏A2-20160101</p>
+        <p style="font-family:arial;">增值电信营业许可证B1-20150962&nbsp;&nbsp;云平台&nbsp;&nbsp;版权所有</p>
+    </div>
+</div>
+
+<script type="text/javascript" th:src="@{/static/js/jquery.js}"></script>
+<!-- 引入JQuery提示库 start-->
+<script type="text/javascript" th:src="@{/static/js/jquery.tips.js}"></script>
+<!-- 引入JQuery提示库 end-->
+<!-- 引入Cookie库 start-->
+<script type="text/javascript" th:src="@{/static/js/jquery.cookie.js}"></script>
+<!-- 引入Cookie库 end -->
+<script type="text/javascript">
+
+    /**加载页面时获取验证码**/
+    $(document).ready(function() {
+        changeCode();
+        $("#codeImg").bind("click", changeCode);
+    });
+    /**按回车键触发登录按钮事件**/
+    $(document).keyup(function(event) {
+        if (event.keyCode == 13) {
+            $(".login-btn").trigger("click");
+        }
+    });
+    /**获取时间戳**/
+    function genTimestamp() {
+        var time = new Date();
+        return time.getTime();
+    }
+    /**刷新验证码的脚本处理**/
+    function changeCode() {
+        $("#codeImg").attr("src", "code/generate?t=" + genTimestamp());
+    }
+    /**客户端校验**/
+    function checkValidity() {
+        if ($("#username").val() == "") {
+            $("#username").tips({
+                side : 2,
+                msg : '用户名不得为空',
+                bg : '#AE81FF',
+                time : 3
+            });
+            $("#username").focus();
+            return false;
+        }
+        if ($("#password").val() == "") {
+            $("#password").tips({
+                side : 2,
+                msg : '密码不得为空',
+                bg : '#AE81FF',
+                time : 3
+            });
+            $("#password").focus();
+            return false;
+        }
+        if ($("#code").val() == "") {
+            $("#code").tips({
+                side : 1,
+                msg : '验证码不得为空',
+                bg : '#AE81FF',
+                time : 3
+            });
+            $("#code").focus();
+            return false;
+        }
+        return true;
+    }
+    /**服务器校验**/
+    function loginCheck(){
+        if(checkValidity()){
+            var username = $("#username").val();
+            var password = $("#password").val();
+            var code = username+","+password+","+$("#code").val();
+            $.ajax({
+                type: "POST",//请求方式为POST
+                url: 'loginCheck',//检验url
+                data: {LOGINDATA:code,tm:new Date().getTime()},//请求数据
+                dataType:'json',//数据类型为JSON类型
+                cache: false,//关闭缓存
+                success: function(data){//响应成功
+                    if("success" == data.result){
+                        $("#login").tips({
+                            side : 1,
+                            msg : '正在登录 , 请稍后 ...',
+                            bg : '#68B500',
+                            time : 10
+                        });
+                        window.location.href="toIndex";
+                    }else if("uerror" == data.result){
+                        $("#username").tips({
+                            side : 1,
+                            msg : "用户名或密码有误",
+                            bg : '#FF5080',
+                            time : 15
+                        });
+                        $("#username").focus();
+                    }else if("codeerror" == data.result){
+                        $("#code").tips({
+                            side : 1,
+                            msg : "验证码输入有误",
+                            bg : '#FF5080',
+                            time : 15
+                        });
+                        $("#code").focus();
+                    }else if("locked" == data.result){
+                        alert('您的账号被锁定了，呜呜');
+                    }else{
+                        $("#username").tips({
+                            side : 1,
+                            msg : "缺少参数",
+                            bg : '#FF5080',
+                            time : 15
+                        });
+                        $("#username").focus();
+                    }
+                }
+            });
+        }
+    }
+</script>
+</body>
+</html>
