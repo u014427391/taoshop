@@ -24,170 +24,14 @@
 <!--header-->
 <header class="header">
     <!--topBar-->
-    <div class="topBar">
-        <div class="layout"> <span class="hello-notice f-orange1 f-b" style="position:absolute;left:50%;margin-left:-600px;top:1px;display:block;font-size:14px;text-align:left;">本商城在试运行阶段，暂不接收任何订单。</span>
-            <!--welcome-->
-            <span class="topBar-userWelcome" th:if="${session.sessionUser == null}">您好，欢迎来商城！<a th:href="@{/portal/toLogin.do}" id="loginHref" rel="popbox">[登录]</a> <a id="registerHref" th:href="@{/portal/toLogin.do}">[注册]</a></span>
-            <!--登录后   -->
-              <span class="topBar-userWelcome logined" th:if="${session.sessionUser != null}" th:onshow="true">
-                欢迎您
-                <span class="user">
-                  <a href="#" class="user-link" th:text="${session.sessionUser}"><em class="icon-arr"></em></a>
-                  <span class="user-cs" style="display:none;">
-                    <span class="user-cs-con">
-                      <s class="icon-arr"></s>
-                      <p><a th:href="@{/templates/admin/user/toUserCenter.do}">个人中心</a></p>
-                      <p><a href="#">退出登录</a></p>
-                    </span>
-                  </span>
-                </span>
-              </span>
-
-
-              <script>
-                $(function(){
-                  $(".user").hover(function(){
-                    $(this).find(".user-cs").show();
-                  },function(){
-                    $(this).find(".user-cs").hide();
-                  });
-                });
-              </script>
-
-            <!--//welcome-->
-            <!--topBar-menu-->
-            <span class="topBar-menu"> <a href="#">商户入驻申请</a>| <a href="#">我的订单</a>| <a href="#">网上营业厅</a> </span>
-            <!--//topBar-menu-->
-        </div>
-    </div>
+    <div class="topBar" th:replace="/top_bar :: .topBar"></div>
     <!--//topBar-->
     <!--headerMain-->
-    <div class="headerMain layout clearfix">
-        <!--logo-->
-        <h1 class="siteLogo"><a href="#" title="商城" class="siteLogo-homepage"></a><a href="#" title="商城" class="siteLogo-mallpage"></a></h1>
-        <!--//logo-->
-        <!--search-->
-        <div class="search">
-            <div class="search-area">
-                <input type="text" placeholder="请输入搜索关键字" class="search-input-text" />
-                <input type="button" title="搜索" class="search-input-submit" />
-                <div class="search-suggest" style="display:none;">
-                    <ol>
-                        <li class="search-suggest-key">三星<b>I9500</b></li>
-                        <li class="search-suggest-key">三星<b>I9501</b></li>
-                        <li class="search-suggest-key">三星<b>I9001</b></li>
-                        <li class="search-suggest-key">三星<b>I9505</b></li>
-                        <li class="search-suggest-key">三星<b>I9503</b></li>
-                    </ol>
-                </div>
-            </div>
-            <p class="search-hotkey">热门搜索：<a href="#">三星手机</a><a href="#">手机套</a><a href="#">手机电源线</a></p>
-        </div>
-        <!--//search-->
-        <!--我的翼猫-->
-        <div class="myYmall"> <em class="icon-user"></em><a href="#">我的翼猫</a> </div>
-        <!--//我的翼猫-->
-        <!--去购物车结算-->
-        <div class="to-cart">
-            <dl>
-                <dt> <span class="shop-amount">0</span> <em class="icon-cart"></em> <a href="#">去购物车结算</a> <span class="angle"></span> </dt>
-                <dd style="display:none;">
-                    <!--购物车为空-->
-                    <div class="nogoods" style="display:none;"> 购物车中还没有商品，赶紧选购吧！ </div>
-                    <!--//购物车为空-->
-                    <!--有商品-->
-                    <div class="cart-table">
-                        <div class="cart-table-body">
-                            <ul class="cart-item clearfix">
-                                <li class="item-img"><a href="#"><img th:src="@{/static/picture/img_small_350x350.jpg}" /></a></li>
-                                <li class="item-intro"><a href="#">三星手机NNOTOS9S</a></li>
-                                <li class="item-extra"><em class="item-price">￥<span>799</span></em>x<span>2</span>
-                                    <p><a href="#" class="delete">删除</a></p>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="cart-info">
-                            <div class="cart-bottom">
-                                <p> 共<span class="f-red2">1</span>件商品，共计<em class="item-price">￥<span>5399</span></em> <br />
-                                    <a href="#" class="cart-goMyCart btn btn-red">去购物车结算</a> </p>
-                            </div>
-                        </div>
-                    </div>
-                    <!--//有商品-->
-                </dd>
-            </dl>
-        </div>
-        <!--//去购物车结算-->
-        <script>
-            $(function(){
-                $(".to-cart").hover(function(){
-                    $(this).find(".angle").addClass("down").end().find("dt").addClass("selected").end().find("dd").show();
-                },function(){
-                    $(this).find(".angle").removeClass("down").end().find("dt").removeClass("selected").end().find("dd").hide();
-                });
-                if($(".cart-table .cart-item").size()>2){
-                    $(".cart-table .cart-table-body").css("overflow-y","auto");
-                }
-            });
-        </script>
-    </div>
+    <div class="headerMain layout clearfix" th:replace="/header_main :: .headerMain"></div>
     <!--//headerMain-->
     <!--headerNav-->
     
-    <div class="headerNav">
-        <div class="layout">
-            <dl class="all-brands">
-                <dt class="all-brands-head"> <a href="#">全部商品分类</a> </dt>
-                <dd class="all-brands-list">
-                    <div class="wrap" th:each="c : ${categories}">
-                        <div class="all-sort-list">
-                            <div class="item bo">
-                                <h3>
-                                <a href="" th:text="${c.categoryName}"></a></h3>
-                                <div class="item-list clearfix">
-                                    <div class="close">x</div>
-                                    <div class="subitem" th:each="s: ${c.subCategorys}">
-                                        <dl class="fore1">
-                                            <dt th:text="${s.categoryName}"><a href="#"></a></dt>
-                                            <dd>
-                                                <em th:each="ss : ${s.subCategorys} "><a href="#" th:text="${ss.categoryName}"></a></em>
-                                            </dd>
-                                        </dl>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </dd>
-                <script type="text/javascript">
-                    $('.all-sort-list > .item').hover(function(){
-                        $(this).addClass('hover');
-                        $(this).children('.item-list').css('display','block');
-                    },function(){
-                        $(this).removeClass('hover');
-                        $(this).children('.item-list').css('display','none');
-                    });
-
-                    $('.item > .item-list > .close').click(function(){
-                        $(this).parent().parent().removeClass('hover');
-                        $(this).parent().hide();
-                    });
-                </script>
-            </dl>
-            <div class="headerNav-main clearfix">
-                <!--headerNav-nav-->
-                <nav class="headerNav-nav">
-                    <ul class="clearfix">
-                        <li><a th:href="@{/portal/toIndex.do}" class="selected">首页</a></li>
-                        <li><a href="#">手机汇</a></li>
-                        <li><a href="#">聚优惠</a></li>
-                        <li><a href="#">商业街</a></li>
-                    </ul>
-                </nav>
-                <!--//headerNav-nav-->
-            </div>
-        </div>
-    </div>
+    <div class="headerNav" th:replace="/header_nav :: .headerNav"></div>
     <!--//headerNav-->
 </header>
 <!--//header-->
@@ -209,45 +53,6 @@
                 <li></li>
             </ul>
         </div>
-        <script type="text/javascript">
-            //banner
-            $(document).ready(function(){
-                var demo = $(".banner");
-                var btn = $(".banner-btn li");
-                var slide = $(".banner-img ul");
-                var slideItem = slide.find("li");
-                var c = 0, speed = 4000 , t;
-                btn.each(function(number){
-                    $(this).click(function(){
-                        $(this).addClass("current").siblings().removeClass("current");
-                        slide.animate({"left":-slideItem.width()*number},300);
-                        c = number;
-                    });
-                });
-
-                if(btn.size()>1){
-                    autoSlide();
-                }
-
-                function timedCount()
-                {
-                    c = c + 1;
-                    if(c>=btn.size())c = 0;
-                    btn.eq(c).click();
-                }
-
-                function autoSlide(){
-                    t = setInterval(function(){timedCount();},speed);
-                }
-                //鼠标移入停止播放
-                demo.mouseover(function(){
-                    clearInterval(t);
-                });
-                demo.mouseout(function(){
-                    autoSlide();
-                });
-            });
-        </script>
         <!--//banner-->
         <!--快捷充值-->
         <div class="index-fast-recharge">
@@ -301,49 +106,47 @@
 </div>
 <!--//container-->
 <!--footer-->
-<footer class="footer">
-    <div class="layout clearfix">
-        <!--footService-->
-        <div class="footer-service">
-            <dl>
-                <dt><em class="icon-aq"></em>购物指南</dt>
-                <dd><a href="#">咨询与投诉</a></dd>
-            </dl>
-            <dl>
-                <dt><em class="icon-service"></em>售后服务</dt>
-                <dd><a href="#">七天包退</a></dd>
-                <dd><a href="#">十五天包换</a></dd>
-                <dd><a href="#">手机维修咨询</a></dd>
-            </dl>
-            <dl>
-                <dt><em class="icon-pay"></em>支付方式</dt>
-                <dd><a href="#">网上支付</a></dd>
-            </dl>
-        </div>
-        <!--//footService-->
-        <!--在线咨询-->
-        <ul class="online">
-            <li class="line1"><a href="#"></a></li>
-            <li class="line2"><a href="#"></a></li>
-            <li class="line3"><a href="#"></a></li>
-            <li class="line4"><a href="#"></a></li>
-            <li class="line5"><a href="#"></a></li>
-            <li class="line6"><a href="#"></a></li>
-        </ul>
-        <!--在线咨询-->
-    </div>
-    <!--copyright-->
-    <div class="footer-copyright">
-        <p class="copyright">版权所有 ©2017 </p>
-        <s class="cr-icon"></s> </div>
-    <!--//copyright-->
-</footer>
+<footer class="footer" th:replace="footer :: .footer"></footer>
 <!--//footer-->
 
-<script>
+<script type="text/javascript">
+    //banner
+    $(document).ready(function(){
+        var demo = $(".banner");
+        var btn = $(".banner-btn li");
+        var slide = $(".banner-img ul");
+        var slideItem = slide.find("li");
+        var c = 0, speed = 4000 , t;
+        btn.each(function(number){
+            $(this).click(function(){
+                $(this).addClass("current").siblings().removeClass("current");
+                slide.animate({"left":-slideItem.width()*number},300);
+                c = number;
+            });
+        });
 
+        if(btn.size()>1){
+            autoSlide();
+        }
 
+        function timedCount()
+        {
+            c = c + 1;
+            if(c>=btn.size())c = 0;
+            btn.eq(c).click();
+        }
 
+        function autoSlide(){
+            t = setInterval(function(){timedCount();},speed);
+        }
+        //鼠标移入停止播放
+        demo.mouseover(function(){
+            clearInterval(t);
+        });
+        demo.mouseout(function(){
+            autoSlide();
+        });
+    });
 </script>
 </body>
 </html>
