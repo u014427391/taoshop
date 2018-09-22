@@ -5,6 +5,7 @@
 <head >
     <link th:href="@{../static/css/style.css}" rel="stylesheet" />
     <link th:href="@{../static/css/backend.css}" rel="stylesheet" />
+    <link th:href="@{../static/css/page/backend/order_manage.css}" rel="stylesheet" />
     <link th:href="@{../plugins/datepicker/css/bootstrap.css}" rel="stylesheet" />
     <link th:href="@{../plugins/datepicker/css/bootstrap-datepicker.css}" rel="stylesheet" />
     <link th:href="@{../plugins/select2/css/select2.min.css}" rel="stylesheet" />
@@ -26,7 +27,7 @@
         <!-- 左边菜单栏 -->
         <div class="" th:replace="admin/frame/sider_bar_bk :: .sider-bar-bk"></div>
         <!-- 订单管理 -->
-        <div class="bd-content-wrap" th:replace="admin/order/order_content_wrap.html :: .bd-content-wrap"></div>
+        <div class="bd-content-wrap" th:replace="admin/order/order_content_wrap :: .bd-content-wrap"></div>
     </div>
 
 </div>

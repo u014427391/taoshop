@@ -1,5 +1,6 @@
-package com.muses.taoshop.manager.web.controller;
+package com.muses.taoshop.manager.web.controller.userCenter;
 
+import com.muses.taoshop.manager.web.controller.BaseController;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +20,7 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 @RequestMapping("/user")
-public class UserController extends BaseController{
+public class UserController extends BaseController {
 
     /**
      * 跳转到用户中心

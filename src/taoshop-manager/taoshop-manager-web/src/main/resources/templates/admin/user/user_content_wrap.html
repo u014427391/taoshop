@@ -1,13 +1,15 @@
-<div class="bd-content-wrap">
+<div class="bd-content-wrap" xmlns:th="http://www.w3.org/1999/xhtml">
     <div class="bd-content">
+
         <div class="title-left-line">账户中心</div>
+
         <div class="basic-info">
             <div class="info-title">基本信息<a href="javascript:;" class="modify">[修改]</a></div>
             <div class="search-box">
                 <div class="form-kv clearfix">
                     <div class="form-kv-label">单位账号：</div>
                     <div class="form-content">
-                        <span>kie*****@163.com</span>
+                        <span th:text="${session.sessionUser.username}">kie*****@163.com</span>
                     </div>
                 </div>
                 <div class="form-kv clearfix">
@@ -21,21 +23,15 @@
                 <div class="form-kv clearfix">
                     <div class="form-kv-label">单位管理员：</div>
                     <div class="form-content">
-                        <span>管理员</span>
+                        <span th:text="${session.sessionUser.mark}">管理员</span>
                         <i class="iconfont">&#xe652;</i>
                         <span class="status">已认证</span>
                     </div>
                 </div>
                 <div class="form-kv clearfix">
-                    <div class="form-kv-label">联系电话：</div>
-                    <div class="form-content">
-                        <span>0755-****5678</span>
-                    </div>
-                </div>
-                <div class="form-kv clearfix">
                     <div class="form-kv-label">手机号码：</div>
                     <div class="form-content">
-                        <span>137****8564</span>
+                        <span th:text="${session.sessionUser.phone}">137****8564</span>
                         <i class="iconfont">&#xe652;</i>
                         <span class="status">已认证</span>
                     </div>
@@ -43,13 +39,20 @@
                 <div class="form-kv clearfix">
                     <div class="form-kv-label">邮箱地址：</div>
                     <div class="form-content">
-                        <span>kie*****@163.com</span>
+                        <span th:text="${session.sessionUser.email}">kie*****@163.com</span>
                         <i class="iconfont">&#xe652;</i>
                         <span class="status">已认证</span>
                     </div>
                 </div>
+                <div class="form-kv clearfix">
+                    <div class="form-kv-label">上次登录：</div>
+                    <div class="form-content">
+                        <span th:text="${{session.sessionUser.lastLogin}}">2018-08-08</span>
+                    </div>
+                </div>
             </div>
         </div>
+
         <div class="safe-setting">
             <div class="info-title">安全设置</div>
             <div class="search-box">
@@ -82,5 +85,6 @@
                 </div>
             </div>
         </div>
+
     </div>
 </div>

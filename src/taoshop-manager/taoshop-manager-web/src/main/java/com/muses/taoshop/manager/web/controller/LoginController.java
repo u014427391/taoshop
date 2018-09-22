@@ -159,12 +159,12 @@ public class LoginController extends BaseController {
 //					replaceAll("menuName","name").replaceAll("hasSubMenu","checked");
 
 //            mv.addObject("menus",json);
-
+              mv.setViewName("admin/frame/index");
         }else{
             //会话失效，返回登录界面
             mv.setViewName("login");
         }
-        mv.setViewName("admin/frame/index");
+
         return mv;
     }
 
