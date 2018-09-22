@@ -1,9 +1,14 @@
 package com.muses.taoshop.manager.web.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.muses.taoshop.manager.core.Constants;
+import com.muses.taoshop.manager.entity.Menu;
+import com.muses.taoshop.manager.entity.Permission;
+import com.muses.taoshop.manager.entity.SysRole;
 import com.muses.taoshop.manager.entity.SysUser;
 import com.muses.taoshop.manager.service.ISysUserService;
+import com.muses.taoshop.manager.util.MenuTreeUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
@@ -12,6 +17,7 @@ import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -22,15 +28,15 @@ import javax.naming.AuthenticationException;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import java.awt.*;
 import java.awt.font.FontRenderContext;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.util.Observable;
-import java.util.Observer;
-import java.util.Random;
+import java.util.*;
+import java.util.List;
 
 /**
  * <pre>
@@ -137,29 +143,30 @@ public class LoginController extends BaseController {
         SysUser user = (SysUser)session.getAttribute(Constants.SESSION_USER);
 
         if(user != null){
-//            Set<Role> roles = user.getRoles();
-//            Set<Permission> permissions = new HashSet<Permission>();
-//            for(Role r : roles){
-//                permissions.addAll(r.getPermissions());
-//            }
-//
-//            /**获取用户可以查看的菜单**/
-//            List<Menu> menuList = new ArrayList<Menu>();
-//            for(Permission p : permissions){
-//                menuList.add(p.getMenu());
-//            }
+            Set<SysRole> roles = user.getRoles();
+            Set<Permission> permissions = new HashSet<Permission>();
+            if(!CollectionUtils.isEmpty(roles)) {
+                for (SysRole r : roles) {
+                    permissions.addAll(r.getPermissions());
+                }
+            }
 
-//            MenuTreeUtil treeUtil = new MenuTreeUtil();
-//            List<Menu> treemenus= treeUtil.menuList(menuList);
-//
-//            JSONArray jsonArray = JSONArray.fromObject(treemenus);
-//            String json = jsonArray.toString();
+            /**获取用户可以查看的菜单**/
+            List<Menu> menuList = new ArrayList<Menu>();
+            for(Permission p : permissions){
+                menuList.add(p.getMenu());
+            }
 
-//			json = json.replaceAll("menuId","id").replaceAll("parentId","pId").
-//					replaceAll("menuName","name").replaceAll("hasSubMenu","checked");
+            MenuTreeUtil treeUtil = new MenuTreeUtil();
+            List<Menu> treemenus= treeUtil.menuList(menuList);
 
-//            mv.addObject("menus",json);
-              mv.setViewName("admin/frame/index");
+            String json = JSON.toJSONString(treemenus);
+
+			json = json.replaceAll("menuId","id").replaceAll("parentId","pId").
+					replaceAll("menuName","name").replaceAll("hasSubMenu","checked");
+
+            mv.addObject("menus",json);
+            mv.setViewName("admin/frame/index");
         }else{
             //会话失效，返回登录界面
             mv.setViewName("login");

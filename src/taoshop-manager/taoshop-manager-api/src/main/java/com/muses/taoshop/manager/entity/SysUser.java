@@ -3,6 +3,7 @@ package com.muses.taoshop.manager.entity;
 import lombok.Data;
 
 import java.util.Date;
+import java.util.Set;
 
 /**
  * <pre>
@@ -89,7 +90,7 @@ public class SysUser {
      */
     private String rights;
 
-    //private Set<Role> roles;
+    private Set<SysRole> roles;
 
 
 }

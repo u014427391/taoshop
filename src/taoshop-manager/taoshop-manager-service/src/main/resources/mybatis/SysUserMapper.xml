@@ -30,6 +30,13 @@
     where username = #{username}
     and password = #{password}
   </select>
+  
+  <select id="getUserInfoByUsername" parameterType="String" resultType="SysUser">
+    select
+    <include refid="BaseColumn" />
+    from sys_user
+    where username = #{username}
+  </select>
 
 
 
