@@ -1,0 +1,10 @@
+@charset "utf-8";
+.you-like{float:left;width:225px;}
+.you-like h3{height:40px;line-height:40px;border-bottom:1px solid #ccc;font-size:18px;font-family:'微软雅黑';text-indent:10px;}
+.you-like-list{padding:0 15px;}
+.you-like-item{padding:10px 0;border-bottom:1px dotted #ddd;word-break:break-all;}
+.you-like-item .item-img{text-align:center;}
+.you-like-item .item-img,.you-like-item .item-img img{width:110px;height:110px;margin:0 auto;}
+.you-like-item .item-info a{color:#666;display:block;text-align:center;}
+.you-like-item .item-info a:hover{color:#f30;}
+.you-like-item .item-price{text-align:center;color:#ef4e2d;}
