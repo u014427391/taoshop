@@ -5,10 +5,6 @@ import com.muses.taoshop.manager.entity.SysUser;
 import org.apache.ibatis.annotations.Param;
 
 /**
- * <pre>
- *
- * </pre>
- *
  * @author nicky
  * @version 1.00.00
  * <pre>
@@ -18,5 +14,8 @@ import org.apache.ibatis.annotations.Param;
  */
 @MybatisRepository
 public interface SysUserMapper {
+
     SysUser getSysUserInfo(@Param("username")String username, @Param("password")String password);
+
+    SysUser getUserInfoByUsername(@Param("username") String username);
 }
