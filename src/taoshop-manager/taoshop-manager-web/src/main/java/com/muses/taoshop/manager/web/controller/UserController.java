@@ -31,4 +31,6 @@ public class UserController extends BaseController{
         mv.setViewName("admin/user/user_center");
         return mv;
     }
+
+
 }
