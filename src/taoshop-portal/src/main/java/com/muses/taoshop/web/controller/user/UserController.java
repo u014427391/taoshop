@@ -17,7 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
  *    修改后版本:     修改人：  修改日期: 2018.08.11 11:08    修改内容:
  * </pre>
  */
-@RequestMapping("/user")
+@RequestMapping("/portal/user")
 @Controller
 public class UserController extends BaseController{
 
@@ -28,7 +28,7 @@ public class UserController extends BaseController{
     @RequestMapping("/toUserCenter")
     public ModelAndView toUserCenter(){
         ModelAndView mv = this.getModelAndView();
-        mv.setViewName("user/user_center");
+        mv.setViewName("user/portal_user_center");
         return mv;
     }
 }
