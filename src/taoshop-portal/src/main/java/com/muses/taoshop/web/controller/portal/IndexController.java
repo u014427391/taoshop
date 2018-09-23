@@ -7,7 +7,7 @@ import com.muses.taoshop.item.entity.ItemPortal;
 import com.muses.taoshop.item.service.IItemBrankService;
 import com.muses.taoshop.item.service.IItemCategoryService;
 import com.muses.taoshop.item.service.IItemService;
-import com.muses.taoshop.util.CategoryTreeUtil;
+import com.muses.taoshop.util.CategoryTreeUtils;
 import com.muses.taoshop.web.controller.BaseController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -52,7 +52,7 @@ public class IndexController extends BaseController{
         ModelAndView mv = this.getModelAndView();
         mv.setViewName("index");
         List<ItemPortal> items = iItemService.listItemPortal();
-        CategoryTreeUtil treeUtil = new CategoryTreeUtil();
+        CategoryTreeUtils treeUtil = new CategoryTreeUtils();
         List<ItemCategory> list = iItemCategoryService.listCategory();
         List<ItemCategory> categories = treeUtil.buildCategoryTree(list);
         mv.addObject("items" , items);
@@ -75,7 +75,7 @@ public class IndexController extends BaseController{
     @GetMapping(value = "/listCategory" , produces = "application/json;charset=UTF-8")
     @ResponseBody
     public String listCategory(){
-        CategoryTreeUtil treeUtil = new CategoryTreeUtil();
+        CategoryTreeUtils treeUtil = new CategoryTreeUtils();
         List<ItemCategory> list = iItemCategoryService.listCategory();
         List<ItemCategory> categories = treeUtil.buildCategoryTree(list);
         for(ItemCategory itemCategory : categories){
