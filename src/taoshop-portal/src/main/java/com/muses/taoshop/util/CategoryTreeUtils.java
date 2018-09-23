@@ -18,7 +18,7 @@ import java.util.List;
  *    修改后版本:     修改人：  修改日期: 2018.06.24 17:12    修改内容:
  * </pre>
  */
-public class CategoryTreeUtil {
+public class CategoryTreeUtils {
 
 
     public List<ItemCategory> commonCategorys;

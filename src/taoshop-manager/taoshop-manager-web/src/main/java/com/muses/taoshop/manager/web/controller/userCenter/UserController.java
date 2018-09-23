@@ -19,7 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
  * </pre>
  */
 @Controller
-@RequestMapping("/user")
+@RequestMapping("/admin/user")
 public class UserController extends BaseController {
 
     /**
