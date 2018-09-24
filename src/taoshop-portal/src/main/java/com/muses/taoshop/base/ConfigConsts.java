@@ -13,4 +13,5 @@ package com.muses.taoshop.base;
  * </pre>
  */
 public class ConfigConsts {
+
 }
