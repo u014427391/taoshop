@@ -1,6 +1,6 @@
 # 电子商务项目
 ## 电商项目简介
-电子商务项目[taoshop](https://github.com/u014427391/taoshop)</br>
+电子商务项目github链接：[taoshop](https://github.com/u014427391/taoshop)</br>
 项目releases链接:https://github.com/u014427391/taoshop/releases
 
 本开源电商项目，SpringBoot+Dubbo技术栈实现微服务，实现一款分布式集群的电商系统。(开发中...)
