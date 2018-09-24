@@ -118,7 +118,8 @@ PS:taoshop-sso重新建个project，链接为https://github.com/u014427391/sso
 
 
 ### 附录
-ps：为了帮助学习者，下面给我我写的一下博客
+ps：为了帮助学习者，下面列下我写的一些博客
+
 [CAS单点登录简单介绍](https://blog.csdn.net/u014427391/article/details/82083995)
 
 [RocketMQ入门手册](https://blog.csdn.net/u014427391/article/details/79914331)
