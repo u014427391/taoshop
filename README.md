@@ -44,7 +44,7 @@ PS:taoshop-sso重新建个project，链接为https://github.com/u014427391/sso
 │  │
 │  ├─taoshop-quartz-----------------------任务调度系统
 │  │
-│  ├─taoshop-sso-------------------------单点登录工程
+│  ├─taoshop-sso-------------------------单点登录工程(另建工程)
 │  │
 │  ├─taoshop-portal--------------------------门户网站
 │  │
@@ -115,3 +115,13 @@ PS:taoshop-sso重新建个project，链接为https://github.com/u014427391/sso
 
 订单管理页面
 ![Image text](https://github.com/u014427391/taoshop/raw/master/screenshot/订单管理.png)
+
+
+### 附录
+ps：为了帮助学习者，下面给我我写的一下博客
+[CAS单点登录简单介绍](https://blog.csdn.net/u014427391/article/details/82083995)
+
+[RocketMQ入门手册](https://blog.csdn.net/u014427391/article/details/79914331)
+
+[Apache Lucene全局搜索引擎入门教程](https://blog.csdn.net/u014427391/article/details/80006401)
+
