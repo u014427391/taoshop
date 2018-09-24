@@ -118,7 +118,7 @@ PS:taoshop-sso重新建个project，链接为https://github.com/u014427391/sso
 
 
 ### 附录
-ps：为了帮助学习者，下面列下我写的一些博客
+为了帮助学习者更好地理解代码，下面给出自己写的一些博客链接
 
 [CAS单点登录简单介绍](https://blog.csdn.net/u014427391/article/details/82083995)
 
