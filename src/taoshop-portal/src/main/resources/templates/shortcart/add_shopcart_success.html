@@ -19,81 +19,7 @@
   <div class="headerMain layout clearfix" th:replace="/header_main :: .headerMain"></div>
   <!--//headerMain-->
   <!--headerNav-->
-  <div class="headerNav">
-    <div class="layout">
-      <dl class="all-brands">
-        <dt class="all-brands-head">
-          <a href="#">全部商品分类</a>
-        </dt>
-        <dd class="all-brands-list" style="display:none;">
-          <div class="all-brands-item">
-            <h3>合约购机<i>NEW</i></h3>
-            <p>
-              <a href="#">三星</a>
-              <a href="#">Iphone</a>
-              <a href="#">小米</a>
-            </p>
-            <a href="#" class="more">更多</a>
-          </div>
-          <div class="all-brands-item">
-            <h3>手机套<em>91折起</em></h3>
-            <p>
-              <a href="#">银联充值</a>
-              <a href="#">易充值</a>
-            </p>
-            <a href="#" class="more">更多</a>
-          </div>
-          <div class="all-brands-item">
-            <h3>手机配件</h3>
-            <p>
-              <a href="#">2000元起</a>
-              <a href="#">3000元起</a>
-            </p>
-            <a href="#" class="more">更多</a>
-          </div>
-          <div class="all-brands-item">
-            <h3>杯子照片<em>91折起</em></h3>
-            <p>
-              <a href="#">银联充值</a>
-              <a href="#">易充值</a>
-            </p>
-            <a href="#" class="more">更多</a>
-          </div>
-          <div class="all-brands-item">
-            <h3>优惠促销</h3>
-            <p>
-              <a href="#">话费服务</a>
-              <a href="#">话费服务</a>
-            </p>
-            <a href="#" class="more">更多</a>
-          </div>
-        </dd>
-      </dl>
-      <script>
-      <!--商品分类显示隐藏-->
-	  $(function(){
-	    $(".all-brands").hover(
-	      function(){
-		    $(this).find(".all-brands-list").show();
-	    },function(){
-	        $(this).find(".all-brands-list").hide();
-	    });
-	  });
-	  </script>
-      <div class="headerNav-main clearfix">
-        <!--headerNav-nav-->
-        <nav class="headerNav-nav">
-          <ul class="clearfix">
-            <li><a href="#" class="selected">首页</a></li>
-            <li><a href="#">手机汇</a></li>
-            <li><a href="#">聚优惠</a></li>
-            <li><a href="#">商业街</a></li>
-          </ul>
-        </nav>
-        <!--//headerNav-nav-->
-      </div>
-    </div>
-  </div>
+  <div class="headerNav" th:replace="/header_nav :: .headerNav"></div>
   <!--//headerNav-->
 </header>
 <!--//header-->
@@ -155,45 +81,7 @@
 <!--//hot-goods-->
 
 <!--footer-->
-<footer class="footer">
-  <div class="layout clearfix">
-    <!--footService-->
-    <div class="footer-service">
-      <dl>
-        <dt><em class="icon-aq"></em>购物指南</dt>
-        <dd><a href="#">咨询与投诉</a></dd>
-      </dl>
-      <dl>
-        <dt><em class="icon-service"></em>售后服务</dt>
-        <dd><a href="#">七天包退</a></dd>
-        <dd><a href="#">十五天包换</a></dd>
-        <dd><a href="#">手机维修咨询</a></dd>
-      </dl>
-      <dl>
-        <dt><em class="icon-pay"></em>支付方式</dt>
-        <dd><a href="#">网上支付</a></dd>
-      </dl>
-    </div>
-    <!--//footService-->
-    <!--在线咨询-->
-    <ul class="online">
-      <li class="line1"><a href="#"></a></li>
-      <li class="line2"><a href="#"></a></li>
-      <li class="line3"><a href="#"></a></li>
-      <li class="line4"><a href="#"></a></li>
-      <li class="line5"><a href="#"></a></li>
-      <li class="line6"><a href="#"></a></li>
-    </ul>
-    <!--在线咨询-->
-  </div>
-  <!--copyright-->
-  <div class="footer-copyright">
-    <p class="footer-nav"><a href="#">关于我们</a> | <a href="#">网厅公告</a> | <a href="#">网站使用帮助</a> | <a href="#">网站导航</a> | <a href="#">业务合作</a> | <a href="#">友情链接</a></p>
-    <p class="copyright">版权所有 ©2009 中国电信集团公司 [ 增值电信业务经营许可证 A2.B1.B2-20090001 ] ICP证号京ICP备 09031924号</p>
-    <s class="cr-icon"></s>
-  </div>
-  <!--//copyright-->
-</footer>
+<footer class="footer" th:replace="/footer :: .footer"></footer>
 
 </body>
 </html>

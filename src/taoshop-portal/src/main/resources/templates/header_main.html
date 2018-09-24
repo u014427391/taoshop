@@ -1,6 +1,6 @@
-<div class="headerMain layout clearfix">
+<div class="headerMain layout clearfix" xmlns:th="http://www.w3.org/1999/xhtml">
     <!--logo-->
-    <h1 class="siteLogo"><a href="#" title="商城" class="siteLogo-homepage"></a><a href="#" title="商城" class="siteLogo-mallpage"></a></h1>
+    <h1 class="siteLogo"><a th:href="@{/portal/toIndex.do}" title="商城" class="siteLogo-homepage"></a><a th:href="@{/portal/toIndex.do}" title="商城" class="siteLogo-mallpage"></a></h1>
     <!--//logo-->
     <!--search-->
     <div class="search">
@@ -21,7 +21,7 @@
     </div>
     <!--//search-->
     <!--我的翼猫-->
-    <div class="myYmall"> <em class="icon-user"></em><a href="#">我的翼猫</a> </div>
+    <div class="myYmall"> <em class="icon-user"></em><a th:href="@{/portal/toIndex.do}">我的翼猫</a> </div>
     <!--//我的翼猫-->
     <!--去购物车结算-->
     <div class="to-cart">
