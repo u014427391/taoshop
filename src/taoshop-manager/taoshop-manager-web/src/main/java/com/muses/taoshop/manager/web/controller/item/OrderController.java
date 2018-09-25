@@ -19,7 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
  * </pre>
  */
 @Controller
-@RequestMapping("/order")
+@RequestMapping("/admin/order/api")
 public class OrderController extends BaseController{
 
 
