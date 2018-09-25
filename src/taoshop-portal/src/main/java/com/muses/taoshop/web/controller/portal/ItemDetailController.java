@@ -29,7 +29,7 @@ import java.util.List;
  * </pre>
  */
 @Controller
-@RequestMapping("/portal")
+@RequestMapping("/portal/item")
 public class ItemDetailController extends BaseController{
 
     @Autowired
@@ -37,7 +37,7 @@ public class ItemDetailController extends BaseController{
     @Autowired
     IItemSpecService iItemSpecService;
 
-    @GetMapping("/item/toDetail/{spuId}/{skuId}")
+    @GetMapping("/toDetail/{spuId}/{skuId}")
     public ModelAndView toDetail(@PathVariable int spuId, @PathVariable int skuId){
         ModelAndView mv = this.getModelAndView();
         ItemDetail itemDetail = iItemService.getItemDetailInfo(spuId);
