@@ -1,6 +1,5 @@
 package com.muses.taoshop.web.controller;
 
-import com.muses.taoshop.base.SessionConsts;
 import com.muses.taoshop.user.entity.User;
 import com.muses.taoshop.user.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Map;
+
+import static com.muses.taoshop.base.SessionConsts.PORTAL_SESSION_USER;
+import static com.muses.taoshop.base.SessionConsts.SESSION_SECURITY_CODE;
 
 /**
  * <pre>
@@ -55,7 +57,7 @@ public class LoginController extends BaseController{
         String logindata[] = request.getParameter("LOGINDATA").split(",");
         HttpSession session = request.getSession();
         if(logindata != null && logindata.length == 3) {
-            String codeSession = (String)session.getAttribute(SessionConsts.PORTAL_SESSION_USER);
+            String codeSession = (String)session.getAttribute(SESSION_SECURITY_CODE);
             String username = logindata[0];
             String password = logindata[1];
             String code = logindata[2];
@@ -65,7 +67,7 @@ public class LoginController extends BaseController{
             //}else{ //账号密码校验
                 User user =  userService.loginCheck(username, password);
                 if(user != null){//校验成功
-                    session.setAttribute(SessionConsts.PORTAL_SESSION_USER,username);
+                    session.setAttribute(PORTAL_SESSION_USER,username);
                     flag = "success";
                 }else{//账号或者密码错误
                     flag = "faild";
