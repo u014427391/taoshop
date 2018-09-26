@@ -90,7 +90,7 @@
     }
     /**刷新验证码的脚本处理**/
     function changeCode() {
-        $("#codeImg").attr("src", "code/generate?t=" + genTimestamp());
+        $("#codeImg").attr("src", "/admin/code/api/generate?t=" + genTimestamp());
     }
     /**客户端校验**/
     function checkValidity() {
