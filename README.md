@@ -117,6 +117,8 @@ PS:taoshop-sso重新建个project，链接为https://github.com/u014427391/sso
 
 [CAS单点登录简单介绍](https://blog.csdn.net/u014427391/article/details/82083995)
 
+[Redis学习笔记之基本数据结构](https://blog.csdn.net/u014427391/article/details/82860694))
+
 [RocketMQ入门手册](https://blog.csdn.net/u014427391/article/details/79914331)
 
 [Apache Lucene全局搜索引擎入门教程](https://blog.csdn.net/u014427391/article/details/80006401)
