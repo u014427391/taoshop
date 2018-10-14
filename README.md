@@ -1,6 +1,8 @@
-﻿# 电子商务项目
+# 电子商务项目
 ## 电商项目简介
 电子商务项目[taoshop](https://github.com/u014427391/taoshop)</br>
+项目releases链接:https://github.com/u014427391/taoshop/releases
+
 本开源电商项目，SpringBoot+Dubbo技术栈实现微服务，实现一款分布式集群的电商系统。(开发中...)
 
 ## 开源协议
@@ -31,8 +33,9 @@ taoshop使用Apache2.0开源协议
 * 负载均衡：Nginx
 * 缓存处理：Redis
 * 后台主要框架：SpringBoot、Mybatis
-* 微服务搭建：SpringCloud或者阿里的Dubbo
+* 微服务搭建：Dubbo
 ## 平台工程目录
+PS:taoshop-sso重新建个project，链接为https://github.com/u014427391/sso
 
 ```
 ├─taoshop----------------------------父项目，公共依赖
@@ -41,7 +44,7 @@ taoshop使用Apache2.0开源协议
 │  │
 │  ├─taoshop-quartz-----------------------任务调度系统
 │  │
-│  ├─taoshop-sso-------------------------单点登录工程
+│  ├─taoshop-sso-------------------------单点登录工程(另建工程)
 │  │
 │  ├─taoshop-portal--------------------------门户网站
 │  │
@@ -107,3 +110,27 @@ taoshop使用Apache2.0开源协议
 
 订单管理页面
 ![Image text](https://github.com/u014427391/taoshop/raw/master/screenshot/订单管理.png)
+
+
+### 附录
+为了帮助学习者更好地理解代码，下面给出自己写的一些博客链接
+
+[CAS单点登录简单介绍](https://blog.csdn.net/u014427391/article/details/82083995)
+
+[RocketMQ入门手册](https://blog.csdn.net/u014427391/article/details/79914331)
+
+[Apache Lucene全局搜索引擎入门教程](https://blog.csdn.net/u014427391/article/details/80006401)
+
+### 缓存
+[Redis学习笔记之基本数据结构](https://blog.csdn.net/u014427391/article/details/82860694)
+
+[SpringBoot集成Redis实现缓存处理(Spring AOP技术)](http://blog.csdn.net/u014427391/article/details/78799623)
+
+
+### Oracle知识
+[Oracle知识整理笔录](https://blog.csdn.net/u014427391/article/details/82317376)
+
+[Oracle笔记之锁表和解锁](https://blog.csdn.net/u014427391/article/details/83046148)
+
+[Oracle笔记之修改表字段类型](https://blog.csdn.net/u014427391/article/details/83046006)
+
