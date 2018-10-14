@@ -1,7 +1,6 @@
 package com.muses.taoshop.web.controller;
 
 
-import com.muses.taoshop.common.core.base.Constants;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -18,6 +17,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.Random;
 
+import static com.muses.taoshop.base.SessionConsts.SESSION_SECURITY_CODE;
+
 
 @Controller
 @RequestMapping("/code")
@@ -31,7 +32,7 @@ public class CodeController {
 //		Subject currentUser = SecurityUtils.getSubject();
 //		Session session = currentUser.getSession();
 		HttpSession session = request.getSession();
-		session.setAttribute(Constants.SESSION_SECURITY_CODE, code);
+		session.setAttribute(SESSION_SECURITY_CODE, code);
 
 		try {
 			ServletOutputStream out = response.getOutputStream();

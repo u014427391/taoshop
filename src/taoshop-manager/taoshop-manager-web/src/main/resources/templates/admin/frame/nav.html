@@ -4,7 +4,7 @@
         <div class="navigation-inner">
             <div class="logo">
                 <h1>
-                    <a th:href="@{/admin/toIndex}" class="logo-img">电商运营平台</a>
+                    <a th:href="@{/admin/login/api/toIndex}" class="logo-img">电商运营平台</a>
                 </h1>
             </div>
             <div class="header-categories" id="nav-con">
@@ -37,7 +37,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="order.html">
+                            <a th:href="@{/admin/order/api/toOrder}">
                                 <i class="iconfont">&#xe60c;</i>
                                 <span class="pf-opt-name">订单信息</span>
                             </a>
@@ -55,7 +55,7 @@
                             </a>
                         </li>
                         <li class="div-line">
-                            <a href="login.html">
+                            <a th:href="@{/admin/login/api/toLogout}">
                                 <i class="iconfont">&#xe60b;</i>
                                 <span class="pf-opt-name">退出</span>
                             </a>

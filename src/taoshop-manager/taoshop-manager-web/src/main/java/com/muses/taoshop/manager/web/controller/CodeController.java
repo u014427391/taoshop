@@ -20,7 +20,7 @@ import java.util.Random;
 
 
 @Controller
-@RequestMapping("/code")
+@RequestMapping("/admin/code/api")
 public class CodeController {
 
 	@RequestMapping("/generate")
