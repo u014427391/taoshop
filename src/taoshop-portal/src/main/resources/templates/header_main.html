@@ -29,10 +29,10 @@
             <dt> <span class="shop-amount">0</span> <em class="icon-cart"></em> <a href="#">去购物车结算</a> <span class="angle"></span> </dt>
             <dd style="display:none;">
                 <!--购物车为空-->
-                <div class="nogoods" style="display:none;"> 购物车中还没有商品，赶紧选购吧！ </div>
+                <div class="nogoods" th:if="${session.potalSessionUser == null}" style="display:none;"> 购物车中还没有商品，赶紧选购吧！ </div>
                 <!--//购物车为空-->
                 <!--有商品-->
-                <div class="cart-table">
+                <div class="cart-table" th:if="${session.potalSessionUser != null}">
                     <div class="cart-table-body">
                         <ul class="cart-item clearfix">
                             <li class="item-img"><a href="#"><img th:src="@{/static/picture/img_small_350x350.jpg}" /></a></li>
