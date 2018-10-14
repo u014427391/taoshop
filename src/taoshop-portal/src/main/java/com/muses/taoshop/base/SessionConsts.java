@@ -13,5 +13,13 @@ package com.muses.taoshop.base;
  * </pre>
  */
 public class SessionConsts {
+    /**
+     * 用户信息会话
+     */
     public static final String PORTAL_SESSION_USER = "potalSessionUser";
+
+    /**
+     * 验证码信息会话
+     */
+    public static final String SESSION_SECURITY_CODE = "sessionSecurityCode";
 }

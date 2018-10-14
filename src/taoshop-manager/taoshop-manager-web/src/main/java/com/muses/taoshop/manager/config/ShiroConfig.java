@@ -37,14 +37,14 @@ public class ShiroConfig {
         filterChainDefinitionMap.put("/upload/**", "anon");
         filterChainDefinitionMap.put("/plugins/**", "anon");
         filterChainDefinitionMap.put("/templates/**", "anon");
-        filterChainDefinitionMap.put("/admin/code/generate", "anon");
-        filterChainDefinitionMap.put("/admin/toLogin", "anon");
-        filterChainDefinitionMap.put("/admin/loginCheck", "anon");
+        filterChainDefinitionMap.put("/admin/code/api/generate", "anon");
+        filterChainDefinitionMap.put("/admin/login/api/toLogin", "anon");
+        filterChainDefinitionMap.put("/admin/login/api/loginCheck", "anon");
         filterChainDefinitionMap.put("/**", "authc");
 
-        shiroFilterFactoryBean.setLoginUrl("/admin/toLogin");
-        shiroFilterFactoryBean.setSuccessUrl("/admin/toIndex");
-        shiroFilterFactoryBean.setUnauthorizedUrl("/admin/toIndex");
+        shiroFilterFactoryBean.setLoginUrl("/admin/login/api/toLogin");
+        shiroFilterFactoryBean.setSuccessUrl("/admin/login/api/toIndex");
+        shiroFilterFactoryBean.setUnauthorizedUrl("/admin/login/api/toIndex");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
         return shiroFilterFactoryBean;
     }
@@ -80,7 +80,7 @@ public class ShiroConfig {
         //同一个用户最大的会话数，默认1；比如2的意思是同一个用户允许最多同时两个人登录；
         filter.setMaxSession(1);
         //被踢出后重定向到的地址；
-        filter.setUrl("/login");
+        filter.setUrl("/admin/login/api/toLogin");
         return filter;
     }
 
