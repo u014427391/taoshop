@@ -14,7 +14,7 @@
     <packaging>pom</packaging>
     <!--<version>1.0-SNAPSHOT</version>-->
     <modules>
-        <module>taoshop-common-zk</module>
+        <module>taoshop-common-rpc</module>
         <module>taoshop-common-cache</module>
         <module>taoshop-common-core</module>
         <module>taoshop-security-core</module>
