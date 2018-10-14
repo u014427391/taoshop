@@ -1,0 +1,38 @@
+<!--topBar-->
+<div class="topBar" xmlns:th="http://www.w3.org/1999/xhtml">
+    <div class="layout"> <span class="hello-notice f-orange1 f-b" style="position:absolute;left:50%;margin-left:-600px;top:1px;display:block;font-size:14px;text-align:left;">本商城在试运行阶段，暂不接收任何订单。</span>
+        <!--welcome-->
+        <span class="topBar-userWelcome" th:if="${session.potalSessionUser == null}">您好，欢迎来商城！<a th:href="@{/portal/toLogin.do}" id="loginHref" rel="popbox">[登录]</a> <a id="registerHref" th:href="@{/portal/toLogin.do}">[注册]</a></span>
+        <!--登录后   -->
+        <span class="topBar-userWelcome logined" th:if="${session.potalSessionUser != null}" th:onshow="true">
+                欢迎您
+                <span class="user">
+                  <a href="#" class="user-link" th:text="${session.potalSessionUser}"><em class="icon-arr"></em></a>
+                  <span class="user-cs" style="display:none;">
+                    <span class="user-cs-con">
+                      <s class="icon-arr"></s>
+                      <p><a th:href="@{/portal/user/toUserCenter.do}">个人中心</a></p>
+                      <p><a href="#">退出登录</a></p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+
+
+        <script>
+            $(function(){
+                $(".user").hover(function(){
+                    $(this).find(".user-cs").show();
+                },function(){
+                    $(this).find(".user-cs").hide();
+                });
+            });
+        </script>
+
+        <!--//welcome-->
+        <!--topBar-menu-->
+        <span class="topBar-menu"> <a href="#">商户入驻申请</a>| <a href="#">我的订单</a>| <a href="#">网上营业厅</a> </span>
+        <!--//topBar-menu-->
+    </div>
+</div>
+<!--//topBar-->

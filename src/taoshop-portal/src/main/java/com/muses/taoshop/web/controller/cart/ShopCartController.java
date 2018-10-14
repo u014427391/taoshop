@@ -1,6 +1,10 @@
 package com.muses.taoshop.web.controller.cart;
 
+import com.muses.taoshop.web.controller.BaseController;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  * <pre>
@@ -15,6 +19,18 @@ import org.springframework.stereotype.Controller;
  * </pre>
  */
 @Controller
-public class ShopCartController {
+@RequestMapping("/portal/shopcart")
+public class ShopCartController extends BaseController{
+
+    /**
+     * 添加购物车成功
+     * @return
+     */
+    @GetMapping(value = "/toAddSuccess")
+    public ModelAndView toAddSuccess() {
+        ModelAndView mv = this.getModelAndView();
+        mv.setViewName("/shopcart/add_shopcart_success");
+        return mv;
+    }
 
 }

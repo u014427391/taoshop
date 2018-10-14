@@ -1,0 +1,69 @@
+<div class="headerMain layout clearfix" xmlns:th="http://www.w3.org/1999/xhtml">
+    <!--logo-->
+    <h1 class="siteLogo"><a th:href="@{/portal/toIndex.do}" title="商城" class="siteLogo-homepage"></a><a th:href="@{/portal/toIndex.do}" title="商城" class="siteLogo-mallpage"></a></h1>
+    <!--//logo-->
+    <!--search-->
+    <div class="search">
+        <div class="search-area">
+            <input type="text" placeholder="请输入搜索关键字" class="search-input-text" />
+            <input type="button" title="搜索" class="search-input-submit" />
+            <div class="search-suggest" style="display:none;">
+                <ol>
+                    <li class="search-suggest-key">三星<b>I9500</b></li>
+                    <li class="search-suggest-key">三星<b>I9501</b></li>
+                    <li class="search-suggest-key">三星<b>I9001</b></li>
+                    <li class="search-suggest-key">三星<b>I9505</b></li>
+                    <li class="search-suggest-key">三星<b>I9503</b></li>
+                </ol>
+            </div>
+        </div>
+        <p class="search-hotkey">热门搜索：<a href="#">三星手机</a><a href="#">手机套</a><a href="#">手机电源线</a></p>
+    </div>
+    <!--//search-->
+    <!--我的翼猫-->
+    <div class="myYmall"> <em class="icon-user"></em><a th:href="@{/portal/toIndex.do}">我的翼猫</a> </div>
+    <!--//我的翼猫-->
+    <!--去购物车结算-->
+    <div class="to-cart">
+        <dl>
+            <dt> <span class="shop-amount">0</span> <em class="icon-cart"></em> <a href="#">去购物车结算</a> <span class="angle"></span> </dt>
+            <dd style="display:none;">
+                <!--购物车为空-->
+                <div class="nogoods" th:if="${session.potalSessionUser == null}" style="display:none;"> 购物车中还没有商品，赶紧选购吧！ </div>
+                <!--//购物车为空-->
+                <!--有商品-->
+                <div class="cart-table" th:if="${session.potalSessionUser != null}">
+                    <div class="cart-table-body">
+                        <ul class="cart-item clearfix">
+                            <li class="item-img"><a href="#"><img th:src="@{/static/picture/img_small_350x350.jpg}" /></a></li>
+                            <li class="item-intro"><a href="#">三星手机NNOTOS9S</a></li>
+                            <li class="item-extra"><em class="item-price">￥<span>799</span></em>x<span>2</span>
+                                <p><a href="#" class="delete">删除</a></p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="cart-info">
+                        <div class="cart-bottom">
+                            <p> 共<span class="f-red2">1</span>件商品，共计<em class="item-price">￥<span>5399</span></em> <br />
+                                <a href="#" class="cart-goMyCart btn btn-red">去购物车结算</a> </p>
+                        </div>
+                    </div>
+                </div>
+                <!--//有商品-->
+            </dd>
+        </dl>
+    </div>
+    <!--//去购物车结算-->
+    <script>
+        $(function(){
+            $(".to-cart").hover(function(){
+                $(this).find(".angle").addClass("down").end().find("dt").addClass("selected").end().find("dd").show();
+            },function(){
+                $(this).find(".angle").removeClass("down").end().find("dt").removeClass("selected").end().find("dd").hide();
+            });
+            if($(".cart-table .cart-item").size()>2){
+                $(".cart-table .cart-table-body").css("overflow-y","auto");
+            }
+        });
+    </script>
+</div>

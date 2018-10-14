@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>成功加入购物车</title>
+    <link th:href="@{/static/css/public.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/css/cart.css}" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" th:src="@{/static/js/jquery-1.3.2.min.js}"></script>
+    <script type="text/javascript" th:src="@{/static/js/html5.js}"></script>
+</head>
+<body>
+<!--header-->
+<header class="header">
+  <!--topBar-->
+  <div class="topBar" th:replace="top_bar :: .topBar"></div>
+  <!--//topBar-->
+  <!--headerMain-->
+  <div class="headerMain layout clearfix" th:replace="/header_main :: .headerMain"></div>
+  <!--//headerMain-->
+  <!--headerNav-->
+  <div class="headerNav" th:replace="/header_nav :: .headerNav"></div>
+  <!--//headerNav-->
+</header>
+<!--//header-->
+
+<!--加入购物车提示-->
+<div class="success-toCart">
+	<div class="tip">商品已成功加入购物车！</div><div class="mb-3em"><a class="btn btn-gray" href="#">继续购物</a><a class="btn btn-red" href="#">去购物车结算</a></div>
+</div>
+<!--//加入购物车提示-->
+
+<div class="clearfix"></div>
+
+<!--hot-goods 热门产品-->
+<div class="hot-goods">
+    <div class="hot-goods-hd">
+        <h2 class="hot-goods-tit">热门商品</h2>
+    </div>
+    <div class="hot-goods-bd">
+        <div class="clearfix hot-goods-list">
+            <div class="goods">
+                <p class="goods-img"><img th:src="@{/static/picture/hot-goods_180x180.jpg}" /></p>
+                <p class="goods-name">学院风帆布双肩包 卡其色</p>
+                <p class="goods-des">使用500g纯棉帆布，材质上乘</p>
+                <p class="goods-price"><span class="val">79元</span></p>
+                <p class="goods-buy"><a class="add-cart" href="#"><span>加入购物车</span></a></p>
+            </div>
+            <div class="goods">
+                <p class="goods-img"><img th:src="@{/static/picture/hot-goods_180x180.jpg}" /></p>
+                <p class="goods-name">学院风帆布双肩包 卡其色</p>
+                <p class="goods-des">使用500g纯棉帆布，材质上乘</p>
+                <p class="goods-price"><span class="val">79元</span></p>
+                <p class="goods-buy"><a class="add-cart" href="#"><span>加入购物车</span></a></p>
+            </div>
+            <div class="goods">
+                <p class="goods-img"><img th:src="@{/static/picture/hot-goods_180x180.jpg}" /></p>
+                <p class="goods-name">学院风帆布双肩包 卡其色</p>
+                <p class="goods-des">使用500g纯棉帆布，材质上乘</p>
+                <p class="goods-price"><span class="val">79元</span></p>
+                <p class="goods-buy"><a class="add-cart" href="#"><span>加入购物车</span></a></p>
+            </div>
+            <div class="goods">
+                <p class="goods-img"><img th:src="@{/static/picture/hot-goods_180x180.jpg}" /></p>
+                <p class="goods-name">学院风帆布双肩包 卡其色</p>
+                <p class="goods-des">使用500g纯棉帆布，材质上乘</p>
+                <p class="goods-price"><span class="val">79元</span></p>
+                <p class="goods-buy"><a class="add-cart" href="#"><span>加入购物车</span></a></p>
+            </div>
+            <div class="goods">
+                <p class="goods-img"><img th:src="@{/static/picture/hot-goods_180x180.jpg}" /></p>
+                <p class="goods-name">学院风帆布双肩包 卡其色</p>
+                <p class="goods-des">使用500g纯棉帆布，材质上乘</p>
+                <p class="goods-price"><span class="val">79元</span></p>
+                <p class="goods-buy"><a class="add-cart" href="#"><span>加入购物车</span></a></p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--//hot-goods-->
+
+<!--footer-->
+<footer class="footer" th:replace="/footer :: .footer"></footer>
+
+</body>
+</html>

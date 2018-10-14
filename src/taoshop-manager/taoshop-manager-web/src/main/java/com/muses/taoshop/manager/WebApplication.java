@@ -33,7 +33,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @EnableTransactionManagement//开启对事务管理配置的支持
 @EnableCaching
 @EnableAsync//开启对异步方法的支持
-@EnableAutoConfiguration //TODO 修改该注解可以实现自动部署
+@EnableAutoConfiguration
 @SpringBootApplication(exclude={DataSourceAutoConfiguration.class,
         MybatisAutoConfiguration.class,
         DataSourceTransactionManagerAutoConfiguration.class})

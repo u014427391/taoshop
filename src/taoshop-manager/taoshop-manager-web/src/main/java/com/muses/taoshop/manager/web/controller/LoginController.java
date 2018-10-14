@@ -1,9 +1,14 @@
 package com.muses.taoshop.manager.web.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.muses.taoshop.manager.core.Constants;
+import com.muses.taoshop.manager.entity.Menu;
+import com.muses.taoshop.manager.entity.Permission;
+import com.muses.taoshop.manager.entity.SysRole;
 import com.muses.taoshop.manager.entity.SysUser;
 import com.muses.taoshop.manager.service.ISysUserService;
+import com.muses.taoshop.manager.util.MenuTreeUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
@@ -12,6 +17,7 @@ import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -22,15 +28,15 @@ import javax.naming.AuthenticationException;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import java.awt.*;
 import java.awt.font.FontRenderContext;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.util.Observable;
-import java.util.Observer;
-import java.util.Random;
+import java.util.*;
+import java.util.List;
 
 /**
  * <pre>
@@ -45,7 +51,7 @@ import java.util.Random;
  * </pre>
  */
 @Controller
-@RequestMapping("/admin")
+@RequestMapping("/admin/login/api")
 public class LoginController extends BaseController {
 
     @Autowired
@@ -137,118 +143,39 @@ public class LoginController extends BaseController {
         SysUser user = (SysUser)session.getAttribute(Constants.SESSION_USER);
 
         if(user != null){
-//            Set<Role> roles = user.getRoles();
-//            Set<Permission> permissions = new HashSet<Permission>();
-//            for(Role r : roles){
-//                permissions.addAll(r.getPermissions());
-//            }
-//
-//            /**获取用户可以查看的菜单**/
-//            List<Menu> menuList = new ArrayList<Menu>();
-//            for(Permission p : permissions){
-//                menuList.add(p.getMenu());
-//            }
+            Set<SysRole> roles = user.getRoles();
+            Set<Permission> permissions = new HashSet<Permission>();
+            if(!CollectionUtils.isEmpty(roles)) {
+                for (SysRole r : roles) {
+                    permissions.addAll(r.getPermissions());
+                }
+            }
 
-//            MenuTreeUtil treeUtil = new MenuTreeUtil();
-//            List<Menu> treemenus= treeUtil.menuList(menuList);
-//
-//            JSONArray jsonArray = JSONArray.fromObject(treemenus);
-//            String json = jsonArray.toString();
+            /**获取用户可以查看的菜单**/
+            List<Menu> menuList = new ArrayList<Menu>();
+            for(Permission p : permissions){
+                menuList.add(p.getMenu());
+            }
 
-//			json = json.replaceAll("menuId","id").replaceAll("parentId","pId").
-//					replaceAll("menuName","name").replaceAll("hasSubMenu","checked");
+            MenuTreeUtil treeUtil = new MenuTreeUtil();
+            List<Menu> treemenus= treeUtil.menuList(menuList);
 
-//            mv.addObject("menus",json);
+            String json = JSON.toJSONString(treemenus);
 
+			json = json.replaceAll("menuId","id").replaceAll("parentId","pId").
+					replaceAll("menuName","name").replaceAll("hasSubMenu","checked");
+
+            mv.addObject("menus",json);
+            mv.setViewName("admin/frame/index");
         }else{
             //会话失效，返回登录界面
-            mv.setViewName("admin/frame/login");
+            mv.setViewName("login");
         }
-        mv.setViewName("admin/frame/index");
+
         return mv;
     }
 
 
-    @RequestMapping("/code/generate")
-    public void generate(HttpServletResponse response){
-        ByteArrayOutputStream output = new ByteArrayOutputStream();
-        String code = drawImg(output);
-
-        Subject currentUser = SecurityUtils.getSubject();
-        Session session = currentUser.getSession();
-        session.setAttribute(Constants.SESSION_SECURITY_CODE, code);
-
-        try {
-            ServletOutputStream out = response.getOutputStream();
-            output.writeTo(out);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    /**
-     * 绘画验证码
-     * @param output
-     * @return
-     */
-    private String drawImg(ByteArrayOutputStream output){
-        String code = "";
-        //随机产生4个字符
-        for(int i=0; i<4; i++){
-            code += randomChar();
-        }
-        int width = 70;
-        int height = 25;
-        BufferedImage bi = new BufferedImage(width,height,BufferedImage.TYPE_3BYTE_BGR);
-        Font font = new Font("Times New Roman",Font.PLAIN,20);
-        //调用Graphics2D绘画验证码
-        Graphics2D g = bi.createGraphics();
-        g.setFont(font);
-        Color color = new Color(66,2,82);
-        g.setColor(color);
-        g.setBackground(new Color(226,226,240));
-        g.clearRect(0, 0, width, height);
-        FontRenderContext context = g.getFontRenderContext();
-        Rectangle2D bounds = font.getStringBounds(code, context);
-        double x = (width - bounds.getWidth()) / 2;
-        double y = (height - bounds.getHeight()) / 2;
-        double ascent = bounds.getY();
-        double baseY = y - ascent;
-        g.drawString(code, (int)x, (int)baseY);
-        g.dispose();
-        try {
-            ImageIO.write(bi, "jpg", output);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return code;
-    }
-
-    /**
-     * 随机参数一个字符
-     * @return
-     */
-    private char randomChar(){
-        Random r = new Random();
-        String s = "ABCDEFGHJKLMNPRSTUVWXYZ0123456789";
-        return s.charAt(r.nextInt(s.length()));
-    }
-
-    /**
-     * 获取随机颜色值
-     * @param fc
-     * @param bc
-     * @return
-     */
-    Color getRandColor(int fc,int bc){
-        Random random=new Random();
-        if(fc>255) fc=255;
-        if(bc>255) bc=255;
-        int r=fc+random.nextInt(bc-fc);
-        int g=fc+random.nextInt(bc-fc);
-        int b=fc+random.nextInt(bc-fc);
-        return new Color(r,g,b);
-    }
 
 
 }

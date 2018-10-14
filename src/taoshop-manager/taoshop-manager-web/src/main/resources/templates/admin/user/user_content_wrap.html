@@ -1,0 +1,90 @@
+<div class="bd-content-wrap" xmlns:th="http://www.w3.org/1999/xhtml">
+    <div class="bd-content">
+
+        <div class="title-left-line">账户中心</div>
+
+        <div class="basic-info">
+            <div class="info-title">基本信息<a href="javascript:;" class="modify">[修改]</a></div>
+            <div class="search-box">
+                <div class="form-kv clearfix">
+                    <div class="form-kv-label">单位账号：</div>
+                    <div class="form-content">
+                        <span th:text="${session.sessionUser.username}">kie*****@163.com</span>
+                    </div>
+                </div>
+                <div class="form-kv clearfix">
+                    <div class="form-kv-label">单位名称：</div>
+                    <div class="form-content">
+                        <span>市地税局</span>
+                        <i class="iconfont">&#xe652;</i>
+                        <span class="status">已认证</span>
+                    </div>
+                </div>
+                <div class="form-kv clearfix">
+                    <div class="form-kv-label">单位管理员：</div>
+                    <div class="form-content">
+                        <span th:text="${session.sessionUser.mark}">管理员</span>
+                        <i class="iconfont">&#xe652;</i>
+                        <span class="status">已认证</span>
+                    </div>
+                </div>
+                <div class="form-kv clearfix">
+                    <div class="form-kv-label">手机号码：</div>
+                    <div class="form-content">
+                        <span th:text="${session.sessionUser.phone}">137****8564</span>
+                        <i class="iconfont">&#xe652;</i>
+                        <span class="status">已认证</span>
+                    </div>
+                </div>
+                <div class="form-kv clearfix">
+                    <div class="form-kv-label">邮箱地址：</div>
+                    <div class="form-content">
+                        <span th:text="${session.sessionUser.email}">kie*****@163.com</span>
+                        <i class="iconfont">&#xe652;</i>
+                        <span class="status">已认证</span>
+                    </div>
+                </div>
+                <div class="form-kv clearfix">
+                    <div class="form-kv-label">上次登录：</div>
+                    <div class="form-content">
+                        <span th:text="${{session.sessionUser.lastLogin}}">2018-08-08</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="safe-setting">
+            <div class="info-title">安全设置</div>
+            <div class="search-box">
+                <div class="form-kv clearfix">
+                    <div class="form-kv-label">登录密码：</div>
+                    <div class="form-content clearfix">
+                        <p class="content-value">安全性高的密码可以使账号安全，建议您定期更换密码，设置一个包含字母，符号或数字中至少两种且长度超过6位的密码</p>
+                        <i class="iconfont">&#xe652;</i>
+                        <span class="status">已设置</span>
+                        <a href="javascript:;">修改</a>
+                    </div>
+                </div>
+                <div class="form-kv clearfix">
+                    <div class="form-kv-label">手机绑定：</div>
+                    <div class="form-content clearfix">
+                        <p class="content-value">您已绑定了手机<span>137****6789，</span>您的手机号可以直接用户登录、找回密码</p>
+                        <i class="iconfont no">&#xe617;</i>
+                        <span class="status no">未设置</span>
+                        <a href="javascript:;">修改</a>
+                    </div>
+                </div>
+                <div class="form-kv clearfix">
+                    <div class="form-kv-label">邮箱绑定：</div>
+                    <div class="form-content clearfix">
+                        <p class="content-value">您已绑定了 kie****@163.com</p>
+                        <i class="iconfont no">&#xe617;</i>
+                        <span class="status no">未设置</span>
+                        <a href="javascript:;">修改</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

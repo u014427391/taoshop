@@ -1,4 +1,4 @@
-package com.muses.taoshop.common.core.utils;
+package com.muses.taoshop.common.core.util;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -17,7 +17,7 @@ import java.util.Date;
  *    修改后版本:     修改人：  修改日期: 2018.06.18 14:28    修改内容:
  * </pre>
  */
-public class DateUtil {
+public class DateUtils {
 
 
     public static Date doParse(String date){
