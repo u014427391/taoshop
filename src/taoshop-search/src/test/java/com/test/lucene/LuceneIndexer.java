@@ -10,7 +10,6 @@ import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.cn.smart.SmartChineseAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
-import org.apache.lucene.document.IntField;
 import org.apache.lucene.document.TextField;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriterConfig;
@@ -90,7 +89,7 @@ public class LuceneIndexer {
 		for(int i = 0; i < ids.length;i++){
 			Document doc = new Document();
 			//添加字段
-	        doc.add(new IntField("id", ids[i],Field.Store.YES)); //添加内容
+	        doc.add(new TextField("id", ids[i].toString(),Field.Store.YES)); //添加内容
 	        doc.add(new TextField("title", titles[i], Field.Store.YES)); //添加文件名，并把这个字段存到索引文件里
 	        doc.add(new TextField("tcontent", tcontents[i], Field.Store.YES)); //添加文件路径
 	        indexWriter.addDocument(doc);
