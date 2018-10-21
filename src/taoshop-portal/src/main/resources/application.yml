@@ -3,7 +3,7 @@ server:
 logging:
   config: classpath:logback_spring.xml
   level:
-    root: debug
+    com.muses.taoshop: debug
   path: /data/logs
 
 spring:
