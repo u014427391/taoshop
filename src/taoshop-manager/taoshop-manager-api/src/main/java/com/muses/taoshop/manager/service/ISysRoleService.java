@@ -3,6 +3,7 @@ package com.muses.taoshop.manager.service;
 import com.muses.taoshop.manager.entity.SysRole;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * <pre>
@@ -21,5 +22,5 @@ public interface ISysRoleService {
      * 获取所有用户角色
      * @return
      */
-    List<SysRole> listUserRole(int userId);
+    Set<SysRole> getUserRoles(int userId);
 }

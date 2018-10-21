@@ -12,5 +12,6 @@ package com.muses.taoshop.manager.mapper;
  *    修改后版本:     修改人：  修改日期: 2018.09.22 12:33    修改内容:
  * </pre>
  */
-public interface IMenuServiceImpl {
+public interface SysMenuMapper {
+
 }

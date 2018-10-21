@@ -7,6 +7,7 @@ import com.muses.taoshop.manager.entity.Menu;
 import com.muses.taoshop.manager.entity.Permission;
 import com.muses.taoshop.manager.entity.SysRole;
 import com.muses.taoshop.manager.entity.SysUser;
+import com.muses.taoshop.manager.service.ISysPermissionService;
 import com.muses.taoshop.manager.service.ISysRoleService;
 import com.muses.taoshop.manager.service.ISysUserService;
 import com.muses.taoshop.manager.util.MenuTreeUtil;
@@ -59,6 +60,8 @@ public class LoginController extends BaseController {
     ISysUserService iSysUserService;
     @Autowired
     ISysRoleService iSysRoleService;
+    @Autowired
+    ISysPermissionService iSysPermissionService;
 
     @RequestMapping(value = "/toLogin")
     @GetMapping
@@ -146,14 +149,15 @@ public class LoginController extends BaseController {
         SysUser user = (SysUser)session.getAttribute(Constants.SESSION_USER);
 
         if(user != null){
-            Set<SysRole> roles = iSysUserService.getUserRoles(user.getId());
+            Set<SysRole> roles = iSysRoleService.getUserRoles(user.getId());
             Set<Permission> permissions = new HashSet<Permission>();
             if(!CollectionUtils.isEmpty(roles)) {
                 for (SysRole r : roles) {
-                    permissions.addAll(r.getPermissions());
+                    Set<Permission> permissionSet = iSysPermissionService.getRolePermissions(r.getRoleId());
+                    permissions.addAll(permissionSet);
                 }
             }
-
+            log.info("权限集合:{}"+permissions.toString());
             /* 获取用户可以查看的菜单 */
             List<Menu> menuList = new ArrayList<Menu>();
             for(Permission p : permissions){
@@ -161,15 +165,18 @@ public class LoginController extends BaseController {
             }
 
             MenuTreeUtil treeUtil = new MenuTreeUtil();
-            List<Menu> treemenus= treeUtil.menuList(menuList);
+            log.info("用户可以查看的菜单列表:{}"+menuList.toArray());
+            if(!CollectionUtils.isEmpty(menuList)) {
+                List<Menu> treemenus= treeUtil.menuList(menuList);
 
 //            String json = JSON.toJSONString(treemenus);
 //
 //			json = json.replaceAll("menuId","id").replaceAll("parentId","pId").
 //					replaceAll("menuName","name").replaceAll("hasSubMenu","checked");
 
-            mv.addObject("menus",treemenus);
-            mv.setViewName("admin/frame/index");
+                mv.addObject("menus",treemenus);
+                mv.setViewName("admin/frame/index");
+            }
         }else{
             //会话失效，返回登录界面
             mv.setViewName("login");
