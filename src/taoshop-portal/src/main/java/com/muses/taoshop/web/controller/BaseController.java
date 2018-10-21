@@ -1,7 +1,8 @@
 package com.muses.taoshop.web.controller;
 
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.servlet.ModelAndView;
@@ -21,15 +22,26 @@ import javax.servlet.http.HttpServletRequest;
  * </pre>
  */
 public class BaseController {
-    public Logger log = Logger.getLogger(getClass());
+    public Logger log = LoggerFactory.getLogger(getClass());
 
+    public void debug(String message){
+        log.debug(message);
+    }
 
     public void debug(String message , Exception e){
         log.debug(message , e);
     }
 
+    public void info(String message) {
+        log.info(message);
+    }
+
     public void info(String message,Exception e){
         log.info(message , e);
+    }
+
+    public void error(String message) {
+        log.error(message);
     }
 
     public void error(String message,Exception e){

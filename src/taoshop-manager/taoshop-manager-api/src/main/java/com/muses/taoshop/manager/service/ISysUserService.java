@@ -1,5 +1,6 @@
 package com.muses.taoshop.manager.service;
 
+import com.muses.taoshop.manager.entity.SysRole;
 import com.muses.taoshop.manager.entity.SysUser;
 
 import java.util.Set;
@@ -45,4 +46,11 @@ public interface ISysUserService {
      * @return
      */
     SysUser getUserInfoByUsername(String username);
+
+    /**
+     * 通过用户id获取用户角色集合
+     * @param userId
+     * @return
+     */
+    Set<SysRole> getUserRoles(int userId);
 }
