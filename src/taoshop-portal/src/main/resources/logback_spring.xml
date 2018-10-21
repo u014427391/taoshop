@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<configuration debug="true">
+<configuration debug="false" scan="true">
     <!-- 日志级别 -->
     <springProperty scope="context" name="LOG_ROOT_LEVEL" source="logging.level.root" defaultValue="DEBUG"/>
     <!--  标识这个"STDOUT" 将会添加到这个logger -->
@@ -76,11 +76,11 @@
     </appender>
 
     <!-- rest template logger-->
-    <logger name="org.springframework.web.client.RestTemplate" level="DEBUG" />
-    <logger name="org.springframework" level="DEBUG" />
+    <!--<logger name="org.springframework.web.client.RestTemplate" level="DEBUG" />-->
+    <!--<logger name="org.springframework" level="DEBUG" />-->
 
     <!-- jdbc-->
-    <logger name="jdbc.sqltiming" level="DEBUG" />
+    <!--<logger name="jdbc.sqltiming" level="DEBUG" />-->
     <logger name="org.mybatis" level="DEBUG" />
 
     <!-- zookeeper-->
