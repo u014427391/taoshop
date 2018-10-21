@@ -3,6 +3,7 @@ package com.muses.taoshop.manager.service;
 import com.muses.taoshop.manager.entity.Operation;
 import com.muses.taoshop.manager.entity.Permission;
 import com.muses.taoshop.manager.entity.SysRole;
+import com.muses.taoshop.manager.mapper.SysRoleMapper;
 import com.muses.taoshop.manager.mapper.SysUserMapper;
 import com.muses.taoshop.manager.entity.SysUser;
 import com.muses.taoshop.manager.service.ISysUserService;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import javax.management.relation.Role;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -31,6 +33,8 @@ public class SysUserServiceImpl implements ISysUserService{
 
     @Autowired
     SysUserMapper sysUserMapper;
+    @Autowired
+    SysRoleMapper sysRoleMapper;
 
     @Override
     public SysUser getSysUser(String username , String password) {
@@ -54,6 +58,18 @@ public class SysUserServiceImpl implements ISysUserService{
     }
 
     /**
+     * 通过用户id获取用户角色集合
+     * @param userId
+     * @return
+     */
+    @Override
+    public Set<SysRole> getUserRoles(int userId) {
+        List<SysRole> roleList = sysRoleMapper.listUserRole(userId);
+        Set<SysRole> roles = new HashSet<>(roleList);
+        return roles;
+    }
+
+    /**
      * 获取用户权限
      * @param username
      * @return
@@ -61,7 +77,7 @@ public class SysUserServiceImpl implements ISysUserService{
     public Set<String> getPermissions(String username) {
         SysUser user = this.getUserInfoByUsername(username);
         Set<SysRole> roles = user.getRoles();
-        /** 创建一个HashSet来存放角色权限信息 **/
+        /* 创建一个HashSet来存放角色权限信息 */
         Set<String> permissions = new HashSet<String>();
         for(SysRole r : roles) {
             for (Permission p : r.getPermissions()){

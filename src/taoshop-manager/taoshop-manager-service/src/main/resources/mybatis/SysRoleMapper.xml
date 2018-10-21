@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.muses.taoshop.manager.mapper.SysRoleMapper">
+
+  <sql id="BaseColumn">
+    roleId, roleName, roleDesc, role
+  </sql>
+
+  <select id="listUserRole" parameterType="Integer" resultType="SysRole">
+        SELECT
+          r.*,
+          ur.userId
+        FROM
+          sys_user_role ur
+        LEFT JOIN sys_role r
+          ON r.roleId = ur.roleId
+        WHERE ur.userId IN (#{userId})
+  </select>
+
+</mapper>

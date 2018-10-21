@@ -13,4 +13,5 @@ package com.muses.taoshop.manager.service;
  * </pre>
  */
 public class MenuServiceImpl {
+
 }

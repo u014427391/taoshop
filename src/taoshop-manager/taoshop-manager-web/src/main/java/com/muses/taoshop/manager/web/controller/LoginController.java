@@ -7,6 +7,7 @@ import com.muses.taoshop.manager.entity.Menu;
 import com.muses.taoshop.manager.entity.Permission;
 import com.muses.taoshop.manager.entity.SysRole;
 import com.muses.taoshop.manager.entity.SysUser;
+import com.muses.taoshop.manager.service.ISysRoleService;
 import com.muses.taoshop.manager.service.ISysUserService;
 import com.muses.taoshop.manager.util.MenuTreeUtil;
 import org.apache.commons.lang3.StringUtils;
@@ -56,6 +57,8 @@ public class LoginController extends BaseController {
 
     @Autowired
     ISysUserService iSysUserService;
+    @Autowired
+    ISysRoleService iSysRoleService;
 
     @RequestMapping(value = "/toLogin")
     @GetMapping
@@ -137,13 +140,13 @@ public class LoginController extends BaseController {
     @RequestMapping(value="/toIndex")
     public ModelAndView toMain() throws AuthenticationException{
         ModelAndView mv = this.getModelAndView();
-        /**获取Shiro管理的Session**/
+        /* 获取Shiro管理的Session */
         Subject subject = SecurityUtils.getSubject();
         Session session = subject.getSession();
         SysUser user = (SysUser)session.getAttribute(Constants.SESSION_USER);
 
         if(user != null){
-            Set<SysRole> roles = user.getRoles();
+            Set<SysRole> roles = iSysUserService.getUserRoles(user.getId());
             Set<Permission> permissions = new HashSet<Permission>();
             if(!CollectionUtils.isEmpty(roles)) {
                 for (SysRole r : roles) {
@@ -151,7 +154,7 @@ public class LoginController extends BaseController {
                 }
             }
 
-            /**获取用户可以查看的菜单**/
+            /* 获取用户可以查看的菜单 */
             List<Menu> menuList = new ArrayList<Menu>();
             for(Permission p : permissions){
                 menuList.add(p.getMenu());
@@ -160,12 +163,12 @@ public class LoginController extends BaseController {
             MenuTreeUtil treeUtil = new MenuTreeUtil();
             List<Menu> treemenus= treeUtil.menuList(menuList);
 
-            String json = JSON.toJSONString(treemenus);
+//            String json = JSON.toJSONString(treemenus);
+//
+//			json = json.replaceAll("menuId","id").replaceAll("parentId","pId").
+//					replaceAll("menuName","name").replaceAll("hasSubMenu","checked");
 
-			json = json.replaceAll("menuId","id").replaceAll("parentId","pId").
-					replaceAll("menuName","name").replaceAll("hasSubMenu","checked");
-
-            mv.addObject("menus",json);
+            mv.addObject("menus",treemenus);
             mv.setViewName("admin/frame/index");
         }else{
             //会话失效，返回登录界面
@@ -175,7 +178,25 @@ public class LoginController extends BaseController {
         return mv;
     }
 
-
+    /**
+     * 注销登录
+     * @return
+     */
+    @RequestMapping(value="/logout")
+    public ModelAndView logout(){
+        ModelAndView mv = this.getModelAndView();
+        /* Shiro管理Session */
+        Subject sub = SecurityUtils.getSubject();
+        Session session = sub.getSession();
+        session.removeAttribute(Constants.SESSION_USER);
+        session.removeAttribute(Constants.SESSION_SECURITY_CODE);
+        /* Shiro销毁登录 */
+        Subject subject = SecurityUtils.getSubject();
+        subject.logout();
+        /* 返回后台系统登录界面 */
+        mv.setViewName("login");
+        return mv;
+    }
 
 
 }
