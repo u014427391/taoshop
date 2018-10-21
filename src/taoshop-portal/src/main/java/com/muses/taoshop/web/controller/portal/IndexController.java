@@ -49,6 +49,7 @@ public class IndexController extends BaseController{
      */
     @GetMapping(value = "/toIndex.do")
     public ModelAndView toIndex(){
+        info("跳转到门户网站");
         ModelAndView mv = this.getModelAndView();
         mv.setViewName("index");
         List<ItemPortal> items = iItemService.listItemPortal();

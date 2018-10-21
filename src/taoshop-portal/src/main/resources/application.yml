@@ -1,9 +1,10 @@
 server:
   port: 8081
-#logging:
-#  config: classpath:logback.xml
-#  level:
-#    com.muses.taoshop.*.mapper: trace
+logging:
+  config: classpath:logback_spring.xml
+  level:
+    com.muses.taoshop: debug
+  path: /data/logs
 
 spring:
   datasource:
