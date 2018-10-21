@@ -14,7 +14,7 @@
           sys_user_role ur
         LEFT JOIN sys_role r
           ON r.roleId = ur.roleId
-        WHERE ur.userId IN (#{userId})
+        WHERE ur.userId = #{userId}
   </select>
 
 </mapper>

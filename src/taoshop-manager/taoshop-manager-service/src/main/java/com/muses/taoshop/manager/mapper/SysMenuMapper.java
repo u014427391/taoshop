@@ -13,4 +13,5 @@ package com.muses.taoshop.manager.mapper;
  * </pre>
  */
 public interface SysMenuMapper {
+
 }

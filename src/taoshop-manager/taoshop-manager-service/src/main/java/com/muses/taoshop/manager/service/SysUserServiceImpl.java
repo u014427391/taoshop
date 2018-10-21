@@ -96,6 +96,7 @@ public class SysUserServiceImpl implements ISysUserService{
      * @return
      */
     @Override
+    @Deprecated
     public SysUser getUserInfoByUsername(String username) {
         return sysUserMapper.getUserInfoByUsername(username);
     }
