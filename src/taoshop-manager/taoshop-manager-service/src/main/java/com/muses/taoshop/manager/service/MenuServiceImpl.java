@@ -5,6 +5,8 @@ import com.muses.taoshop.manager.mapper.SysMenuMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * <pre>
  *  菜单管理业务接口
@@ -22,9 +24,23 @@ public class MenuServiceImpl implements IMenuService{
 
     @Autowired
     SysMenuMapper sysMenuMapper;
-
+    /**
+     * 根据权限id获取菜单
+     * @param permissionId
+     * @return
+     */
     @Override
     public Menu listMenu(int permissionId) {
         return sysMenuMapper.listMenu(permissionId);
+    }
+
+    /**
+     * 权限菜单获取，即根据用户角色获取用户可以查看的菜单
+     *
+     * @return
+     */
+    @Override
+    public List<Menu> listPermissionMenu(int userId) {
+        return sysMenuMapper.listPermissionMenu(userId);
     }
 }

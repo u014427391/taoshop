@@ -20,5 +20,8 @@ import java.util.List;
  */
 @MybatisRepository
 public interface SysMenuMapper {
+
     Menu listMenu(@Param("permissionId") int permissionId);
+
+    List<Menu> listPermissionMenu(@Param("userId")int userId);
 }

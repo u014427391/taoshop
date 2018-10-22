@@ -120,6 +120,7 @@ public class LoginController extends BaseController {
                             Subject sub = SecurityUtils.getSubject();
                             UsernamePasswordToken token = new UsernamePasswordToken(username,password);
                             sub.login(token);
+                            log.info("登录成功！");
                         }
                     }else{
                         //账号或者密码错误
@@ -145,12 +146,13 @@ public class LoginController extends BaseController {
      */
     @RequestMapping(value="/toIndex")
     public ModelAndView toMain() throws AuthenticationException{
+        log.info("跳转到系统主页=>");
         ModelAndView mv = this.getModelAndView();
-        /* 获取Shiro管理的Session */
+        /* E1：获取Shiro管理的用户Session */
         Subject subject = SecurityUtils.getSubject();
         Session session = subject.getSession();
         SysUser user = (SysUser)session.getAttribute(Constants.SESSION_USER);
-
+        /* E2：获取用户具有的角色权限 */
         if(user != null){
             Set<SysRole> roles = iSysRoleService.getUserRoles(user.getId());
             Set<Permission> permissions = new HashSet<Permission>();
@@ -167,17 +169,13 @@ public class LoginController extends BaseController {
                 Menu menu = iMenuService.listMenu(p.getId());
                 menuList.add(menu);
             }
-
+            /* E3：获取权限对应的菜单信息*/
+            //TODO 方法二: 直接通过SQL获取权限菜单
+            //menuList = iMenuService.listPermissionMenu(user.getId());
+            log.info("用户可以查看的菜单个数:{}"+menuList.size());
             MenuTreeUtil treeUtil = new MenuTreeUtil();
-            log.info("用户可以查看的菜单列表:{}"+menuList.toArray());
             if(!CollectionUtils.isEmpty(menuList)) {
                 List<Menu> treemenus= treeUtil.menuList(menuList);
-
-//            String json = JSON.toJSONString(treemenus);
-//
-//			json = json.replaceAll("menuId","id").replaceAll("parentId","pId").
-//					replaceAll("menuName","name").replaceAll("hasSubMenu","checked");
-
                 mv.addObject("menus",treemenus);
                 mv.setViewName("admin/frame/index");
             }
