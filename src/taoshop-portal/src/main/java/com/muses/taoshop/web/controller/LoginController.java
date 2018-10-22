@@ -61,7 +61,7 @@ public class LoginController extends BaseController{
             String username = logindata[0];
             String password = logindata[1];
             String code = logindata[2];
-            //TODO 先不要验证码校验
+            //先不要验证码校验
             //if(!code.equalsIgnoreCase(codeSession)){//验证码校验
                // flag = "codeError";
             //}else{ //账号密码校验
