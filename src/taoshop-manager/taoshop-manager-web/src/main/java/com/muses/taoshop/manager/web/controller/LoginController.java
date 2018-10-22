@@ -7,6 +7,7 @@ import com.muses.taoshop.manager.entity.Menu;
 import com.muses.taoshop.manager.entity.Permission;
 import com.muses.taoshop.manager.entity.SysRole;
 import com.muses.taoshop.manager.entity.SysUser;
+import com.muses.taoshop.manager.service.IMenuService;
 import com.muses.taoshop.manager.service.ISysPermissionService;
 import com.muses.taoshop.manager.service.ISysRoleService;
 import com.muses.taoshop.manager.service.ISysUserService;
@@ -62,6 +63,8 @@ public class LoginController extends BaseController {
     ISysRoleService iSysRoleService;
     @Autowired
     ISysPermissionService iSysPermissionService;
+    @Autowired
+    IMenuService iMenuService;
 
     @RequestMapping(value = "/toLogin")
     @GetMapping
@@ -161,7 +164,8 @@ public class LoginController extends BaseController {
             /* 获取用户可以查看的菜单 */
             List<Menu> menuList = new ArrayList<Menu>();
             for(Permission p : permissions){
-                menuList.add(p.getMenu());
+                Menu menu = iMenuService.listMenu(p.getId());
+                menuList.add(menu);
             }
 
             MenuTreeUtil treeUtil = new MenuTreeUtil();
