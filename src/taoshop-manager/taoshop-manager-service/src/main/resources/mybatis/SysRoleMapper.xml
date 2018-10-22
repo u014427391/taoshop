@@ -8,7 +8,7 @@
 
   <select id="listUserRole" parameterType="Integer" resultType="SysRole">
         SELECT
-          r.*,
+          r.*
         FROM
           sys_user_role ur
         LEFT JOIN sys_role r
