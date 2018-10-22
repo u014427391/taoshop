@@ -52,5 +52,6 @@ public interface ISysUserService {
      * @param userId
      * @return
      */
+    @Deprecated
     Set<SysRole> getUserRoles(int userId);
 }

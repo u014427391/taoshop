@@ -5,7 +5,9 @@ import com.muses.taoshop.manager.mapper.SysRoleMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * <pre>
@@ -26,13 +28,15 @@ public class SysRoleServiceImpl implements ISysRoleService {
     SysRoleMapper sysRoleMapper;
 
     /**
-     * 获取所有用户角色
+     * 通过用户id获取用户角色
      *
      * @param userId
      * @return
      */
     @Override
-    public List<SysRole> listUserRole(int userId) {
-        return sysRoleMapper.listUserRole(userId);
+    public Set<SysRole> getUserRoles(int userId) {
+        List<SysRole> roleList = sysRoleMapper.listUserRole(userId);
+        Set<SysRole> roles = new HashSet<>(roleList);
+        return roles;
     }
 }

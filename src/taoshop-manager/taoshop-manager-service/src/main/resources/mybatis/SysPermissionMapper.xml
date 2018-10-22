@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.muses.taoshop.manager.mapper.SysPermissionMapper">
+
+  <select id="listRolePermission" parameterType="Integer" resultType="Permission">
+        SELECT
+          p.*
+        FROM
+          sys_role_permission rp
+          LEFT JOIN sys_permission p
+            ON p.id = rp.permissionId
+        WHERE rp.roleId = #{roleId}
+  </select>
+
+</mapper>

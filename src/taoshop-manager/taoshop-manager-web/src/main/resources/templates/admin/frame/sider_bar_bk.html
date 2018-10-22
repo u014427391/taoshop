@@ -15,8 +15,7 @@
                 </a>
             </h3>
             <ul class="sider-nav-s">
-                <li><a href="#">系统用户管理</a></li>
-                <li><a href="#">系统角色管理</a></li>
+                <li th:each="subM : ${menu.subMenu}"><a href="#" th:text="${subM.menuName}">系统用户管理</a></li>
             </ul>
         </li>
 
