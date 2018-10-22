@@ -164,13 +164,13 @@ public class LoginController extends BaseController {
             }
             log.info("权限集合:{}"+permissions.toString());
             List<Menu> menuList = new ArrayList<Menu>();
-//            for(Permission p : permissions){
-//                Menu menu = iMenuService.listMenu(p.getId());
-//                menuList.add(menu);
-//            }
+            for(Permission p : permissions){
+                Menu menu = iMenuService.listMenu(p.getId());
+                menuList.add(menu);
+            }
             /* E3：获取权限对应的菜单信息*/
             //方法二: 直接通过SQL获取权限菜单
-            menuList = iMenuService.listPermissionMenu(user.getId());
+            //menuList = iMenuService.listPermissionMenu(user.getId());
             log.info("用户可以查看的菜单个数:{}"+menuList.size());
             MenuTreeUtil treeUtil = new MenuTreeUtil();
             if(!CollectionUtils.isEmpty(menuList)) {
