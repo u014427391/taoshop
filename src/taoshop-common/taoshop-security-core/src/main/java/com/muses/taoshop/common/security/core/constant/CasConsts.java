@@ -23,6 +23,6 @@ public class CasConsts {
     public static final String CAS_SERVER_LOGOUT_URL = CAS_SERVER_LOGIN_URL + "/logout";
 
     //登录地址
-    public static final String loginUrl = CAS_SERVER_LOGIN_URL + "?service=" +
+    public static final String loginUrl = CAS_SERVER_LOGIN_URL + "?service=" ;
 
 }
