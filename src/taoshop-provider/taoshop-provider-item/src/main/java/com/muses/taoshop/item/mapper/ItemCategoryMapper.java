@@ -1,8 +1,7 @@
 package com.muses.taoshop.item.mapper;
 
 import com.muses.taoshop.item.entity.ItemCategory;
-import com.muses.taoshop.item.entity.ItemDto;
-import com.muses.taoshop.item.entity.ItemVo;
+import com.muses.taoshop.item.entity.ItemList;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -14,5 +13,5 @@ public interface ItemCategoryMapper {
 
     List<ItemCategory> listCategory();
 
-    List<ItemVo> listItemByCategoryId(@Param("categoryId") int categoryId);
+    List<ItemList> listItemByCategoryId(@Param("categoryId") int categoryId);
 }

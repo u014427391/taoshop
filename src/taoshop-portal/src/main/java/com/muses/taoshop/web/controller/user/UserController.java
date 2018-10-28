@@ -2,6 +2,7 @@ package com.muses.taoshop.web.controller.user;
 
 import com.muses.taoshop.web.controller.BaseController;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -25,7 +26,7 @@ public class UserController extends BaseController{
      * 跳转用户中心
      * @return
      */
-    @RequestMapping("/toUserCenter")
+    @GetMapping("/toUserCenter")
     public ModelAndView toUserCenter(){
         ModelAndView mv = this.getModelAndView();
         mv.setViewName("user/portal_user_center");
