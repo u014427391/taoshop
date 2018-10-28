@@ -1,6 +1,8 @@
 package com.muses.taoshop.item.service;
 
 import com.muses.taoshop.item.entity.ItemCategory;
+import com.muses.taoshop.item.entity.ItemDto;
+import com.muses.taoshop.item.entity.ItemVo;
 
 import java.util.List;
 
@@ -28,4 +30,10 @@ public interface IItemCategoryService {
      * @return
      */
     List<ItemCategory> listCategory();
+
+    /**
+     * 根据品目id获取商品信息
+     * @return
+     */
+    List<ItemVo> listItemByCategoryId(int categoryId);
 }
