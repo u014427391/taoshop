@@ -1,6 +1,8 @@
 package com.muses.taoshop.item.service;
 
 import com.muses.taoshop.item.entity.ItemCategory;
+import com.muses.taoshop.item.entity.ItemDto;
+import com.muses.taoshop.item.entity.ItemVo;
 import com.muses.taoshop.item.mapper.ItemCategoryMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -42,6 +44,16 @@ public class ItemCategoryServiceImpl implements IItemCategoryService{
     @Override
     public List<ItemCategory> listCategory() {
         return itemCategoryMapper.listCategory();
+    }
+
+    /**
+     * 根据品目id获取商品信息
+     *
+     * @return
+     */
+    @Override
+    public List<ItemVo> listItemByCategoryId(int categoryId) {
+        return itemCategoryMapper.listItemByCategoryId(categoryId);
     }
 
 
