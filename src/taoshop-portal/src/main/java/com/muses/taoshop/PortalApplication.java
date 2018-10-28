@@ -7,6 +7,7 @@ import org.springframework.boot.*;
 import org.springframework.boot.autoconfigure.*;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
@@ -31,15 +32,16 @@ import org.springframework.web.bind.annotation.*;
 @EnableCaching
 @EnableAsync//开启对异步方法的支持
 @EnableAutoConfiguration
+@ServletComponentScan
 @SpringBootApplication(exclude={DataSourceAutoConfiguration.class,
         MybatisAutoConfiguration.class,
         DataSourceTransactionManagerAutoConfiguration.class})
-public class Application {
+public class PortalApplication {
 
     @RequestMapping("/")
     @ResponseBody
     String home() {
-        return "Hello World!";
+        return "portal web!";
     }
 
     @RequestMapping("/doTest")
@@ -51,6 +53,6 @@ public class Application {
     }
 
     public static void main(String[] args) throws Exception {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(PortalApplication.class, args);
     }
 }

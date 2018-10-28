@@ -140,7 +140,7 @@ public class SysAccessControllerFilter extends AccessControlFilter{
     private void out(ServletResponse hresponse, Map<String, String> resultMap)
             throws IOException {
         try {
-            hresponse.setCharacterEncoding("UTF-8");
+            hresponse.setContentType("UTF-8");
             PrintWriter out = hresponse.getWriter();
             out.println(JSON.toJSON(resultMap));
             out.flush();
