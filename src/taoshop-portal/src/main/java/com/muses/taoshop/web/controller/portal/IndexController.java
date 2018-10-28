@@ -41,8 +41,6 @@ public class IndexController extends BaseController{
     @Autowired
     IItemCategoryService iItemCategoryService;
 
-    //@RequestMapping(value = "/toIndex" ,method = RequestMethod.GET)
-
     /**
      * 跳转到门户网站
      * @return

@@ -31,4 +31,19 @@
         <include refid="BaseColumnList" />
         FROM item_category t
     </select>
+    <!-- 根据品目id获取商品信息-->
+    <select id="listItemByCategoryId" resultType="ItemVo">
+        SELECT
+          spu.spu_code,
+          spu.item_name,
+          spu.category_id,
+          spu.brand_id,
+          spu.shop_id,
+          ic.category_name
+        FROM
+          item_spu spu
+          LEFT JOIN item_category ic
+            ON ic.id = spu.category_id
+        WHERE spu.category_id = #{categoryId}
+    </select>
 </mapper>

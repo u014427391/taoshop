@@ -1,0 +1,273 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>无标题文档</title>
+  <link th:href="@{/static/css/public.css}" rel="stylesheet" type="text/css" />
+  <link th:href="@{/static/css/category.css}" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" th:src="@{/static/js/jquery-1.3.2.min.js}"></script>
+  <script type="text/javascript" th:src="@{/static/js/html5.js}"></script>
+  <script type="text/javascript" th:src="@{/static/js/jqzoom.js}"></script>
+</head>
+<body>
+<!--header-->
+<header class="header">
+  <!--topBar-->
+  <div class="topBar" th:replace="/top_bar :: .topBar"></div>
+  <!--//topBar-->
+  <!--headerMain-->
+  <div class="headerMain layout clearfix" th:replace="/header_main :: .headerMain"></div>
+  <!--//headerMain-->
+  <!--headerNav-->
+  <div class="headerNav" th:replace="/header_nav :: .headerNav"></div>
+  <!--//headerNav-->
+</header>
+<!--//header-->
+<!--container-->
+<div class="container">
+  <div class="layout">
+    <h2 class="phoneSearch-title">手机汇</h2>
+    <!--搜索条件-->
+    <div class="phoneSearch-filter" id="phoneSearch_filter">
+      <div class="ft">
+        <a href="javascript:;" class="wrapper-tgr-click">
+          更多<span class="more-expand"></span>
+        </a>
+      </div>
+      <div class="phoneSearch-filter-item">
+        <h3>品牌：</h3>
+        <p id="brand">
+          <a href="#" class="selected">全部</a>
+          <a href="#">Apple</a>
+          <a href="#">三星</a>
+          <a href="#">HTC</a>
+          <a href="#">华为</a>
+          <a href="#">中兴</a>
+          <a href="#">联想</a>
+        </p>
+      </div>
+      <div class="phoneSearch-filter-item">
+        <h3>价格：</h3>
+        <p>
+          <a href="#">全部</a>
+          <a href="#">0-400</a>
+          <a href="#">400-800</a>
+          <a href="#">800-1500</a>
+          <a href="#">1500-3000</a>
+          <a href="#">3000-4500</a>
+          <a href="#">4500以上</a>
+        </p>
+      </div>
+      <div class="phoneSearch-filter-item" style="display:none;">
+        <h3>外观：</h3>
+        <p>
+          <a href="#">全部</a>
+          <a href="#">直板</a>
+          <a href="#">翻盖</a>
+        </p>
+      </div>
+      <div class="phoneSearch-filter-item" style="display:none;">
+        <h3>特色：</h3>
+        <p>
+          <a href="#">全部</a>
+          <a href="#">多核手机</a>
+          <a href="#">老人儿童</a>
+          <a href="#">千元大屏</a>
+          <a href="#">双网双待</a>
+          <a href="#">尾货清仓</a>
+        </p>
+      </div>
+      <div class="phoneSearch-filter-item" style="display:none;">
+        <h3>尺寸：</h3>
+        <p>
+          <a href="#">全部</a>
+          <a href="#">2.0英寸以下</a>
+          <a href="#">2.-3.5英寸</a>
+          <a href="#">3.6-4.5英寸</a>
+          <a href="#">4.5以上</a>
+        </p>
+      </div>
+      <div class="phoneSearch-filter-item" style="display:none;">
+        <h3>CPU：</h3>
+        <p>
+          <a href="#">全部</a>
+          <a href="#">单核</a>
+          <a href="#">双核</a>
+          <a href="#">四核</a>
+          <a href="#">八核</a>
+          <a href="#">五核</a>
+        </p>
+      </div>
+      <div class="phoneSearch-filter-item" style="display:none;">
+        <h3>像素：</h3>
+        <p>
+          <a href="#">全部</a>
+          <a href="#">300万及以下</a>
+          <a href="#">301-500万</a>
+          <a href="#">501-800万</a>
+          <a href="#">800万以上摄像头</a>
+        </p>
+      </div>
+    </div>
+    <script>
+	 $(function(){
+	   var o = $("#phoneSearch_filter");
+	   o.find(".ft").toggle(function(){
+		 $('#phoneSearch_filter .phoneSearch-filter-item:gt(1)').show();
+		 $(this).find(".more-expand").css("background-position","0 -7px");
+	   },function(){
+		 $('#phoneSearch_filter .phoneSearch-filter-item:gt(1)').hide();
+		 $(this).find(".more-expand").css("background-position","0 0");
+	   });
+     });
+	</script>
+    <!--//搜索条件-->
+    <!--排序-->
+    <div class="reorder clearfix m10-b">
+      <div class="reorder-wrapper">
+        <a class="selected">最新</a>
+        <a>价格从高到低</a>
+        <a>价格从低到高</a>
+      </div>
+      <div class="reorder-styles">
+        <label><input type="checkbox" /> 仅显示有库存的机型</label>
+      </div>
+    </div>
+    <!--//排序-->
+    <!--商品列表-->
+    <div class="phoneList clearfix m10-b">
+      <div class="phoneList-wrap">
+      <div class="phoneListItem">
+        <p class="item-img">
+          <a href="#"><img th:src="@{/static/picture/img_phoneList_240x240.jpg}" /></a>
+        </p>
+        <p class="item-name">
+          <a href="#">苹果（APPLE）iPhone 4S 8G版</a>
+        </p>
+        <p class="item-info">北京电信购机</p>
+        <p class="item-price">￥<em>2098</em></p>
+        <p class="item-btn">
+          <a href="#" class="btn btn-gray">加入购物车</a>
+          <a href="#" class="btn btn-red">立即购买</a>
+        </p>
+      </div>
+      <div class="phoneListItem">
+        <p class="item-img">
+          <a href="#"><img th:src="@{/static/picture/img_phoneList_240x240.jpg}" /></a>
+        </p>
+        <p class="item-name">
+          <a href="#">苹果（APPLE）iPhone 4S 8G版</a>
+        </p>
+        <p class="item-info">北京电信购机</p>
+        <p class="item-price">￥<em>2098</em></p>
+        <p class="item-btn">
+          <a href="#" class="btn btn-gray">加入购物车</a>
+          <a href="#" class="btn btn-red">立即购买</a>
+        </p>
+      </div>
+      <div class="phoneListItem">
+        <p class="item-img">
+          <a href="#"><img th:src="@{/static/picture/img_phoneList_240x240.jpg}" /></a>
+        </p>
+        <p class="item-name">
+          <a href="#">苹果（APPLE）iPhone 4S 8G版</a>
+        </p>
+        <p class="item-info">北京电信购机</p>
+        <p class="item-price">￥<em>2098</em></p>
+        <p class="item-btn">
+          <a href="#" class="btn btn-gray">加入购物车</a>
+          <a href="#" class="btn btn-red">立即购买</a>
+        </p>
+      </div>
+      <div class="phoneListItem">
+        <p class="item-img">
+          <a href="#"><img th:src="@{/static/picture/img_phoneList_240x240.jpg}" /></a>
+        </p>
+        <p class="item-name">
+          <a href="#">苹果（APPLE）iPhone 4S 8G版</a>
+        </p>
+        <p class="item-info">北京电信购机</p>
+        <p class="item-price">￥<em>2098</em></p>
+        <p class="item-btn">
+          <a href="#" class="btn btn-gray">加入购物车</a>
+          <a href="#" class="btn btn-red">立即购买</a>
+        </p>
+      </div>
+      <div class="phoneListItem">
+        <p class="item-img">
+          <a href="#"><img th:src="@{/static/picture/img_phoneList_240x240.jpg}" /></a>
+        </p>
+        <p class="item-name">
+          <a href="#">苹果（APPLE）iPhone 4S 8G版</a>
+        </p>
+        <p class="item-info">北京电信购机</p>
+        <p class="item-price">￥<em>2098</em></p>
+        <p class="item-btn">
+          <a href="#" class="btn btn-gray">加入购物车</a>
+          <a href="#" class="btn btn-red">立即购买</a>
+        </p>
+      </div>
+      <div class="phoneListItem">
+        <p class="item-img">
+          <a href="#"><img th:src="@{/static/picture/img_phoneList_240x240.jpg}" /></a>
+        </p>
+        <p class="item-name">
+          <a href="#">苹果（APPLE）iPhone 4S 8G版</a>
+        </p>
+        <p class="item-info">北京电信购机</p>
+        <p class="item-price">￥<em>2098</em></p>
+        <p class="item-btn">
+          <a href="#" class="btn btn-gray">加入购物车</a>
+          <a href="#" class="btn btn-red">立即购买</a>
+        </p>
+      </div>
+      <div class="phoneListItem">
+        <p class="item-img">
+          <a href="#"><img th:src="@{/static/picture/img_phoneList_240x240.jpg}" /></a>
+        </p>
+        <p class="item-name">
+          <a href="#">苹果（APPLE）iPhone 4S 8G版</a>
+        </p>
+        <p class="item-info">北京电信购机</p>
+        <p class="item-price">￥<em>2098</em></p>
+        <p class="item-btn">
+          <a href="#" class="btn btn-gray">加入购物车</a>
+          <a href="#" class="btn btn-red">立即购买</a>
+        </p>
+      </div>
+      <div class="phoneListItem">
+        <p class="item-img">
+          <a href="#"><img th:src="@{/static/picture/img_phoneList_240x240.jpg}" /></a>
+        </p>
+        <p class="item-name">
+          <a href="#">苹果（APPLE）iPhone 4S 8G版</a>
+        </p>
+        <p class="item-info">北京电信购机</p>
+        <p class="item-price">￥<em>2098</em></p>
+        <p class="item-btn">
+          <a href="#" class="btn btn-gray">加入购物车</a>
+          <a href="#" class="btn btn-red">立即购买</a>
+        </p>
+      </div>
+      </div>
+    </div>
+    <!--//商品列表-->
+    <!--翻页-->
+    <div class="pages m20-b">
+      <a class="page-action page-prev-unable" href="javascript:;"><span><b class="arrow"></b>上一页</span></a>
+      <a class="page-num selected" href="javascript:;"><span>1</span></a>
+      <a class="page-num" href="javascript:;"><span>2</span></a>
+      <a class="page-num" href="javascript:;"><span>3</span></a>
+      ...
+      <a class="page-num" href="javascript:;"><span>66</span></a>
+      <a class="page-action page-next" href="javascript:;"><span><b class="arrow"></b>下一页</span></a>
+    </div>
+    <!--//翻页-->
+  </div>
+</div>
+<!--//container-->
+<!--footer-->
+<footer class="footer" th:replace="/footer :: .footer"></footer>
+<!--//footer-->
+</body>
+</html>
