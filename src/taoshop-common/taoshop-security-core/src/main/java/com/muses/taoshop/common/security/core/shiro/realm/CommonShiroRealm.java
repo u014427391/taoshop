@@ -19,7 +19,7 @@ import org.apache.shiro.subject.PrincipalCollection;
  * @author Nicky
  * @date 2017年3月12日
  */
-public class ShiroRealm extends AuthorizingRealm {
+public class CommonShiroRealm extends AuthorizingRealm {
 
 	/**注解引入业务类**/
 //	@Resource
