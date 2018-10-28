@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * <pre>
- *  商品详情DTO类
+ *  商品详情VO类
  * </pre>
  *
  * @author nicky
