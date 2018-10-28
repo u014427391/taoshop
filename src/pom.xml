@@ -43,6 +43,7 @@
     <module>taoshop-portal</module>
     <module>taoshop-cms</module>
     <module>taoshop-order</module>
+      <module>taoshop-sso</module>
   </modules>
 
   <build>
