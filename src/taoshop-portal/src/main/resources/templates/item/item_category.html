@@ -135,115 +135,17 @@
     </div>
     <!--//排序-->
     <!--商品列表-->
-    <div class="phoneList clearfix m10-b">
+    <div class="phoneList clearfix m10-b" th:each="i : ${items}">
       <div class="phoneList-wrap">
       <div class="phoneListItem">
         <p class="item-img">
-          <a href="#"><img th:src="@{/static/picture/img_phoneList_240x240.jpg}" /></a>
+          <a href="#"><img th:src="${i.imgPath}" /></a>
         </p>
         <p class="item-name">
-          <a href="#">苹果（APPLE）iPhone 4S 8G版</a>
+          <a href="#" th:text="${i.itemName}">苹果（APPLE）iPhone 4S 8G版</a>
         </p>
         <p class="item-info">北京电信购机</p>
-        <p class="item-price">￥<em>2098</em></p>
-        <p class="item-btn">
-          <a href="#" class="btn btn-gray">加入购物车</a>
-          <a href="#" class="btn btn-red">立即购买</a>
-        </p>
-      </div>
-      <div class="phoneListItem">
-        <p class="item-img">
-          <a href="#"><img th:src="@{/static/picture/img_phoneList_240x240.jpg}" /></a>
-        </p>
-        <p class="item-name">
-          <a href="#">苹果（APPLE）iPhone 4S 8G版</a>
-        </p>
-        <p class="item-info">北京电信购机</p>
-        <p class="item-price">￥<em>2098</em></p>
-        <p class="item-btn">
-          <a href="#" class="btn btn-gray">加入购物车</a>
-          <a href="#" class="btn btn-red">立即购买</a>
-        </p>
-      </div>
-      <div class="phoneListItem">
-        <p class="item-img">
-          <a href="#"><img th:src="@{/static/picture/img_phoneList_240x240.jpg}" /></a>
-        </p>
-        <p class="item-name">
-          <a href="#">苹果（APPLE）iPhone 4S 8G版</a>
-        </p>
-        <p class="item-info">北京电信购机</p>
-        <p class="item-price">￥<em>2098</em></p>
-        <p class="item-btn">
-          <a href="#" class="btn btn-gray">加入购物车</a>
-          <a href="#" class="btn btn-red">立即购买</a>
-        </p>
-      </div>
-      <div class="phoneListItem">
-        <p class="item-img">
-          <a href="#"><img th:src="@{/static/picture/img_phoneList_240x240.jpg}" /></a>
-        </p>
-        <p class="item-name">
-          <a href="#">苹果（APPLE）iPhone 4S 8G版</a>
-        </p>
-        <p class="item-info">北京电信购机</p>
-        <p class="item-price">￥<em>2098</em></p>
-        <p class="item-btn">
-          <a href="#" class="btn btn-gray">加入购物车</a>
-          <a href="#" class="btn btn-red">立即购买</a>
-        </p>
-      </div>
-      <div class="phoneListItem">
-        <p class="item-img">
-          <a href="#"><img th:src="@{/static/picture/img_phoneList_240x240.jpg}" /></a>
-        </p>
-        <p class="item-name">
-          <a href="#">苹果（APPLE）iPhone 4S 8G版</a>
-        </p>
-        <p class="item-info">北京电信购机</p>
-        <p class="item-price">￥<em>2098</em></p>
-        <p class="item-btn">
-          <a href="#" class="btn btn-gray">加入购物车</a>
-          <a href="#" class="btn btn-red">立即购买</a>
-        </p>
-      </div>
-      <div class="phoneListItem">
-        <p class="item-img">
-          <a href="#"><img th:src="@{/static/picture/img_phoneList_240x240.jpg}" /></a>
-        </p>
-        <p class="item-name">
-          <a href="#">苹果（APPLE）iPhone 4S 8G版</a>
-        </p>
-        <p class="item-info">北京电信购机</p>
-        <p class="item-price">￥<em>2098</em></p>
-        <p class="item-btn">
-          <a href="#" class="btn btn-gray">加入购物车</a>
-          <a href="#" class="btn btn-red">立即购买</a>
-        </p>
-      </div>
-      <div class="phoneListItem">
-        <p class="item-img">
-          <a href="#"><img th:src="@{/static/picture/img_phoneList_240x240.jpg}" /></a>
-        </p>
-        <p class="item-name">
-          <a href="#">苹果（APPLE）iPhone 4S 8G版</a>
-        </p>
-        <p class="item-info">北京电信购机</p>
-        <p class="item-price">￥<em>2098</em></p>
-        <p class="item-btn">
-          <a href="#" class="btn btn-gray">加入购物车</a>
-          <a href="#" class="btn btn-red">立即购买</a>
-        </p>
-      </div>
-      <div class="phoneListItem">
-        <p class="item-img">
-          <a href="#"><img th:src="@{/static/picture/img_phoneList_240x240.jpg}" /></a>
-        </p>
-        <p class="item-name">
-          <a href="#">苹果（APPLE）iPhone 4S 8G版</a>
-        </p>
-        <p class="item-info">北京电信购机</p>
-        <p class="item-price">￥<em>2098</em></p>
+        <p class="item-price" th:text="${'￥'+i.skuPrice}">￥<em>2098</em></p>
         <p class="item-btn">
           <a href="#" class="btn btn-gray">加入购物车</a>
           <a href="#" class="btn btn-red">立即购买</a>

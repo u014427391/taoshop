@@ -15,29 +15,26 @@ import lombok.Data;
  * </pre>
  */
 @Data
-public class ItemVo {
+public class ItemList {
     /**
-     * spu编号
+     * spu id
      */
-    private String spuCode;
+    private Long spuId;
     /**
      * 商品名称
      */
     private String itemName;
+
     /**
-     * 品类id
+     * sku id
      */
-    private Long categoryId;
+    private Long skuId;
     /**
-     * 品牌id
+     * 商品价钱
      */
-    private Long brandId;
+    private Long skuPrice;
     /**
-     * 商家id
+     * 图片路径
      */
-    private Long shopId;
-    /**
-     * 品目名称
-     */
-    private String categoryName;
+    private String imgPath;
 }
