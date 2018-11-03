@@ -113,7 +113,7 @@ taoshop使用Apache2.0开源协议
 ![Image text](https://github.com/u014427391/taoshop/raw/master/screenshot/订单管理.png)
 
 
-### 附录
+## 附录
 为了帮助学习者更好地理解代码，下面给出自己写的一些博客链接
 
 [CAS单点登录简单介绍](https://blog.csdn.net/u014427391/article/details/82083995)
@@ -121,6 +121,12 @@ taoshop使用Apache2.0开源协议
 [RocketMQ入门手册](https://blog.csdn.net/u014427391/article/details/79914331)
 
 [Apache Lucene全局搜索引擎入门教程](https://blog.csdn.net/u014427391/article/details/80006401)
+
+### SpringBoot
+[电商门户网站商品品类多级联动SpringBoot+Thymeleaf实现](https://blog.csdn.net/u014427391/article/details/83685901)
+
+### Mybatis
+[Mybatis+Thymeleaf开发遇到的几个问题笔录](https://blog.csdn.net/u014427391/article/details/83686014)
 
 ### 缓存
 [Redis学习笔记之基本数据结构](https://blog.csdn.net/u014427391/article/details/82860694)
