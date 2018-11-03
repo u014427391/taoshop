@@ -1,4 +1,4 @@
-package com.muses.taoshop.common.security.core.constant;
+package com.muses.taoshop.common.cas.constant;
 
 /**
  * <pre>

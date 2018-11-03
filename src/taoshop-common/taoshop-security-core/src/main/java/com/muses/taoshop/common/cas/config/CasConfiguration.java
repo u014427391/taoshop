@@ -1,4 +1,4 @@
-package com.muses.taoshop.common.security.core.shiro.config;
+package com.muses.taoshop.common.cas.config;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,9 +17,9 @@ import org.springframework.context.annotation.Configuration;
  * </pre>
  */
 @Configuration
-public class ShiroCasConfiguration {
+public class CasConfiguration {
 
-    private static final Logger log = LoggerFactory.getLogger(ShiroCasConfiguration.class);
+    private static final Logger log = LoggerFactory.getLogger(CasConfiguration.class);
 
 
 }
