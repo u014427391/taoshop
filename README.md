@@ -115,12 +115,17 @@ taoshop使用Apache2.0开源协议
 
 ## 附录
 为了帮助学习者更好地理解代码，下面给出自己写的一些博客链接
-
+### 单点登录
 [CAS单点登录简单介绍](https://blog.csdn.net/u014427391/article/details/82083995)
 
+### 消息队列
 [RocketMQ入门手册](https://blog.csdn.net/u014427391/article/details/79914331)
 
+### 搜索引擎
 [Apache Lucene全局搜索引擎入门教程](https://blog.csdn.net/u014427391/article/details/80006401)
+
+### Dubbo
+[Dubbo学习笔记](https://blog.csdn.net/u014427391/article/details/83716884)
 
 ### SpringBoot
 [电商门户网站商品品类多级联动SpringBoot+Thymeleaf实现](https://blog.csdn.net/u014427391/article/details/83685901)
