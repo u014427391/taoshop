@@ -1,7 +1,9 @@
 package com.muses.taoshop.order.web.controller;
 
 
-import org.apache.log4j.Logger;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.servlet.ModelAndView;
@@ -21,7 +23,7 @@ import javax.servlet.http.HttpServletRequest;
  * </pre>
  */
 public class BaseController {
-    public Logger log = Logger.getLogger(getClass());
+    public Logger log = LoggerFactory.getLogger(BaseController.class);
 
     public void debug(String message , Exception e){
         log.debug(message , e);
