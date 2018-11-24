@@ -20,7 +20,6 @@
     </modules>
     <packaging>pom</packaging>
 
-    <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 
     <distributionManagement>
