@@ -1,7 +1,7 @@
 server:
   port: 8081
 #logging:
-#  config: classpath:logback_spring.xml
+#  config: classpath:logback_spring.xml.bat
 #  level:
 #    com.muses.taoshop: debug
 #  path: /data/logs
