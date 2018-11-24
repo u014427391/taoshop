@@ -15,7 +15,7 @@ import java.util.Date;
 
 /**
  * <pre>
- *  TODO 类说明
+ *  类型转换 Long => Date
  * </pre>
  *
  * @author nicky

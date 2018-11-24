@@ -9,7 +9,7 @@ import java.io.IOException;
 
 /**
  * <pre>
- *  TODO 类说明
+ *  测试类
  * </pre>
  *
  * @author nicky
