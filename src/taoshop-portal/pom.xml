@@ -35,6 +35,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-logging</artifactId>
         </dependency>
+        <!-- thymeleaf-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
 
         <!-- 商品信息服务-->
         <dependency>
@@ -54,15 +59,7 @@
             <artifactId>taoshop-common-core</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-        <!--<dependency>
-            <groupId>com.muses.taoshop.common</groupId>
-            <artifactId>taoshop-security-core</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
-        </dependency>
+
 
         <!-- Apache POI -->
         <dependency>
