@@ -1,3 +1,5 @@
+
+
 # 电子商务项目
 ## 电商项目简介
 电子商务项目[taoshop](https://github.com/u014427391/taoshop)</br>
@@ -185,34 +187,30 @@ Minitor：统计服务调用次数和时间的监控中心
 ## 博客记录
 为了帮助学习者更好地理解代码，下面给出自己写的一些博客链接
 ### 单点登录
-[CAS单点登录简单介绍](https://blog.csdn.net/u014427391/article/details/82083995)
+* [CAS单点登录简单介绍](https://blog.csdn.net/u014427391/article/details/82083995)
 
 ### 消息队列
-[RocketMQ入门手册](https://blog.csdn.net/u014427391/article/details/79914331)
+* [RocketMQ入门手册](https://blog.csdn.net/u014427391/article/details/79914331)
 
 ### 搜索引擎
-[Apache Lucene全局搜索引擎入门教程](https://blog.csdn.net/u014427391/article/details/80006401)
+* [Apache Lucene全局搜索引擎入门教程](https://blog.csdn.net/u014427391/article/details/80006401)
 
 ### Dubbo
-[Dubbo学习笔记](https://blog.csdn.net/u014427391/article/details/83716884)
-
-[SpringBoot+Dubbo搭建微服务](https://blog.csdn.net/u014427391/article/details/84455282)
+* [Dubbo学习笔记](https://blog.csdn.net/u014427391/article/details/83716884)
+* [SpringBoot+Dubbo搭建微服务](https://blog.csdn.net/u014427391/article/details/84455282)
 
 ### SpringBoot
-[电商门户网站商品品类多级联动SpringBoot+Thymeleaf实现](https://blog.csdn.net/u014427391/article/details/83685901)
+* [电商门户网站商品品类多级联动SpringBoot+Thymeleaf实现](https://blog.csdn.net/u014427391/article/details/83685901)
 
 ### Mybatis
-[Mybatis+Thymeleaf开发遇到的几个问题笔录](https://blog.csdn.net/u014427391/article/details/83686014)
+* [Mybatis+Thymeleaf开发遇到的几个问题笔录](https://blog.csdn.net/u014427391/article/details/83686014)
 
 ### 缓存
-[Redis学习笔记之基本数据结构](https://blog.csdn.net/u014427391/article/details/82860694)
-
-[SpringBoot集成Redis实现缓存处理(Spring AOP技术)](http://blog.csdn.net/u014427391/article/details/78799623)
+* [Redis学习笔记之基本数据结构](https://blog.csdn.net/u014427391/article/details/82860694)
+* [SpringBoot集成Redis实现缓存处理(Spring AOP技术)](http://blog.csdn.net/u014427391/article/details/78799623)
 
 ### Oracle知识
-[Oracle知识整理笔录](https://blog.csdn.net/u014427391/article/details/82317376)
-
-[Oracle笔记之锁表和解锁](https://blog.csdn.net/u014427391/article/details/83046148)
-
-[Oracle笔记之修改表字段类型](https://blog.csdn.net/u014427391/article/details/83046006)
+* [Oracle知识整理笔录](https://blog.csdn.net/u014427391/article/details/82317376)
+* [Oracle笔记之锁表和解锁](https://blog.csdn.net/u014427391/article/details/83046148)
+* [Oracle笔记之修改表字段类型](https://blog.csdn.net/u014427391/article/details/83046006)
 
