@@ -47,8 +47,10 @@ public class TypeAliasesPackageScanner {
         //TreeSet packageNames = new TreeSet();
         String typeAliasesPackage ="";
         try {
+            //加载所有的资源
             Resource[] resources = resourcePatternResolver.getResources(PACKAGE_PATTERN);
             MetadataReaderFactory readerFactory = new CachingMetadataReaderFactory(resourcePatternResolver);
+            //遍历资源
             for (Resource resource : resources) {
                 if (resource.isReadable()) {
                     MetadataReader reader = readerFactory.getMetadataReader(resource);
@@ -67,6 +69,7 @@ public class TypeAliasesPackageScanner {
         } catch (IOException e) {
             LOGGER.error("ioException =>: {} " + e);
         }
+        //集合不为空的情况，拼装一下数据
         if (!CollectionUtils.isEmpty(packageNames)) {
             typeAliasesPackage = StringUtils.join(packageNames.toArray() , ConfigurableApplicationContext.CONFIG_LOCATION_DELIMITERS);
         }else{
@@ -75,5 +78,5 @@ public class TypeAliasesPackageScanner {
         return typeAliasesPackage;
     }
 
-
+    
 }
