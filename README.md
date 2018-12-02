@@ -1,4 +1,4 @@
-
+[![Build Status](https://travis-ci.org/crossoverJie/JCSprout.svg?branch=master)](https://travis-ci.org/crossoverJie/taoshop)
 
 # 电子商务项目
 ## 电商项目简介
