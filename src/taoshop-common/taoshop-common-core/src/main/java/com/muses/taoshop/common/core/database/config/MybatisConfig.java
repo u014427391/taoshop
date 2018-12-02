@@ -1,23 +1,15 @@
 package com.muses.taoshop.common.core.database.config;
 
 import com.muses.taoshop.common.core.database.annotation.MybatisRepository;
-import org.apache.ibatis.io.DefaultVFS;
-import org.apache.ibatis.io.ResolverUtil;
+import com.muses.taoshop.common.core.database.annotation.TypeAliasesPackageScanner;
 import org.apache.ibatis.io.VFS;
 import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.type.TypeHandler;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
-import org.mybatis.spring.boot.autoconfigure.MybatisProperties;
 import org.mybatis.spring.boot.autoconfigure.SpringBootVFS;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.boot.autoconfigure.AutoConfigureAfter;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceBuilder;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -65,6 +57,9 @@ import static com.muses.taoshop.common.core.database.config.BaseConfig.*;
 //@AutoConfigureAfter(DataSourceAutoConfiguration.class)
 public class MybatisConfig {
 
+
+    TypeAliasesPackageScanner packageScanner = new TypeAliasesPackageScanner();
+
     @Bean(name = DATA_SOURCE_NAME)
     @ConfigurationProperties(prefix = DATA_SOURCE_PROPERTIES)
     @Primary
@@ -76,14 +71,15 @@ public class MybatisConfig {
     @Bean(name = SQL_SESSION_FACTORY)
     public SqlSessionFactory sqlSessionFactory(@Qualifier(DATA_SOURCE_NAME)DataSource dataSource)throws Exception{
         //SpringBoot默认使用DefaultVFS进行扫描，但是没有扫描到jar里的实体类
-        //VFS.addImplClass(SpringBootVFS.class);
+        VFS.addImplClass(SpringBootVFS.class);
         SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
         factoryBean.setDataSource(dataSource);
         //factoryBean.setConfigLocation(new ClassPathResource("mybatis-config.xml"));
         ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
         try{
             factoryBean.setMapperLocations(resolver.getResources("classpath*:/mybatis/*Mapper.xml"));
-            String typeAliasesPackage=setTypeAliasesPackage(ENTITY_PACKAGES);
+            //String typeAliasesPackage=setTypeAliasesPackage(ENTITY_PACKAGES);
+            String typeAliasesPackage = packageScanner.getTypeAliasesPackages();
             factoryBean.setTypeAliasesPackage(typeAliasesPackage);
             SqlSessionFactory sqlSessionFactory = factoryBean.getObject();
             return sqlSessionFactory;
