@@ -2,6 +2,7 @@ package com.muses.taoshop.common.core.database.annotation;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.core.io.support.ResourcePatternResolver;
 
@@ -41,9 +42,9 @@ public class TypeAliasesPackageScanner {
             new AnnotationTypeFilter(org.hibernate.annotations.Entity.class, false)};*/
 
 
-    public static String scanTypeAliasesPackage() {
-        Set<String> classNames = new TreeSet<String>();
-        TreeSet packageNames = new TreeSet();
+    public static String getTypeAliasesPackages() {
+        Set<String> packageNames = new TreeSet<String>();
+        //TreeSet packageNames = new TreeSet();
         String typeAliasesPackage ="";
         try {
             Resource[] resources = resourcePatternResolver.getResources(PACKAGE_PATTERN);
@@ -52,20 +53,24 @@ public class TypeAliasesPackageScanner {
                 if (resource.isReadable()) {
                     MetadataReader reader = readerFactory.getMetadataReader(resource);
                     String className = reader.getClassMetadata().getClassName();
+                    //eg:com.muses.taoshop.item.entity.ItemBrand
+                    LOGGER.info("className : {} "+className);
                     try{
-                        classNames.add(Class.forName(className).getPackage().getName());
+                        //eg:com.muses.taoshop.item.entity
+                        LOGGER.info("packageName : {} "+Class.forName(className).getPackage().getName());
+                        packageNames.add(Class.forName(className).getPackage().getName());
                     }catch (ClassNotFoundException e){
-                        LOGGER.error("class not found exception..."+e);
+                        LOGGER.error("classNotFoundException : {} "+e);
                     }
                 }
             }
         } catch (IOException e) {
-            LOGGER.error("scan type aliases package exception : {}" + e);
+            LOGGER.error("ioException =>: {} " + e);
         }
-        if (!CollectionUtils.isEmpty(classNames)) {
-            typeAliasesPackage = StringUtils.join(classNames.toArray() , ",");
+        if (!CollectionUtils.isEmpty(packageNames)) {
+            typeAliasesPackage = StringUtils.join(packageNames.toArray() , ConfigurableApplicationContext.CONFIG_LOCATION_DELIMITERS);
         }else{
-            LOGGER.info("can not scan packages,the set of classNames is empty...");
+            LOGGER.info("set empty,size:{} "+packageNames.size());
         }
         return typeAliasesPackage;
     }

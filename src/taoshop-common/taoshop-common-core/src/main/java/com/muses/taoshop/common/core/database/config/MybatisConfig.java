@@ -2,9 +2,11 @@ package com.muses.taoshop.common.core.database.config;
 
 import com.muses.taoshop.common.core.database.annotation.MybatisRepository;
 import com.muses.taoshop.common.core.database.annotation.TypeAliasesPackageScanner;
+import org.apache.ibatis.io.VFS;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
+import org.mybatis.spring.boot.autoconfigure.SpringBootVFS;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceBuilder;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -69,7 +71,7 @@ public class MybatisConfig {
     @Bean(name = SQL_SESSION_FACTORY)
     public SqlSessionFactory sqlSessionFactory(@Qualifier(DATA_SOURCE_NAME)DataSource dataSource)throws Exception{
         //SpringBoot默认使用DefaultVFS进行扫描，但是没有扫描到jar里的实体类
-        //VFS.addImplClass(SpringBootVFS.class);
+        VFS.addImplClass(SpringBootVFS.class);
         SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
         factoryBean.setDataSource(dataSource);
         //factoryBean.setConfigLocation(new ClassPathResource("mybatis-config.xml"));
@@ -77,7 +79,7 @@ public class MybatisConfig {
         try{
             factoryBean.setMapperLocations(resolver.getResources("classpath*:/mybatis/*Mapper.xml"));
             //String typeAliasesPackage=setTypeAliasesPackage(ENTITY_PACKAGES);
-            String typeAliasesPackage = packageScanner.scanTypeAliasesPackage();
+            String typeAliasesPackage = packageScanner.getTypeAliasesPackages();
             factoryBean.setTypeAliasesPackage(typeAliasesPackage);
             SqlSessionFactory sqlSessionFactory = factoryBean.getObject();
             return sqlSessionFactory;
