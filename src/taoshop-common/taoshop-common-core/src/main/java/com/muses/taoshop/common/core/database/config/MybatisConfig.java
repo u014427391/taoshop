@@ -3,16 +3,16 @@ package com.muses.taoshop.common.core.database.config;
 import com.muses.taoshop.common.core.database.annotation.MybatisRepository;
 import com.muses.taoshop.common.core.database.annotation.TypeAliasesPackageScanner;
 import org.apache.ibatis.io.VFS;
+import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 import org.mybatis.spring.boot.autoconfigure.SpringBootVFS;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceBuilder;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.*;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.core.io.support.ResourcePatternResolver;
@@ -49,6 +49,7 @@ import static com.muses.taoshop.common.core.database.config.BaseConfig.*;
         annotationClass = MybatisRepository.class,
         sqlSessionFactoryRef = SQL_SESSION_FACTORY
 )
+@ComponentScan
 @EnableTransactionManagement
 @Configuration
 //@ConditionalOnClass({ SqlSessionFactory.class, SqlSessionFactoryBean.class })
@@ -57,6 +58,9 @@ import static com.muses.taoshop.common.core.database.config.BaseConfig.*;
 //@AutoConfigureAfter(DataSourceAutoConfiguration.class)
 public class MybatisConfig {
 
+
+    @Autowired
+    MybatisSqlInterceptor interceptor;
 
     TypeAliasesPackageScanner packageScanner = new TypeAliasesPackageScanner();
 
@@ -73,6 +77,7 @@ public class MybatisConfig {
         //SpringBoot默认使用DefaultVFS进行扫描，但是没有扫描到jar里的实体类
         VFS.addImplClass(SpringBootVFS.class);
         SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
+        factoryBean.setPlugins(new Interceptor[]{interceptor});
         factoryBean.setDataSource(dataSource);
         //factoryBean.setConfigLocation(new ClassPathResource("mybatis-config.xml"));
         ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
@@ -94,52 +99,5 @@ public class MybatisConfig {
         return new DataSourceTransactionManager(dataSource);
     }
 
-    static final String DEFAULT_RESOURCE_PATTERN = "**/*.class";
-
-    public static String setTypeAliasesPackage(String typeAliasesPackage) {
-        ResourcePatternResolver resolver = (ResourcePatternResolver) new PathMatchingResourcePatternResolver();
-        MetadataReaderFactory metadataReaderFactory = new CachingMetadataReaderFactory(
-                resolver);
-        typeAliasesPackage = ResourcePatternResolver.CLASSPATH_ALL_URL_PREFIX
-                + ClassUtils.convertClassNameToResourcePath(typeAliasesPackage)
-                + "/" + DEFAULT_RESOURCE_PATTERN;
-        try {
-            List<String> result = new ArrayList<String>();
-            Resource[] resources = resolver.getResources(typeAliasesPackage);
-            if (resources != null && resources.length > 0) {
-                MetadataReader metadataReader = null;
-                for (Resource resource : resources) {
-                    if (resource.isReadable()) {
-                        metadataReader = metadataReaderFactory
-                                .getMetadataReader(resource);
-                        try {
-//                            System.out.println(Class.forName(metadataReader.getClassMetadata().getClassName()).getPackage().getName());
-                            result.add(Class
-                                    .forName(
-                                            metadataReader.getClassMetadata()
-                                                    .getClassName())
-                                    .getPackage().getName());
-                        } catch (ClassNotFoundException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }
-            }
-            if (result.size() > 0) {
-                HashSet<String> h = new HashSet<String>(result);
-                result.clear();
-                result.addAll(h);
-                typeAliasesPackage=String.join(",",(String[]) result.toArray(new String[0]));
-//                System.out.println(typeAliasesPackage);
-            } else {
-                throw new RuntimeException(
-                        "mybatis typeAliasesPackage 路径扫描错误,参数typeAliasesPackage:"
-                                + typeAliasesPackage + "未找到任何包");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return typeAliasesPackage;
-    }
 
 }
