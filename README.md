@@ -202,18 +202,29 @@ Minitor：统计服务调用次数和时间的监控中心
 * [Dubbo学习笔记](https://blog.csdn.net/u014427391/article/details/83716884)
 * [SpringBoot+Dubbo搭建微服务](https://blog.csdn.net/u014427391/article/details/84455282)
 
+### 分布式锁
+* [Redis学习笔记之分布式锁](https://blog.csdn.net/u014427391/article/details/84934045)
+
 ### SpringBoot
 * [电商门户网站商品品类多级联动SpringBoot+Thymeleaf实现](https://blog.csdn.net/u014427391/article/details/83685901)
 
 ### Mybatis
-* [Mybatis+Thymeleaf开发遇到的几个问题笔录](https://blog.csdn.net/u014427391/article/details/83686014)
+* [Mybatis+Thymeleaf前端显示时间格式问题解决方法](https://blog.csdn.net/u014427391/article/details/83686014)
+* [Mybatis3.2不支持Ant通配符的TypeAliasesPackage扫描解决方案](https://blog.csdn.net/u014427391/article/details/84723292)
 
 ### 缓存
 * [Redis学习笔记之基本数据结构](https://blog.csdn.net/u014427391/article/details/82860694)
 * [SpringBoot集成Redis实现缓存处理(Spring AOP技术)](http://blog.csdn.net/u014427391/article/details/78799623)
 
+### 设计模式
+* [设计模式之观察者模式(行为型)](https://blog.csdn.net/u014427391/article/details/81156661)
+* [设计模式之建造者模式(创建型)](https://blog.csdn.net/u014427391/article/details/80061566)
+
 ### Oracle知识
 * [Oracle知识整理笔录](https://blog.csdn.net/u014427391/article/details/82317376)
 * [Oracle笔记之锁表和解锁](https://blog.csdn.net/u014427391/article/details/83046148)
+* [Oracle递归查询start with connect by prior](https://blog.csdn.net/u014427391/article/details/84996259)
+* [Oracle列转行函数vm_concat使用](https://blog.csdn.net/u014427391/article/details/84981114)
 * [Oracle笔记之修改表字段类型](https://blog.csdn.net/u014427391/article/details/83046006)
+* [Oracle的nvl函数和nvl2函数](https://blog.csdn.net/u014427391/article/details/84996009)
 
