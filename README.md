@@ -4,7 +4,7 @@
 ## 电商项目简介
 电子商务项目[taoshop](https://github.com/u014427391/taoshop)</br>
 
-代码已经捐赠给开源中国社区：https://www.oschina.net/p/taoshop</
+代码已经捐赠给开源中国社区：https://www.oschina.net/p/taoshop
 
 项目releases链接:https://github.com/u014427391/taoshop/releases
 
