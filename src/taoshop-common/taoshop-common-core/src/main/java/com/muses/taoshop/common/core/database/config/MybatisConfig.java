@@ -22,7 +22,6 @@ import javax.sql.DataSource;
 
 import static com.muses.taoshop.common.core.database.config.BaseConfig.*;
 
-
 /**
  * <pre>
  *  Mybatis配置类
@@ -35,7 +34,6 @@ import static com.muses.taoshop.common.core.database.config.BaseConfig.*;
  *    修改后版本:     修改人：  修改日期:     修改内容:
  * </pre>
  */
-
 @MapperScan(
         basePackages = MAPPER_PACKAGES,
         annotationClass = MybatisRepository.class,
@@ -44,10 +42,6 @@ import static com.muses.taoshop.common.core.database.config.BaseConfig.*;
 @ComponentScan
 @EnableTransactionManagement
 @Configuration
-//@ConditionalOnClass({ SqlSessionFactory.class, SqlSessionFactoryBean.class })
-//@ConditionalOnBean(DataSource.class)
-//@EnableConfigurationProperties(MybatisProperties.class)
-//@AutoConfigureAfter(DataSourceAutoConfiguration.class)
 public class MybatisConfig {
 
 
@@ -75,7 +69,6 @@ public class MybatisConfig {
         ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
         try{
             factoryBean.setMapperLocations(resolver.getResources("classpath*:/mybatis/*Mapper.xml"));
-            //String typeAliasesPackage=setTypeAliasesPackage(ENTITY_PACKAGES);
             String typeAliasesPackage = packageScanner.getTypeAliasesPackages();
             factoryBean.setTypeAliasesPackage(typeAliasesPackage);
             SqlSessionFactory sqlSessionFactory = factoryBean.getObject();

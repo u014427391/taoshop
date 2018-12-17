@@ -14,6 +14,18 @@ import org.springframework.stereotype.Component;
 
 import java.util.Properties;
 
+/**
+ * <pre>
+ *  Mybatis SQL拦截器
+ * </pre>
+ *
+ * @author nicky
+ * @version 1.00.00
+ * <pre>
+ * 修改记录
+ *    修改后版本:     修改人：  修改日期:     修改内容:
+ * </pre>
+ */
 @Component
 @Intercepts(@Signature(type = Executor.class, method = "query",
         args = {MappedStatement.class, Object.class, RowBounds.class, ResultHandler.class}))
