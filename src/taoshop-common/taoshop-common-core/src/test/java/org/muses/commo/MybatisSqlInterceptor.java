@@ -1,8 +1,4 @@
-package org.muses.commo; /**
- * Author:ZhuShangJin
- * Date:2018/8/23
- */
-
+package org.muses.commo;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.ibatis.executor.Executor;
 import org.apache.ibatis.mapping.BoundSql;
