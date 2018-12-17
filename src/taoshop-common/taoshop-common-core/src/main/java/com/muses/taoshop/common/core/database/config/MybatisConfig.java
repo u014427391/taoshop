@@ -13,20 +13,12 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceBuilder;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.*;
-import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.core.io.support.ResourcePatternResolver;
-import org.springframework.core.type.classreading.CachingMetadataReaderFactory;
-import org.springframework.core.type.classreading.MetadataReader;
-import org.springframework.core.type.classreading.MetadataReaderFactory;
+
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.springframework.util.ClassUtils;
-
 import javax.sql.DataSource;
-
-import java.io.IOException;
-import java.util.*;
 
 import static com.muses.taoshop.common.core.database.config.BaseConfig.*;
 
@@ -60,7 +52,7 @@ public class MybatisConfig {
 
 
     @Autowired
-    MybatisSqlInterceptor interceptor;
+    MybatisSqlInterceptor mybatisSqlInterceptor;
 
     TypeAliasesPackageScanner packageScanner = new TypeAliasesPackageScanner();
 
@@ -77,7 +69,7 @@ public class MybatisConfig {
         //SpringBoot默认使用DefaultVFS进行扫描，但是没有扫描到jar里的实体类
         VFS.addImplClass(SpringBootVFS.class);
         SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
-        factoryBean.setPlugins(new Interceptor[]{interceptor});
+        factoryBean.setPlugins(new Interceptor[]{mybatisSqlInterceptor});
         factoryBean.setDataSource(dataSource);
         //factoryBean.setConfigLocation(new ClassPathResource("mybatis-config.xml"));
         ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
