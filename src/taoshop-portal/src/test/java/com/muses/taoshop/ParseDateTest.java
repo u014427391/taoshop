@@ -8,23 +8,23 @@ import java.util.concurrent.Executors;
 
 /**
  * <pre>
- *  ThreadLocal测试类
+ *  ParseDateTest
  * </pre>
  *
  * @author nicky
  * @version 1.00.00
  * <pre>
  * 修改记录
- *    修改后版本:     修改人：  修改日期: 2018.12.22 22:51    修改内容:
+ *    修改后版本:     修改人：  修改日期: 2018.12.23 11:59    修改内容:
  * </pre>
  */
-public class ThreadLocalTest implements Runnable {
+public class ParseDateTest implements Runnable{
 
     private int i ;
 
-    private static final ThreadLocal<SimpleDateFormat> threadLocal = new ThreadLocal<SimpleDateFormat>();
+    private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-    public ThreadLocalTest(int i){
+    public ParseDateTest(int i){
         this.i = i;
     }
 
@@ -41,9 +41,8 @@ public class ThreadLocalTest implements Runnable {
      */
     @Override
     public void run() {
-        threadLocal.set(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"));
         try {
-            Date t = threadLocal.get().parse("2018-12-22 19:30:"+i%60);
+            Date t = sdf.parse("2018-12-22 19:30:"+i%60);
             System.out.println(i+":"+t.toString());
         } catch (ParseException e) {
             e.printStackTrace();
@@ -56,4 +55,5 @@ public class ThreadLocalTest implements Runnable {
             es.execute(new ThreadLocalTest(i));
         }
     }
+
 }
