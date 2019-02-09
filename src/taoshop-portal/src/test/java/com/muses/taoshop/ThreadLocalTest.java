@@ -1,5 +1,6 @@
 package com.muses.taoshop;
 
+import java.lang.ref.SoftReference;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -55,5 +56,6 @@ public class ThreadLocalTest implements Runnable {
         for(int i =0;i<=1000;i++){
             es.execute(new ThreadLocalTest(i));
         }
+        threadLocal.remove();
     }
 }

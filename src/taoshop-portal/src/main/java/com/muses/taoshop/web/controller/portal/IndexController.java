@@ -12,10 +12,11 @@ import com.muses.taoshop.web.controller.BaseController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.CollectionUtils;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -77,10 +78,6 @@ public class IndexController extends BaseController{
         CategoryTreeUtils treeUtil = new CategoryTreeUtils();
         List<ItemCategory> list = iItemCategoryService.listCategory();
         List<ItemCategory> categories = treeUtil.buildCategoryTree(list);
-        for(ItemCategory itemCategory : categories){
-            Date unixlongTime = itemCategory.getCreateTime();
-            log.debug("create time!!!!!!!!!"+unixlongTime);
-        }
         String jsonString = "";
         if(!CollectionUtils.isEmpty(categories)){
             jsonString = JSON.toJSON(categories).toString();
