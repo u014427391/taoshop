@@ -214,6 +214,9 @@ Minitor：统计服务调用次数和时间的监控中心
 
 ### 缓存
 * [Redis学习笔记之基本数据结构](https://blog.csdn.net/u014427391/article/details/82860694)
+* [Redis学习笔记之位图](https://blog.csdn.net/u014427391/article/details/87923407)
+* [Redis学习笔记之延时队列](https://blog.csdn.net/u014427391/article/details/87905450)
+* [Redis学习笔记之分布式锁](https://blog.csdn.net/u014427391/article/details/84934045)
 * [SpringBoot集成Redis实现缓存处理(Spring AOP技术)](http://blog.csdn.net/u014427391/article/details/78799623)
 
 ### 设计模式
