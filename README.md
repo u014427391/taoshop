@@ -221,6 +221,8 @@ Minitor：统计服务调用次数和时间的监控中心
 
 ### 设计模式
 * [设计模式之观察者模式(行为型)](https://blog.csdn.net/u014427391/article/details/81156661)
+* [设计模式之桥接模式(结构型)](https://blog.csdn.net/u014427391/article/details/88412075)
+* [设计模式之适配器模式(结构型)](https://blog.csdn.net/u014427391/article/details/88412105)
 * [设计模式之建造者模式(创建型)](https://blog.csdn.net/u014427391/article/details/80061566)
 
 ### Oracle知识
