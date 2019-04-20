@@ -220,10 +220,21 @@ Minitor：统计服务调用次数和时间的监控中心
 * [SpringBoot集成Redis实现缓存处理(Spring AOP技术)](http://blog.csdn.net/u014427391/article/details/78799623)
 
 ### 设计模式
-* [设计模式之观察者模式(行为型)](https://blog.csdn.net/u014427391/article/details/81156661)
+创建型
+* [设计模式之建造者模式(创建型)](https://blog.csdn.net/u014427391/article/details/80061566)
+* [设计模式之简单工厂模式(创建型)](https://blog.csdn.net/u014427391/article/details/85543283)
+* [设计模式之抽象工厂模式(创建型)](https://blog.csdn.net/u014427391/article/details/85543242)
+* [设计模式之单例模式(创建型)](https://blog.csdn.net/u014427391/article/details/80019048)
+* [设计模式之工厂方法模式(创建型)](https://blog.csdn.net/u014427391/article/details/85543251)
+* [设计模式之原型模式(创建型)](https://blog.csdn.net/u014427391/article/details/87539023)
+结构型
 * [设计模式之桥接模式(结构型)](https://blog.csdn.net/u014427391/article/details/88412075)
 * [设计模式之适配器模式(结构型)](https://blog.csdn.net/u014427391/article/details/88412105)
-* [设计模式之建造者模式(创建型)](https://blog.csdn.net/u014427391/article/details/80061566)
+行为型
+* [设计模式之观察者模式(行为型)](https://blog.csdn.net/u014427391/article/details/81156661)
+* [设计模式之命令模式(行为型)](https://blog.csdn.net/u014427391/article/details/89289375)
+* [设计模式之备忘录模式(行为型)](https://blog.csdn.net/u014427391/article/details/88598079)
+* [设计模式之访问者模式(行为型)](https://blog.csdn.net/u014427391/article/details/88562267)
 
 ### Oracle知识
 * [Oracle知识整理笔录](https://blog.csdn.net/u014427391/article/details/82317376)
