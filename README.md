@@ -227,9 +227,11 @@ Minitor：统计服务调用次数和时间的监控中心
 * [设计模式之单例模式(创建型)](https://blog.csdn.net/u014427391/article/details/80019048)
 * [设计模式之工厂方法模式(创建型)](https://blog.csdn.net/u014427391/article/details/85543251)
 * [设计模式之原型模式(创建型)](https://blog.csdn.net/u014427391/article/details/87539023)
+
 结构型
 * [设计模式之桥接模式(结构型)](https://blog.csdn.net/u014427391/article/details/88412075)
 * [设计模式之适配器模式(结构型)](https://blog.csdn.net/u014427391/article/details/88412105)
+
 行为型
 * [设计模式之观察者模式(行为型)](https://blog.csdn.net/u014427391/article/details/81156661)
 * [设计模式之命令模式(行为型)](https://blog.csdn.net/u014427391/article/details/89289375)
