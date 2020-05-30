@@ -1,0 +1,48 @@
+@charset "utf-8";
+.header{margin-bottom:20px;}
+
+/**phoneSearch**/
+.phoneSearch-title{padding:0 0 10px 10px;border-bottom:1px solid #ccc;font-size:18px;font-weight:bold;font-family:'微软雅黑';color:#666;}
+.phoneSearch-filter{position:relative;zoom:1;line-height:25px;margin-bottom:30px;padding-top:15px;}
+.phoneSearch-filter-item{position:relative;zoom:1;border-bottom:1px solid #f4f4f4;margin:0 5px 15px 5px;}
+.phoneSearch-filter-item h3{float:left;width:70px;font-weight:normal;padding-left:10px;}
+.phoneSearch-filter-item p{margin-left:80px;overflow:hidden;}
+.phoneSearch-filter-item p a{display:inline-block;*zoom:1;margin-right:20px;margin-bottom:15px;color:#666;}
+.phoneSearch-filter-item p a.selected{background:#ef4218;color:#fff;padding:0 10px;}
+.phoneSearch-filter-item p a:hover{color:#f30;}
+.phoneSearch-filter-item p a.selected:hover{color:#fff;}
+.phoneSearch-filter-more{height:5px;background:#ffddaa;border-top:1px solid #ffaa66;}
+.phoneSearch-filter-more a{display:block;margin:-1px auto -20px auto;width:100px;border:1px solid #ff6600;border-top-color:#fff;text-align:center;height:20px;line-height:20px;margin-bottom:-20px;*position:relative;background:#fff;}
+.phoneSearch-filter .ft{width:50px;line-height:26px;position:absolute;right:10px;top:-27px;}
+.phoneSearch-filter .ft a{color:#00469d;}
+.phoneSearch-filter .ft span{display:inline-block;*display:inline;*zoom:1;width:8px;height:7px;overflow:hidden;margin-left:9px;font-size:0;background:url(../images/more-expand.png) no-repeat;}
+.phoneSearch-filter .ft a:hover{color:#f30;}
+
+/*排序*/
+.reorder{height:45px;overflow:hidden;background:#f7f7f7;border:1px solid #ddd;}
+.reorder .reorder-wrapper{float:left;line-height:45px;}
+.reorder .reorder-wrapper a{float:left;height:45px;display:block;border-right:1px solid #ddd;padding:0 20px;cursor:pointer;overflow:hidden;}
+.reorder .reorder-wrapper a:hover,.reorder .reorder-wrapper a.selected{position:relative;background:#fff;text-decoration:none;cursor:pointer;}
+.reorder .reorder-styles{float:right;line-height:26px;padding-top:10px;padding-right:15px;}
+
+/*商品列表*/
+.phoneList{overflow:hidden;}
+.phoneList-wrap{position:relative;left:-10px;width:1220px;}
+.phoneListItem{float:left;display:inline;width:253px;height:358px;text-align:center;border:1px solid #fff;padding:15px;margin:10px;word-break:break-all;}
+.phoneListItem .item-img,.phoneListItem .item-img img{width:240px;height:240px;margin:0 auto;}
+.phoneListItem .item-name{font-weight:bold;white-space:nowrap;overflow:hidden;}
+.phoneListItem .item-name a{color:#5b5b5b;}
+.phoneListItem .item-name a:hover{color:#f30;}
+.phoneListItem .item-info{height:20px;line-height:20px;margin-bottom:5px;white-space:nowrap;overflow:hidden;color:#707070;}
+.phoneListItem .item-price{padding:2px 0 10px 0;font-size:16px;color:#f75831;}
+.phoneListItem .item-btn .btn{width:94px;height:34px;line-height:34px;padding:0;margin-right:10px;border-radius:0;font-size:14px;}
+.phoneListItem .item-btn .btn-gray{border:1px solid #e7e7e7;color:#898989;background-color:#f8f8f8;}
+.phoneListItem .item-btn .btn-red{border:1px solid #ef4218;background-color:#ef4218;}
+.phoneListItem .item-btn .btn-gray:hover{background:#fefefe;}
+.phoneListItem .item-btn .btn-red:hover{background:#f30;}
+.phoneListItem:hover{border-color:#f60;}
+
+/*相关搜索*/
+.searchResult-key{color:#858585;padding-left:10px;margin-bottom:15px;}
+.searchResult-key a{color:#0444a6;margin-right:10px;}
+.searchResult-key a:hover{color:#f30;}

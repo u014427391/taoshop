@@ -1,0 +1,71 @@
+﻿@charset "utf-8";
+
+.login-reg-page .siteLogo{margin-left:100px;}
+.login-reg-section{width:985px;margin:0 auto 30px;border:4px solid #eaeaea;font-size:14px;color:#606060;}
+.login-reg-main{position:relative;padding:25px 45px 25px 0;}
+.login-pic{position:absolute;left:0;top:25px;}
+.login{margin-left:548px;width:390px;border:1px solid #dfdfdf;}
+.login-hd li{float:left;width:195px;height:40px;border-bottom:1px solid #dfdfdf;text-align:center;line-height:40px;cursor:pointer;background:#f7f7f7;}
+.login-hd .current{color:#fff;background:#ef4218;}
+.login-bd{height:266px;padding:18px 25px 0 30px;}
+.login-bd .login-tips{font-size:12px;color:#ef4218;}
+.login-box-phone{padding-bottom:25px;}
+.forms-box p{margin-top:12px;line-height:32px;}
+.forms-box .label{display:inline-block;width:90px;padding-right:5px;text-align:right;font-family:simsun;}
+.forms-box .required{display:inline-block;margin-right:10px;color:#ef4218;font-weight:normal;}
+.forms-box .user-text{width:200px;height:28px;border:1px solid #dfdfdf;padding-left:3px;line-height:28px;}
+.forms-box .user-pwd{width:126px;}
+.forms-box .user-code{width:78px;}
+.forms-box .code-img{width:40px;height:26px;margin:0 8px;vertical-align:-9px;}
+.forms-box .smsCapt{font-size:12px;}
+.forms-box .input-tips{margin-left:5px;color:#3399e0;font-size:12px;}
+.forms-box .input-tips:hover{color:#f30;}
+.forms-box .get-pwd{display:inline-block;width:58px;height:24px;margin-left:17px;font-size:12px;line-height:24px;vertical-align:middle;}
+.forms-box .pwd-type{margin:0 5px;font-size:12px;}
+.forms-box .enter-btn{width:116px;height:31px;cursor:pointer;}
+.forms-box .reg-tips{margin-top:20px;padding-top:6px;padding-bottom:11px;border-top:1px dotted #d0d0d0;text-align:center;}
+.forms-box .reg-now{margin-left:5px;color:#3399e0;text-decoration:underline;}
+.forms-box .reg-now:hover{color:#f30;}
+
+.reg-main{padding:25px 45px; }
+.reg-top{padding-left:28px;border-bottom:1px dotted #d0d0d0;}
+.reg-top-tit{color:#ef4218;font:18px/20px "Microsoft Yahei";}
+.reg-top-tips{padding:20px 0;font-size:12px;}
+.reg-forms{padding:30px 0 30px 90px;border-bottom:1px dotted #d0d0d0;}
+.reg-forms .user-pwd{width:200px;}
+.reg-forms-tips{font-size:12px;}
+
+/***统一按钮***/
+.brown-btn{border-radius:2px;color:#fff;text-align:center;background:#b67136;}
+.brown-btn:hover,.brown-btn:active{color:#fff;background:#9f5e27;}
+
+.orange-btn{border:1px solid #ff3300;border-radius:2px;color:#fff;text-align:center;background:#ff3300;}
+.orange-btn:hover,.orange-btn:active{color:#fff;background:#ef4218;}
+
+.forms-box .entry{margin-left:15px;font-size:12px;color:#3399e0;text-decoration:underline;}
+.forms-box .entry:hover{color:#f30;}
+
+/**成功绑定**/
+.binding-cue{padding:35px 0;text-align:center;}
+.binding-cue .icon-cue{display:inline-block;*display:inline;*zoom:1;width:44px;height:40px;overflow:hidden;background:url(../images/login-reg-bg.png) no-repeat 0 -72px;vertical-align:top;margin:-8px 20px 0 0;}
+.binding-cue .btn-action{padding-top:30px;}
+.binding-cue .btn-action .btn-red{padding:9px 24px;border-radius:5px;background-color:#f65730;}
+.binding-cue .btn-action .btn-red:hover{background-color:#f30;}
+/**电信手机初次登录**/
+.reg-binding{float:left;width:365px;margin-top:10px;}
+.reg-binding .reg-top{padding-left:10px;}
+.reg-binding .reg-top-tips{padding:15px 0;}
+.reg-binding .reg-forms{padding:5px 0 0 10px;border-bottom:0;}
+.reg-binding .reg-forms p{margin-top:10px;}
+.reg-binding .reg-forms .action{float:right;margin-right:44px;color:#3399e0;}
+.reg-binding .reg-forms .action:hover{color:#f30;}
+.reg-binding .reg-forms .j-massage{display:block;line-height:18px;padding-top:5px;padding-left:95px;font-size:12px;color:#f40;}
+.reg-binding .reg-forms .reg-forms-tips{margin-top:25px;padding-top:5px;border-top:1px dotted #d0d0d0;}
+.reg-binding .reg-forms .reg-forms-tips a{text-decoration:underline;color:#3399e0;}
+.reg-binding .reg-forms .reg-forms-tips a:hover{color:#f30;}
+.direct-binding{float:right;width:355px;margin-top:25px;padding:30px;border:3px solid #eaeaea;}
+.direct-binding .reg-top{padding-left:10px;}
+.direct-binding .reg-top-tit{padding:0 0 15px 0;color:#606060;}
+.direct-binding .reg-forms{padding:5px 0 0 10px;border-bottom:0;}
+.direct-binding .forms-box .label{display:block;width:auto;text-align:left;}
+.direct-binding .reg-forms .j-massage{display:block;line-height:18px;padding-top:5px;padding-left:0;font-size:12px;color:#f40;}
