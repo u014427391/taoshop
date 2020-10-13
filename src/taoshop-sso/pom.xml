@@ -22,7 +22,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <kaptcha.version>2.3.2</kaptcha.version>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
         <pac4j-cas.version>2.0.0-RC1</pac4j-cas.version>
         <disruptor.version>3.3.6</disruptor.version>
         <cas.integration.redis.version>1.1.1-RELEASE</cas.integration.redis.version>
