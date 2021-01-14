@@ -17,7 +17,7 @@
     <url>http://www.example.com</url>
 
     <properties>
-        <poi.version>3.7</poi.version>
+        <poi.version>3.17</poi.version>
         <cas.client.version>3.4.1</cas.client.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
