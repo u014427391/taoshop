@@ -19,7 +19,7 @@
     <url>http://www.example.com</url>
 
     <properties>
-        <poi.version>3.7</poi.version>
+        <poi.version>3.17</poi.version>
         <shiro.version>1.2.3</shiro.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
